@@ -14,6 +14,8 @@
 		046ADF6228F85D4F007616A2 /* VerticalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046ADF6128F85D4F007616A2 /* VerticalTests.swift */; };
 		046ADF6C28F85D4F007616A2 /* VerticalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046ADF6B28F85D4F007616A2 /* VerticalUITests.swift */; };
 		046ADF6E28F85D4F007616A2 /* VerticalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046ADF6D28F85D4F007616A2 /* VerticalUITestsLaunchTests.swift */; };
+		046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */; };
+		046E333328FF6FF500EAC8DC /* TaskBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E333228FF6FF500EAC8DC /* TaskBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		046ADF6728F85D4F007616A2 /* VerticalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerticalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046ADF6B28F85D4F007616A2 /* VerticalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalUITests.swift; sourceTree = "<group>"; };
 		046ADF6D28F85D4F007616A2 /* VerticalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		046E333228FF6FF500EAC8DC /* TaskBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				046ADF5228F85D4D007616A2 /* ContentView.swift */,
 				046ADF5428F85D4F007616A2 /* Assets.xcassets */,
 				046ADF5628F85D4F007616A2 /* Preview Content */,
+				046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */,
+				046E333228FF6FF500EAC8DC /* TaskBar.swift */,
 			);
 			path = Vertical;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046E333328FF6FF500EAC8DC /* TaskBar.swift in Sources */,
+				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
 				046ADF5328F85D4D007616A2 /* ContentView.swift in Sources */,
 				046ADF5128F85D4D007616A2 /* VerticalApp.swift in Sources */,
 			);

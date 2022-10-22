@@ -9,13 +9,17 @@ import Foundation
 import SwiftUI
 
 struct TaskBar: View {
-    
     var body: some View {
-        HStack{
-            Text("Home")
-            Text("User Profile")
-            Text("Area Profile")
-            Text("Climb Profile")
+        TabView{
+            UserProfile()
+                .tabItem{(Image(systemName: "house"))
+                    Text("Profile")
+                }
+            Feed()
+                .tabItem{(Image(systemName: "house"))
+                Text("Home")
+
+                }
         }
     }
 }

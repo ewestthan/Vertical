@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Roof Of Rumours",
+        "stars": 3,
+        "image": "Boulder1.jpg",
+        "area": "Bolton",
+        "description": "Did the climb"
+    },
+    {
+        "id": 2,
+        "name": "Touching the Sky",
+        "stars": 4,
+        "image": "Boulder1.jpg",
+        "area": "Smugglers Notch",
+        "description": "Did the climb"
+    }
+]

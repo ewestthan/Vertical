@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>725481168455-f3hqf5ldevafb7gtaptjmif35mg9hg84.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.725481168455-f3hqf5ldevafb7gtaptjmif35mg9hg84</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-MNA1lz9WmFe5h7P9TiAPFD96pz-HTT4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>725481168455</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>app.CS275.Vertical</string>
+	<key>PROJECT_ID</key>
+	<string>climbing-app-a374f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>climbing-app-a374f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:725481168455:ios:a016c1507e56e1672edb62</string>
+</dict>
+</plist>

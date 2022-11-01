@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct UserProfile: View {
+    
+    var user: UserRow
+    
     var body: some View {
         VStack{
-            UserProfileHeader()
+            UserProfileHeader(user: user)
             UserProfileBottom()
         }
     }
@@ -18,6 +21,6 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile()
+        UserProfile(user: users[0])
     }
 }

@@ -3,7 +3,7 @@ import SwiftUI
 
 struct UserProfileBottom: View{
     
-    @State private var tabSelected: Tab = .climbs
+    @State private var tabSelected: UserProfileTab = .climbs
         
     init() {
         UITabBar.appearance().isHidden = true
@@ -12,17 +12,16 @@ struct UserProfileBottom: View{
     var body: some View {
         ZStack {
             VStack {
-                CustomTabBar(selectedTab: $tabSelected)
+                UserProfileTabBar(selectedTab: $tabSelected)
                 TabView(selection: $tabSelected) {
-                    ForEach(Tab.allCases, id: \.rawValue) { tab in
+                    ForEach(UserProfileTab.allCases, id: \.rawValue) { tab in
                         HStack {
                             if(tab.rawValue == "climbs"){
                                 UserProfileClimbList().background(.gray)
                             }
                             if(tab.rawValue == "videos"){
-                                Text("\(tab.rawValue.capitalized)")
-                                    .bold()
-                                    .animation(nil, value: tabSelected)
+                                UserProfileVideos()
+                                    .background(.gray)
                             }
                             if(tab.rawValue == "wishlist"){
                                 Text("\(tab.rawValue.capitalized)")
@@ -34,11 +33,14 @@ struct UserProfileBottom: View{
                                     .bold()
                                     .animation(nil, value: tabSelected)
                             }
+                            if(tab.rawValue == "filter"){
+                                UserProfileFilter()
+                            }
                         }
                         .tag(tab)
                     }
                 }
-            }
+            }.padding([.top], 10)
         }.background(.gray)
     }
 }

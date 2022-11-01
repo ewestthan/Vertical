@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TaskBar()
-    }
+        
+            TabView(){
+                Feed()
+                    .tabItem(){Label("Home", systemImage: "house")}
+//                Search()
+//                    .tabItem(){Label("Home", systemImage: "house")}
+//                UserProfile(user: users[0])
+//                    .tabItem(){Label("Profile", systemImage: "person")}
+            }.frame(alignment: .bottomLeading)
+                .accentColor(.gray)
+        }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct VerticalApp: App {
+    
+    @StateObject var user = User()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if user.isAuthenticated {
+                ContentView()
+                    .environmentObject(user)
+                
+            } else {
+                LoginView()
+                    .environmentObject(user)
+            }
+
         }
     }
 }

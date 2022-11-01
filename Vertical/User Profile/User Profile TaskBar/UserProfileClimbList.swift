@@ -10,6 +10,7 @@ import SwiftUI
 struct ClimbRow: Hashable, Codable {
     var id: Int
     var name: String
+    var grade: Int
     var stars: Int
     var area: String
     var image: String
@@ -42,7 +43,7 @@ struct UserProfileClimbRow: View {
             .padding([.leading, .trailing], 25.0)
            
             if isExpanded{
-                Image("Boulder1")
+                Image(climb.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 VStack(alignment: .leading){
@@ -59,13 +60,13 @@ struct UserProfileClimbRow: View {
 struct UserProfileClimbList: View {
     
     @State private var selection: Set<ClimbRow> = []
-    
+
     var body: some View{
         scrollForEach
     }
     
     var list: some View {
-        List(climbs, id: \.id) { row in
+        List(climbs, id: \.grade) { row in
             UserProfileClimbRow(climb: row, isExpanded: self.selection.contains(row))
                 .onTapGesture {
                     selectDeselect(row)

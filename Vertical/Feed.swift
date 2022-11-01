@@ -10,6 +10,6 @@ import SwiftUI
 
 struct Feed: View {
     var body: some View {
-        Text("home")
+        Text("home").frame(height: 150)
     }
 }

@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TaskBar()
+        TabView(){
+            Feed()
+                .tabItem(){Label("Home", systemImage: "house")}
+            Search()
+                .tabItem(){Label("Search", systemImage: "magnigyingglass")}
+            UserProfile(user: users[0])
+                .tabItem(){Label("Profile", systemImage: "person")}
+        }.frame(alignment: .bottomLeading)
+            .accentColor(.gray)
     }
 }
 

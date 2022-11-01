@@ -1,38 +1,31 @@
 import SwiftUI
 
-enum Tab: String, CaseIterable {
+enum SearchTab: String, CaseIterable {
+    case users
     case climbs
-    case videos
-    case wishlist
-    case info
-    case filter
+    case areas
 }
 
-struct CustomTabBar: View {
-    @Binding var selectedTab: Tab
+struct SearchTabBar: View {
+    @Binding var selectedTab: SearchTab
     private var fillImage: String {
         selectedTab.rawValue + ".fill"
     }
     private var tabColor: Color {
         switch selectedTab {
+        case .users:
+            return .orange
         case .climbs:
-            return .blue
-        case .videos:
-            return .indigo
-        case .wishlist:
-            return .purple
-        case .info:
-            return .green
-        case .filter:
+            return .orange
+        case .areas:
             return .orange
         }
+        
     }
-    
-    
     var body: some View {
         VStack {
-            HStack(spacing: 10){
-                ForEach(Tab.allCases, id: \.rawValue) { tab in
+            HStack(spacing: 70){
+                ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                     Text(tab.rawValue)
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.1)) {
@@ -50,8 +43,8 @@ struct CustomTabBar: View {
     }
 }
 
-struct CustomTabBar_Previews: PreviewProvider {
+struct SearchTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBar(selectedTab: .constant(.climbs))
+        SearchTabBar(selectedTab: .constant(.users))
     }
 }

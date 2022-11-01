@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Jimmy",
+        "handle": "jwebxl",
+        "location": "Tahoe, CA",
+        "image": "jimmy",
+        "description": "boulders are cool, blah blah blah. climbing words and stuff go here. tell me about yourself.",
+        "followers": 100,
+        "following": 100,
+        "ascents": 100,
+        "climbs":
+                [{
+                    "id": 3,
+                    "name": "Touching the Sky",
+                    "grade": 11,
+                    "stars": 4,
+                    "image": "Boulder1",
+                    "area": "Smugglers Notch",
+                    "description": "Did the climb",
+                    "climbLink": 5
+                },
+                {
+                    "id": 4,
+                    "name": "Moon Tower",
+                    "grade": 8,
+                    "stars": 5,
+                    "image": "Boulder1",
+                    "area": "Smugglers Notch",
+                    "description": "Did the climb",
+                    "climbLink": 5
+                }]
+
+    },
+    {
+        "id": 2,
+        "name": "Daniel",
+        "handle": "dwoods",
+        "location": "Tahoe, CA",
+        "image": "daniel",
+        "description": "boulders are cool, blah blah blah. climbing words and stuff go here. tell me about yourself.",
+        "followers": 100,
+        "following": 100,
+        "ascents": 100
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Roof Of Rumours",
+        "grade": 11,
+        "stars": 3,
+        "image": "Boulder1",
+        "area": "Bolton",
+        "description": "Did the climb"
+    },
+    {
+        "id": 2,
+        "name": "Splice",
+        "grade": 8,
+        "stars": 4,
+        "image": "Boulder1",
+        "area": "Smugglers Notch",
+        "description": "Did the climb"
+    },
+    {
+        "id": 3,
+        "name": "Touching the Sky",
+        "grade": 11,
+        "stars": 4,
+        "image": "Boulder1",
+        "area": "Smugglers Notch",
+        "description": "Did the climb"
+    },
+    {
+        "id": 4,
+        "name": "Moon Tower",
+        "grade": 8,
+        "stars": 5,
+        "image": "Boulder1",
+        "area": "Smugglers Notch",
+        "description": "Did the climb"
+    }
+]

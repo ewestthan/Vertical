@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct UserProfilePic: View {
+    var pic: String
+    
     var body: some View {
-        Image("ProfilePic")
+        Image(pic)
             .resizable()
             .frame(width: 125, height: 125)
             .clipShape(Circle())
@@ -22,6 +24,6 @@ struct UserProfilePic: View {
 
 struct UserProfilePic_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfilePic()
+        UserProfilePic(pic: users[0].image)
     }
 }

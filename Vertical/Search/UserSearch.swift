@@ -46,8 +46,9 @@ struct SearchUserRow: View {
             HStack{
                 Image(user.image)
                     .resizable()
+                    .scaledToFill()
 //                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+                    .frame(width: 35, height: 35)
                     .clipShape(Circle())
                     .overlay{
                         Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 4)

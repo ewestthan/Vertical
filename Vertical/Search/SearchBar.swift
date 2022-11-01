@@ -21,6 +21,7 @@ struct SearchBar: View {
                     .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
+                    .textInputAutocapitalization(.none)
                     .overlay(
                         HStack {
                             Image(systemName: "magnifyingglass")

@@ -34,7 +34,7 @@ struct UserProfileVideoPost: View {
             .padding([.top, .bottom], 10)
             .padding([.leading, .trailing], 25.0)
             .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956).opacity(0.5))
-            Image("Boulder1")
+            Image(climb.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             VStack(alignment: .leading){

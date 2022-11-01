@@ -33,6 +33,9 @@ struct UserProfileBottom: View{
                                     .bold()
                                     .animation(nil, value: tabSelected)
                             }
+                            if(tab.rawValue == "filter"){
+                                UserProfileFilter()
+                            }
                         }
                         .tag(tab)
                     }

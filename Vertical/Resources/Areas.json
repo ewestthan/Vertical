@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "name": "Bolton",
+        "location": "Vermont, USA",
+        "image": "bolton",
+        "follower_count": 538,
+        "boulder_count": 188,
+        "rank": 3.1,
+        "description": "Bolton, VT climbing"
+    }
+]
+

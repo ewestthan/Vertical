@@ -1,14 +1,14 @@
 //
-//  ClimbsSearch.swift
+//  AreaSearch.swift
 //  Vertical
 //
-//  Created by Ethan West on 11/1/22.
+//  Created by Ethan West on 11/2/22.
 //
 
 import SwiftUI
 
-struct SearchClimbRowView: View {
-    var climb: ClimbRow
+struct SearchAreaRowView: View {
+    var area: Area
     
     var body: some View {
         HStack{
@@ -22,7 +22,7 @@ struct SearchClimbRowView: View {
     private var content: some View{
         VStack{
             HStack{
-                Image(climb.image)
+                Image(area.image)
                     .resizable()
 //                    .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
@@ -34,8 +34,8 @@ struct SearchClimbRowView: View {
                     
                 Spacer()
                 VStack(alignment: .leading){
-                    Text(climb.name)
-                    Text(climb.area).foregroundColor(.gray)
+                    Text(area.name)
+                    Text(area.location).foregroundColor(.gray)
                 }
                 Spacer()
                 Text(">")
@@ -46,25 +46,33 @@ struct SearchClimbRowView: View {
     }
 }
 
-struct ClimbSearch: View {
+struct AreaSearch: View {
     
     let searchText: String
-    @State var searchCollection = climbs
-    @State var clicked = false
+    @State var searchCollection = areas
+    
     var body: some View{
         scrollForEach
     }
     
+    var list: some View {
+        NavigationView{
+            List(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id) { area in
+                NavigationLink{
+                    TestClimbSearch(name: area.name)
+                } label: {
+                    SearchAreaRowView(area: area)
+                }
+            }
+        }
+    }
+                       
     var scrollForEach: some View {
         ScrollView{
-            LazyVStack{
-                ForEach(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ climb in
-                    
-                    NavigationLink(destination: TestClimbSearch(name: climb.name))
-                                   { SearchClimbRowView(climb: climb).modifier(ListRowModifier())
-                                            .animation(.linear(duration: 0.3))
-                    }
-                }
+            ForEach(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ area in
+                SearchAreaRowView(area: area)
+                    .modifier(ListRowModifier())
+                    .animation(.linear(duration: 0.3))
             }
         }
     }
@@ -79,8 +87,9 @@ struct ClimbSearch: View {
     }
 }
 
-struct ClimbSearch_Previews: PreviewProvider {
+struct AreaSearch_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbSearch(searchText: "")
+        AreaSearch(searchText: "")
     }
 }
+

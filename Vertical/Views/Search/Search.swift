@@ -23,15 +23,13 @@ struct Search: View {
                     ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                         HStack{
                             if(tab.rawValue == "users"){
-                                UserSearch(searchText: searchText)
+                                UserSearch(searchText: searchText).background(.gray)
                             }
                             if(tab.rawValue == "climbs"){
                                 ClimbSearch(searchText: searchText).background(.gray)
                             }
                             if(tab.rawValue == "areas"){
-                                Text("\(tab.rawValue.capitalized)")
-                                    .bold()
-                                    .animation(nil, value: tabSelected)
+                                AreaSearch(searchText: searchText).background(.gray)
                             }
                         }
                         .tag(tab)

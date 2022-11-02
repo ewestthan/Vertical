@@ -57,6 +57,10 @@
 		795660502911B89900D747AF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7956604F2911B89900D747AF /* FirebaseStorageCombine-Community */; };
 		795660522911BC9500D747AF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795660512911BC9500D747AF /* LoginViewModel.swift */; };
 		795660542911C5E000D747AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 795660532911C5E000D747AF /* GoogleService-Info.plist */; };
+		FD95C76D2911EE0800A54810 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C76C2911EE0800A54810 /* Area.swift */; };
+		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
+		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
+		FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +120,10 @@
 		7956602E2911AFB700D747AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		795660512911BC9500D747AF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		795660532911C5E000D747AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
+		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
+		FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +299,7 @@
 		046E334829007E7200EAC8DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD95C76E2911EE3D00A54810 /* Areas.json */,
 				046E334029007AEC00EAC8DC /* Climbs.json */,
 				042B72CC2910871F007E1691 /* Users.json */,
 			);
@@ -327,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				7956602E2911AFB700D747AF /* User.swift */,
+				FD95C76C2911EE0800A54810 /* Area.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +344,7 @@
 		795660302911AFCC00D747AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FD95C7702911EE5E00A54810 /* Area Profile */,
 				042D004A2911EA1900F907E2 /* Misc */,
 				042B72C9291084EF007E1691 /* Tab Bars */,
 				04DD942529117B6600D36C2E /* Registration */,
@@ -352,6 +363,15 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FD95C7702911EE5E00A54810 /* Area Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FD95C7712911EE6A00A54810 /* AreaProfile.swift */,
+				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
+			);
+			path = "Area Profile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +499,7 @@
 			files = (
 				042B72CD2910871F007E1691 /* Users.json in Resources */,
 				046ADF5828F85D4F007616A2 /* Preview Assets.xcassets in Resources */,
+				FD95C76F2911EE3D00A54810 /* Areas.json in Resources */,
 				795660542911C5E000D747AF /* GoogleService-Info.plist in Resources */,
 				046E334129007AEC00EAC8DC /* Climbs.json in Resources */,
 				046ADF5528F85D4F007616A2 /* Assets.xcassets in Resources */,
@@ -523,12 +544,15 @@
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
 				04DD94242911653000D36C2E /* TestClimbSearch.swift in Sources */,
 				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
+				FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */,
 				046E334529007C4E00EAC8DC /* LoadUserClimbs.swift in Sources */,
 				042B72CB29108502007E1691 /* SearchTabBar.swift in Sources */,
 				042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */,
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
+				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
 				046E333929005F4300EAC8DC /* UserProfileBottom.swift in Sources */,
+				FD95C76D2911EE0800A54810 /* Area.swift in Sources */,
 				046E333B29005F5800EAC8DC /* UserProfile.swift in Sources */,
 				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
 				793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */,

@@ -12,11 +12,11 @@ struct ContentView: View {
         
             TabView(){
                 Feed()
-                    .tabItem(){Label("Home", systemImage: "house")}
-//                Search()
-//                    .tabItem(){Label("Home", systemImage: "house")}
-//                UserProfile(user: users[0])
-//                    .tabItem(){Label("Profile", systemImage: "person")}
+                    .tabItem(){Image(systemName: "house")}
+                Search()
+                    .tabItem(){Image(systemName: "magnifyingglass")}
+                UserProfile(user: users[0])
+                    .tabItem(){Image(systemName: "person")}
             }.frame(alignment: .bottomLeading)
                 .accentColor(.gray)
         }

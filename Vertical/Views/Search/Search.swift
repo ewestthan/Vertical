@@ -12,17 +12,13 @@ struct Search: View {
     
     @State var searchText = ""
     
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
-    
     var body: some View {
         ZStack {
             VStack {
                 SearchBar(text: $searchText)
                 
                 SearchTabBar(selectedTab: $tabSelected)
-                
+
                 TabView(selection: $tabSelected) {
                     ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                         HStack{
@@ -43,7 +39,6 @@ struct Search: View {
                 }
             }.padding([.top], 10)
         }.background(.gray)
-        
     }
 }
 

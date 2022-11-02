@@ -4,10 +4,6 @@ import SwiftUI
 struct UserProfileBottom: View{
     
     @State private var tabSelected: UserProfileTab = .climbs
-        
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
     
     var body: some View {
         ZStack {

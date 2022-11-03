@@ -12,23 +12,17 @@ struct UserProfileHeader: View {
     let user: UserRow
     
     var body: some View {
-        VStack{
+        ZStack{
             VStack{
-
-                Text(user.name).font(.title)
-                    .foregroundColor(.black)
-                Text(user.handle).font(.subheadline)
-                    .foregroundColor(.black)
-                UserProfilePic(pic: user.image)
-                HStack(spacing: 30){
+                HStack(spacing: 25){
                     Button(action:{
                     }, label: {
                         Text("Follow")
-                            .padding([.leading, .trailing], 30)
-                            .padding([.bottom, .top], 10)
+                            .frame(maxWidth: 120, maxHeight: 35)
                             .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                             .foregroundColor(.white)
                             .cornerRadius(20)
+                            .fontWeight(.bold)
                     })
                     Text(user.location)
                         .foregroundColor(.gray)
@@ -37,13 +31,14 @@ struct UserProfileHeader: View {
                         
                     }, label: {
                         Text("Message")
-                            .padding([.leading, .trailing], 20)
-                            .padding([.bottom, .top], 10)
+                            .frame(maxWidth: 120, maxHeight: 35)
                             .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                             .foregroundColor(.white)
                             .cornerRadius(20)
+                            .fontWeight(.bold)
                     })
-                }.offset(y: -30)
+                }.padding(.bottom, 10)
+                
                 HStack(spacing: 40){
                     VStack{
                         Text("Followers")
@@ -58,18 +53,29 @@ struct UserProfileHeader: View {
                         Text(String(user.following))
                     }
                 }.fontWeight(.bold)
-                    .offset(y: -20)
+                
                 VStack{
                     Text(user.description)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .foregroundColor(.gray)
-                        .padding([.bottom, .top], 5)
-                }.offset(y:-20)
-            }
+                        .padding([.bottom, .top], 3)
+                }
+            }.padding(.top, 20)
+                .padding(.bottom, 10)
+                .frame(maxWidth: .infinity)
+                .background(Color(.gray).opacity(0.2))
+            .padding(.top, 160)
+            VStack{
+                Text(user.name).font(.title)
+                    .foregroundColor(.black)
+                Text("@" + user.handle).font(.subheadline)
+                    .foregroundColor(.black)
+                UserProfilePic(pic: user.image)
+            }.offset(y: -70)
+                .frame(maxHeight: 100)
+                .fontWeight(.bold)
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 330, alignment: .topLeading)
-        .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.767, opacity: 0.588))
     }
 }
 

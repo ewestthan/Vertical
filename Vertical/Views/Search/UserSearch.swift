@@ -36,9 +36,10 @@ struct SearchUserRow: View {
         HStack{
             content
         }.contentShape(Rectangle())
-            .background(.white)
-            .foregroundColor(.black)
+            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956, opacity: 0.8))
+            .foregroundColor(.white)
             .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
     }
     
     private var content: some View{
@@ -47,21 +48,17 @@ struct SearchUserRow: View {
                 Image(user.image)
                     .resizable()
                     .scaledToFill()
-//                    .aspectRatio(contentMode: .fit)
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
-                    .overlay{
-                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 4)
-                    }
-                    .shadow(radius: 7)
-                    
+
+                VStack(alignment: .leading){
+                    Text(user.handle).font(.system(size: 16))
+                    Text(user.location).font(.system(size: 12))
+                }.padding(.leading, 10)
                 Spacer()
-                Text(user.handle)
-                Spacer()
-                Text(">")
             }
             .padding([.top, .bottom], 10)
-            .padding([.leading, .trailing], 25.0)
+            .padding([.leading, .trailing], 15)
         }
     }
 }
@@ -74,32 +71,16 @@ struct UserSearch: View {
     var body: some View{
         scrollForEach
     }
-    
-    var list: some View {
-        NavigationView{
-            List(users.filter({ searchText.isEmpty ? true : $0.handle.contains(searchText)}), id: \.id) { user in
-                NavigationLink(destination: UserProfile(user: user)){
-                    SearchUserRow(user: user)
-                }
-            }
-        }
-    }
                        
     var scrollForEach: some View {
         ScrollView{
-            ForEach(users.filter({ searchText.isEmpty ? true : $0.handle.contains(searchText)}), id: \.id){ user in
-                SearchUserRow(user: user)
-                    .modifier(ListRowModifier())
-                    .animation(.linear(duration: 0.3))
-            }
-        }
-    }
-    
-    struct ListRowModifier: ViewModifier{
-        func body(content: Content) -> some View {
-            Group{
-                content
-                Divider()
+            LazyVStack{
+                ForEach(users.filter({ searchText.isEmpty ? true : $0.handle.contains(searchText)}), id: \.id){ user in
+                    NavigationLink(destination: UserProfile(user: user))
+                    { SearchUserRow(user: user).animation(.linear(duration: 0.3))
+                            .frame(maxHeight: 60)
+                    }
+                }
             }
         }
     }

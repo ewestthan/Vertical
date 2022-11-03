@@ -13,6 +13,7 @@ struct UserProfilePic: View {
     var body: some View {
         Image(pic)
             .resizable()
+            .scaledToFill()
             .frame(width: 125, height: 125)
             .clipShape(Circle())
             .overlay{

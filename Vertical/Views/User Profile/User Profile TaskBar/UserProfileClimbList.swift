@@ -64,22 +64,11 @@ struct UserProfileClimbList: View {
     var body: some View{
         scrollForEach
     }
-    
-    var list: some View {
-        List(climbs, id: \.grade) { row in
-            UserProfileClimbRow(climb: row, isExpanded: self.selection.contains(row))
-                .onTapGesture {
-                    selectDeselect(row)
-                }
-                .animation(.linear(duration: 0.3))
-        }
-    }
                        
     var scrollForEach: some View {
         ScrollView{
             ForEach(climbs, id: \.id){ climb in
                 UserProfileClimbRow(climb: climb, isExpanded: self.selection.contains(climb))
-                    .modifier(ListRowModifier())
                     .onTapGesture{ self.selectDeselect(climb)}
                     .animation(.linear(duration: 0.3))
             }
@@ -93,19 +82,10 @@ struct UserProfileClimbList: View {
             selection.insert(climb)
         }
     }
-    
-    struct ListRowModifier: ViewModifier{
-        func body(content: Content) -> some View {
-            Group{
-                content
-                Divider()
-            }
-        }
-    }
 }
 
 struct UserProfileClimbList_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileClimbList().background(.gray)
+        UserProfileClimbList()
     }
 }

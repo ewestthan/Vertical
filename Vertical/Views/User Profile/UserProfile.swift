@@ -14,7 +14,7 @@ struct UserProfile: View {
     var body: some View {
         VStack{
             UserProfileHeader(user: user)
-            UserProfileBottom()
+            UserProfileBottom().offset(y:-8)
         }
     }
 }

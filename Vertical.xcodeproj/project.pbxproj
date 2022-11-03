@@ -33,7 +33,6 @@
 		04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */; };
 		04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD941F2910B8C300D36C2E /* SearchBar.swift */; };
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
-		04DD94242911653000D36C2E /* TestClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94232911653000D36C2E /* TestClimbSearch.swift */; };
 		04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942629117B7B00D36C2E /* UserRegistration.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
 		5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */; };
@@ -110,7 +109,6 @@
 		04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVideos.swift; sourceTree = "<group>"; };
 		04DD941F2910B8C300D36C2E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
-		04DD94232911653000D36C2E /* TestClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClimbSearch.swift; sourceTree = "<group>"; };
 		04DD942629117B7B00D36C2E /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
 		5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileView.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 				042B72D029108A7C007E1691 /* UserSearch.swift */,
 				04DD941F2910B8C300D36C2E /* SearchBar.swift */,
 				04DD942129115FDF00D36C2E /* ClimbsSearch.swift */,
-				04DD94232911653000D36C2E /* TestClimbSearch.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -542,7 +539,6 @@
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
-				04DD94242911653000D36C2E /* TestClimbSearch.swift in Sources */,
 				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
 				FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */,
 				046E334529007C4E00EAC8DC /* LoadUserClimbs.swift in Sources */,

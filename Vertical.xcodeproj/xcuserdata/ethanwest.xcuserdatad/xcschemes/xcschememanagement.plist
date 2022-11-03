@@ -28,7 +28,25 @@
 		<key>Vertical.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>046ADF4C28F85D4D007616A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046ADF5C28F85D4F007616A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>046ADF6628F85D4F007616A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

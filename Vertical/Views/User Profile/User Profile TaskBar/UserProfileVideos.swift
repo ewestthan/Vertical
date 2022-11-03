@@ -61,7 +61,7 @@ struct UserProfileVideos: View {
                         }
                     }
                 }
-            }.background(.gray)
+            }
         }
     }
 }

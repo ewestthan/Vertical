@@ -9,11 +9,12 @@ struct UserProfileBottom: View{
         ZStack {
             VStack {
                 UserProfileTabBar(selectedTab: $tabSelected)
+                Divider()
                 TabView(selection: $tabSelected) {
                     ForEach(UserProfileTab.allCases, id: \.rawValue) { tab in
                         HStack {
                             if(tab.rawValue == "climbs"){
-                                UserProfileClimbList().background(.gray)
+                                UserProfileClimbList()
                             }
                             if(tab.rawValue == "videos"){
                                 UserProfileVideos()
@@ -35,9 +36,10 @@ struct UserProfileBottom: View{
                         }
                         .tag(tab)
                     }
+                        .background(Color(.gray).opacity(0.2))
                 }
             }.padding([.top], 10)
-        }.background(.gray)
+        }.background(Color(.gray).opacity(0.2))
     }
 }
 

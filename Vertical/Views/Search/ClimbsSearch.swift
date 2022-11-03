@@ -56,7 +56,7 @@ struct ClimbSearch: View {
         NavigationView{
             List(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id) { climb in
                 NavigationLink{
-                    TestClimbSearch(name: climb.name)
+                    Text("")
                 } label: {
                     SearchClimbRowView(climb: climb)
                 }

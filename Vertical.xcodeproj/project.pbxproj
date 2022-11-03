@@ -36,6 +36,8 @@
 		04DD94242911653000D36C2E /* TestClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94232911653000D36C2E /* TestClimbSearch.swift */; };
 		04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942629117B7B00D36C2E /* UserRegistration.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
+		5E5B6772291436480035F407 /* ClimbProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6771291436480035F407 /* ClimbProfileRepository.swift */; };
+		5E5B6775291438790035F407 /* ClimbProfileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6774291438790035F407 /* ClimbProfileListViewModel.swift */; };
 		5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */; };
 		5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */; };
 		793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E15A8290CA05B00D4C774 /* LoginView.swift */; };
@@ -113,6 +115,8 @@
 		04DD94232911653000D36C2E /* TestClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClimbSearch.swift; sourceTree = "<group>"; };
 		04DD942629117B7B00D36C2E /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
+		5E5B6771291436480035F407 /* ClimbProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileRepository.swift; sourceTree = "<group>"; };
+		5E5B6774291438790035F407 /* ClimbProfileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileListViewModel.swift; sourceTree = "<group>"; };
 		5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileView.swift; sourceTree = "<group>"; };
 		5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileModel.swift; sourceTree = "<group>"; };
 		793E15A8290CA05B00D4C774 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 		046ADF4F28F85D4D007616A2 /* Vertical */ = {
 			isa = PBXGroup;
 			children = (
+				5E5B6773291436DD0035F407 /* ViewModel */,
+				5E5B6770291436270035F407 /* Repository */,
 				795660532911C5E000D747AF /* GoogleService-Info.plist */,
 				795660312911B10700D747AF /* Services */,
 				795660302911AFCC00D747AF /* Views */,
@@ -323,10 +329,25 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		5E5B6770291436270035F407 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B6771291436480035F407 /* ClimbProfileRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5E5B6773291436DD0035F407 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B6774291438790035F407 /* ClimbProfileListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5E630F7B2908AE6C00295FC3 /* Climb Profile */ = {
 			isa = PBXGroup;
 			children = (
-				5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */,
 				5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */,
 			);
 			path = "Climb Profile";
@@ -335,6 +356,7 @@
 		7956602B2911AF6300D747AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */,
 				7956602E2911AFB700D747AF /* User.swift */,
 				FD95C76C2911EE0800A54810 /* Area.swift */,
 			);
@@ -527,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5B6775291438790035F407 /* ClimbProfileListViewModel.swift in Sources */,
 				042B72D129108A7C007E1691 /* UserSearch.swift in Sources */,
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
@@ -540,6 +563,7 @@
 				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
 				04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
+				5E5B6772291436480035F407 /* ClimbProfileRepository.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
 				04DD94242911653000D36C2E /* TestClimbSearch.swift in Sources */,

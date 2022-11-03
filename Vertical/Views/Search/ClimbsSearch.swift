@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchClimbRowView: View {
-    var climb: ClimbRow
+    let climb: ClimbProfileModel
     
     var body: some View {
         HStack{
@@ -22,7 +22,8 @@ struct SearchClimbRowView: View {
     private var content: some View{
         VStack{
             HStack{
-                Image(climb.image)
+                //TODO: Still need to figure out how to store images
+                Image("exampleClimb")
                     .resizable()
 //                    .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
@@ -33,7 +34,7 @@ struct SearchClimbRowView: View {
                     .shadow(radius: 7)
                     
                 Spacer()
-                Text(climb.name)
+                Text(climb.Name!)
                 Spacer()
                 Text(">")
             }
@@ -46,7 +47,8 @@ struct SearchClimbRowView: View {
 struct ClimbSearch: View {
     
     let searchText: String
-    @State var searchCollection = climbs
+    @ObservedObject var climbProfileListViewModel: ClimbProfileListViewModel = ClimbProfileListViewModel()
+    
     
     var body: some View{
         scrollForEach
@@ -54,9 +56,9 @@ struct ClimbSearch: View {
     
     var list: some View {
         NavigationView{
-            List(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id) { climb in
+            List(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id) { climb in
                 NavigationLink{
-                    TestClimbSearch(name: climb.name)
+                    TestClimbSearch(name: climb.Name!)
                 } label: {
                     SearchClimbRowView(climb: climb)
                 }
@@ -66,7 +68,7 @@ struct ClimbSearch: View {
                        
     var scrollForEach: some View {
         ScrollView{
-            ForEach(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ climb in
+            ForEach(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id){ climb in
                 SearchClimbRowView(climb: climb)
                     .modifier(ListRowModifier())
                     .animation(.linear(duration: 0.3))
@@ -86,6 +88,6 @@ struct ClimbSearch: View {
 
 struct ClimbSearch_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbSearch(searchText: "")
+        ClimbSearch(searchText: "", climbProfileListViewModel: ClimbProfileListViewModel())
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ClimbProfile: View {
+    let climb: ClimbProfileModel
+    
     var body: some View {
         VStack {
             ZStack {
@@ -19,33 +21,40 @@ struct ClimbProfile: View {
                     Rectangle()
                         .fill(Color.white.opacity(0.5))
                         .frame(width: 80, height: 30)
-                    Button(action: {}) {
+                    Button(action: {
+                        //Go To Previous Screen
+                    }) {
                         Label("Back", systemImage: "chevron.left")
                     }
                 }
-                    .padding(.bottom, 340.0)
-                    .padding(.trailing, 320)
+                    .padding(.bottom, 280.0)
+                    .padding(.trailing, 300)
             }
             HStack {
-                Text("Shark Fin | V3")
+                Text("\(climb.Name!) | \(climb.Grade!)")
                     .font(.title)
                     .padding(.leading)
                 Spacer()
-                Button(action: {}) {
+                Button(action: {
+                    //Go to post form
+                }) {
                     Text("Add")
                 }
                     .buttonStyle(.borderedProminent)
                     .shadow(color: .black.opacity(0.3), radius: 2, x: 1, y: 0)
                 Spacer()
-                Button(action: {}) {
+                Button(action: {
+                    //Follow the climb
+                }) {
                     Text("Follow")
                 }
                     .buttonStyle(.borderedProminent)
                     .shadow(color: .black.opacity(0.3), radius: 2, x: 1, y: 0)
                 Spacer()
             }
+            StarsView(rating:climb.Rating!).frame(height:18)
             Spacer()
-        }
+        }.ignoresSafeArea()
         
     }
 }

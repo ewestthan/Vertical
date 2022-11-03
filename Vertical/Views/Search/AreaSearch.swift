@@ -14,9 +14,10 @@ struct SearchAreaRowView: View {
         HStack{
             content
         }.contentShape(Rectangle())
-            .background(.white)
-            .foregroundColor(.black)
+            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956, opacity: 0.8))
+            .foregroundColor(.white)
             .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
     }
     
     private var content: some View{
@@ -27,20 +28,16 @@ struct SearchAreaRowView: View {
                     .scaledToFit()
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
-                    .overlay{
-                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 2)
-                    }
                 
                 VStack(alignment: .leading){
-                    Text(area.name)
-                        .font(.system(size: 16))
-                    Text(area.location).foregroundColor(.gray).font(.system(size: 12))
+                    Text(area.name).font(.system(size: 16))
+                    Text(area.location).font(.system(size: 12))
                 }.padding(.leading, 10)
                 Spacer()
                 StarsView(rating: Int(area.rank)).frame(maxHeight: 15)
             }
             .padding([.top, .bottom], 10)
-            .padding([.leading, .trailing], 25.0)
+            .padding([.leading, .trailing], 15)
         }
     }
 }
@@ -59,7 +56,7 @@ struct AreaSearch: View {
             LazyVStack{
                 ForEach(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ area in
                     NavigationLink(destination: AreaProfile())
-                    { SearchAreaRowView(area: area).animation(.linear(duration: 0.3))
+                    { SearchAreaRowView(area: area).animation(.linear(duration: 0.3)).frame(maxHeight: 60)
                     }
                 }
             }

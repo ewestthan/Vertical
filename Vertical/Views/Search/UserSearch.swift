@@ -36,9 +36,10 @@ struct SearchUserRow: View {
         HStack{
             content
         }.contentShape(Rectangle())
-            .background(.white)
-            .foregroundColor(.black)
+            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956, opacity: 0.8))
+            .foregroundColor(.white)
             .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
     }
     
     private var content: some View{
@@ -47,22 +48,17 @@ struct SearchUserRow: View {
                 Image(user.image)
                     .resizable()
                     .scaledToFill()
-//                    .aspectRatio(contentMode: .fit)
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
-                    .overlay{
-                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 2)
-                    }
 
                 VStack(alignment: .leading){
                     Text(user.handle).font(.system(size: 16))
                     Text(user.location).font(.system(size: 12))
-                        .foregroundColor(.gray)
                 }.padding(.leading, 10)
                 Spacer()
             }
             .padding([.top, .bottom], 10)
-            .padding([.leading, .trailing], 25.0)
+            .padding([.leading, .trailing], 15)
         }
     }
 }
@@ -82,8 +78,8 @@ struct UserSearch: View {
                 ForEach(users.filter({ searchText.isEmpty ? true : $0.handle.contains(searchText)}), id: \.id){ user in
                     NavigationLink(destination: UserProfile(user: user))
                     { SearchUserRow(user: user).animation(.linear(duration: 0.3))
+                            .frame(maxHeight: 60)
                     }
-                    
                 }
             }
         }

@@ -14,33 +14,31 @@ struct SearchClimbRowView: View {
         HStack{
             content
         }.contentShape(Rectangle())
-            .background(.white)
-            .foregroundColor(.black)
+            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956, opacity: 0.8))
+            .foregroundColor(.white)
             .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
+
     }
     
     private var content: some View{
         VStack{
-            HStack(alignment: .center){
+            HStack{
                 Image(climb.image)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
-                    .overlay{
-                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 2)
-                    }
                     
                 VStack(alignment: .leading){
                     Text(climb.name + " V" + String(climb.grade)).font(.system(size: 16))
                     Text(climb.area).font(.system(size: 12))
-                        .foregroundColor(.gray)
                 }.padding(.leading, 10)
                 Spacer()
                 StarsView(rating: climb.stars).frame(maxHeight: 15)
             }
             .padding([.top, .bottom], 10)
-            .padding([.leading, .trailing], 25.0)
+            .padding([.leading, .trailing], 15)
         }
     }
 }
@@ -49,7 +47,7 @@ struct ClimbSearch: View {
     
     let searchText: String
     @State var searchCollection = climbs
-    @State var clicked = false
+
     var body: some View{
         scrollForEach
     }
@@ -59,20 +57,10 @@ struct ClimbSearch: View {
             LazyVStack{
                 ForEach(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ climb in
                     
-                    NavigationLink(destination: ClimbProfile())
-                                   { SearchClimbRowView(climb: climb).modifier(ListRowModifier())
-                                            .animation(.linear(duration: 0.3))
+                    NavigationLink(destination: ClimbProfile()){ SearchClimbRowView(climb: climb).animation(.linear(duration: 0.3))
+                            .frame(maxHeight: 60)
                     }
                 }
-            }
-        }
-    }
-    
-    struct ListRowModifier: ViewModifier{
-        func body(content: Content) -> some View {
-            Group{
-                content
-                Divider()
             }
         }
     }

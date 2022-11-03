@@ -24,21 +24,20 @@ struct SearchAreaRowView: View {
             HStack{
                 Image(area.image)
                     .resizable()
-//                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+                    .scaledToFit()
+                    .frame(width: 35, height: 35)
                     .clipShape(Circle())
                     .overlay{
-                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 4)
+                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 2)
                     }
-                    .shadow(radius: 7)
-                    
-                Spacer()
+                
                 VStack(alignment: .leading){
                     Text(area.name)
-                    Text(area.location).foregroundColor(.gray)
-                }
+                        .font(.system(size: 16))
+                    Text(area.location).foregroundColor(.gray).font(.system(size: 12))
+                }.padding(.leading, 10)
                 Spacer()
-                Text(">")
+                StarsView(rating: Int(area.rank)).frame(maxHeight: 15)
             }
             .padding([.top, .bottom], 10)
             .padding([.leading, .trailing], 25.0)
@@ -55,33 +54,14 @@ struct AreaSearch: View {
         scrollForEach
     }
     
-    var list: some View {
-        NavigationView{
-            List(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id) { area in
-                NavigationLink{
-                    TestClimbSearch(name: area.name)
-                } label: {
-                    SearchAreaRowView(area: area)
-                }
-            }
-        }
-    }
-                       
     var scrollForEach: some View {
         ScrollView{
-            ForEach(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ area in
-                SearchAreaRowView(area: area)
-                    .modifier(ListRowModifier())
-                    .animation(.linear(duration: 0.3))
-            }
-        }
-    }
-    
-    struct ListRowModifier: ViewModifier{
-        func body(content: Content) -> some View {
-            Group{
-                content
-                Divider()
+            LazyVStack{
+                ForEach(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ area in
+                    NavigationLink(destination: AreaProfile())
+                    { SearchAreaRowView(area: area).animation(.linear(duration: 0.3))
+                    }
+                }
             }
         }
     }

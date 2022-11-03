@@ -21,24 +21,23 @@ struct SearchClimbRowView: View {
     
     private var content: some View{
         VStack{
-            HStack{
+            HStack(alignment: .center){
                 Image(climb.image)
                     .resizable()
-//                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+                    .scaledToFill()
+                    .frame(width: 35, height: 35)
                     .clipShape(Circle())
                     .overlay{
-                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 4)
+                        Circle().stroke(Color(hue: 0.72, saturation: 0.715, brightness: 0.956), lineWidth: 2)
                     }
-                    .shadow(radius: 7)
                     
-                Spacer()
                 VStack(alignment: .leading){
-                    Text(climb.name)
-                    Text(climb.area).foregroundColor(.gray)
-                }
+                    Text(climb.name + " V" + String(climb.grade)).font(.system(size: 16))
+                    Text(climb.area).font(.system(size: 12))
+                        .foregroundColor(.gray)
+                }.padding(.leading, 10)
                 Spacer()
-                Text(">")
+                StarsView(rating: climb.stars).frame(maxHeight: 15)
             }
             .padding([.top, .bottom], 10)
             .padding([.leading, .trailing], 25.0)
@@ -60,7 +59,7 @@ struct ClimbSearch: View {
             LazyVStack{
                 ForEach(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ climb in
                     
-                    NavigationLink(destination: TestClimbSearch(name: climb.name))
+                    NavigationLink(destination: ClimbProfile())
                                    { SearchClimbRowView(climb: climb).modifier(ListRowModifier())
                                             .animation(.linear(duration: 0.3))
                     }

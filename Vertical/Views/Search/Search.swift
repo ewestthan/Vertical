@@ -13,30 +13,33 @@ struct Search: View {
     @State var searchText = ""
     
     var body: some View {
-        ZStack {
-            VStack {
-                SearchBar(text: $searchText)
-                
-                SearchTabBar(selectedTab: $tabSelected)
-
-                TabView(selection: $tabSelected) {
-                    ForEach(SearchTab.allCases, id: \.rawValue) { tab in
-                        HStack{
-                            if(tab.rawValue == "users"){
-                                UserSearch(searchText: searchText).background(.gray)
-                            }
-                            if(tab.rawValue == "climbs"){
-                                ClimbSearch(searchText: searchText).background(.gray)
-                            }
-                            if(tab.rawValue == "areas"){
-                                AreaSearch(searchText: searchText).background(.gray)
-                            }
+        NavigationView{
+            ZStack {
+                VStack {
+                    SearchBar(text: $searchText)
+                    
+                    SearchTabBar(selectedTab: $tabSelected)
+                    Divider()
+                    TabView(selection: $tabSelected) {
+                        ForEach(SearchTab.allCases, id: \.rawValue) { tab in
+                            HStack{
+                                if(tab.rawValue == "users"){
+                                    UserSearch(searchText: searchText)
+                                }
+                                if(tab.rawValue == "climbs"){
+                                    ClimbSearch(searchText: searchText)
+                                }
+                                if(tab.rawValue == "areas"){
+                                    AreaSearch(searchText: searchText)
+                                }
+                            }.padding([.leading, .trailing], 10)
+                            .tag(tab)
                         }
-                        .tag(tab)
                     }
-                }
-            }.padding([.top], 10)
-        }.background(.gray)
+                }.padding([.top], 10)
+            }
+        }
+        
     }
 }
 

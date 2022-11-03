@@ -12,9 +12,11 @@ struct UserProfile: View {
     var user: UserRow
     
     var body: some View {
-        VStack{
-            UserProfileHeader(user: user)
-            UserProfileBottom().offset(y:-8)
+        NavigationView{
+            VStack{
+                UserProfileHeader(user: user)
+                UserProfileBottom().offset(y:-8)
+            }
         }
     }
 }

@@ -13,8 +13,8 @@ struct UserProfileVideo: View {
     var body: some View {
         Image(climb.image)
             .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 125, height: 125)
+            .scaledToFill()
+            .frame(width: 120, height: 120)
             .cornerRadius(14)
     }
 }
@@ -52,17 +52,16 @@ struct UserProfileVideos: View {
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
     var body: some View {
-        NavigationView{
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
+                LazyVGrid(columns: columns, spacing: 7) {
                     ForEach(climbs, id: \.id){ climb in
-                        NavigationLink(destination: UserProfileVideoPost(climb: climb)){
+                        NavigationLink(destination: FeedVideoCell().padding(.top)){
                             UserProfileVideo(climb: climb)
                         }
                     }
                 }
-            }
-        }
+            }.padding([.leading, .trailing], 10)
+//            .background(Color(.gray).opacity(0.2))
     }
 }
 

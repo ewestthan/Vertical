@@ -28,6 +28,7 @@ struct UserProfileClimbRow: View {
             .background(.white)
             .foregroundColor(.black)
             .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
     }
     
     private var content: some View{

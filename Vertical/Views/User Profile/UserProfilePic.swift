@@ -14,7 +14,7 @@ struct UserProfilePic: View {
         Image(pic)
             .resizable()
             .scaledToFill()
-            .frame(width: 125, height: 125)
+            .frame(width: 115, height: 115)
             .clipShape(Circle())
             .overlay{
                 Circle().stroke(.white, lineWidth: 6)

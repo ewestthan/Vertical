@@ -26,7 +26,8 @@ struct UserProfileHeader: View {
                     })
                     Text(user.location)
                         .foregroundColor(.gray)
-                        .offset(y: 20)
+                        .offset(y: 15)
+                        .font(.system(size: 14))
                     Button(action:{
                         
                     }, label: {
@@ -37,22 +38,22 @@ struct UserProfileHeader: View {
                             .cornerRadius(20)
                             .fontWeight(.bold)
                     })
-                }.padding(.bottom, 10)
+                }
                 
-                HStack(spacing: 40){
+                HStack(spacing: 60){
                     VStack{
-                        Text("Followers")
-                        Text(String(user.followers))
+                        Text(String(user.followers)).font(.system(size: 24)).fontWeight(.bold)
+                        Text("Followers").font(.system(size: 14))
                     }
                     VStack{
-                        Text("Ascents")
-                        Text(String(user.ascents))
+                        Text(String(user.ascents)).font(.system(size: 24)).fontWeight(.bold)
+                        Text("Ascents").font(.system(size: 14))
                     }
                     VStack{
-                        Text("Following")
-                        Text(String(user.following))
+                        Text(String(user.following)).font(.system(size: 24)).fontWeight(.bold)
+                        Text("Following").font(.system(size: 14))
                     }
-                }.fontWeight(.bold)
+                }
                 
                 VStack{
                     Text(user.description)
@@ -61,20 +62,20 @@ struct UserProfileHeader: View {
                         .foregroundColor(.gray)
                         .padding([.bottom, .top], 3)
                 }
-            }.padding(.top, 20)
-                .padding(.bottom, 10)
+            }.padding(.top, 15)
+                .padding(.bottom, 50)
                 .frame(maxWidth: .infinity)
                 .background(Color(.gray).opacity(0.2))
-            .padding(.top, 160)
+                .padding(.top, 160)
             VStack{
-                Text(user.name).font(.title)
-                    .foregroundColor(.black)
-                Text("@" + user.handle).font(.subheadline)
-                    .foregroundColor(.black)
+                Text(user.name).font(.system(size: 32))
+                    .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
+                Text("@" + user.handle).font(.system(size: 14)).foregroundColor(.gray)
+                    .foregroundColor(.black).offset(y: 5)
                 UserProfilePic(pic: user.image)
-            }.offset(y: -70)
+            }.offset(y: -75)
                 .frame(maxHeight: 100)
-                .fontWeight(.bold)
+                
         }
     }
 }

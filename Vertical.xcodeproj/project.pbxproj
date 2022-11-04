@@ -180,7 +180,6 @@
 				042B72D029108A7C007E1691 /* UserSearch.swift */,
 				04DD941F2910B8C300D36C2E /* SearchBar.swift */,
 				04DD942129115FDF00D36C2E /* ClimbsSearch.swift */,
-				04DD94232911653000D36C2E /* TestClimbSearch.swift */,
 				0474DAB52912EF9000C02360 /* AreaSearch.swift */,
 			);
 			path = Search;
@@ -289,8 +288,8 @@
 		046E333D2900655D00EAC8DC /* User Profile TaskBar */ = {
 			isa = PBXGroup;
 			children = (
-				046E33492900800E00EAC8DC /* UserProfileClimbList.swift */,
 				046E334429007C4E00EAC8DC /* LoadUserClimbs.swift */,
+				046E33492900800E00EAC8DC /* UserProfileClimbList.swift */,
 				04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */,
 				042441E52911CDCB008C4E5B /* UserProfileFilter.swift */,
 			);

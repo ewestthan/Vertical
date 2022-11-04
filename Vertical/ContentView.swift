@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
+        NavigationView{
             TabView(){
                 Feed()
                     .tabItem(){Image(systemName: "house")}
@@ -20,7 +20,7 @@ struct ContentView: View {
             }.frame(alignment: .bottomLeading)
                 .accentColor(.gray)
         }
-    
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -13,7 +13,6 @@ struct Search: View {
     @State var searchText = ""
     
     var body: some View {
-        NavigationView{
             ZStack {
                 VStack {
                     SearchBar(text: $searchText)
@@ -37,7 +36,6 @@ struct Search: View {
                         }
                     }
                 }.padding([.top], 10)
-            }
         }
         
     }

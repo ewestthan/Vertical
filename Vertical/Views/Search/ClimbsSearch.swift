@@ -36,7 +36,6 @@ struct SearchClimbRowView: View {
                 Spacer()
                 Text(climb.Name!)
                 Spacer()
-                Text(">")
             }
             .padding([.top, .bottom], 10)
             .padding([.leading, .trailing], 25.0)
@@ -56,24 +55,28 @@ struct ClimbSearch: View {
     
     var list: some View {
         NavigationView{
-            List(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id) { climb in
-                NavigationLink{
-                    TestClimbSearch(name: climb.Name!)
-                } label: {
-                    SearchClimbRowView(climb: climb)
+                List(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id) { climb in
+                    NavigationLink(destination:
+                        SearchClimbRowView(climb: climb)) {
+                        ClimbProfileView(climb: climb)
+                    }
                 }
-            }
         }
     }
                        
     var scrollForEach: some View {
-        ScrollView{
-            ForEach(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id){ climb in
-                SearchClimbRowView(climb: climb)
-                    .modifier(ListRowModifier())
-                    .animation(.linear(duration: 0.3))
+            NavigationView {
+                List {
+                    ForEach(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id){ climb in
+                        NavigationLink(destination:
+                                        ClimbProfileView(climb: climb)) {
+                            SearchClimbRowView(climb: climb)
+                                .modifier(ListRowModifier())
+                                .animation(.linear(duration: 0.3))
+                        }
+                    }
+                }
             }
-        }
     }
     
     struct ListRowModifier: ViewModifier{

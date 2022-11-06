@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClimbProfile: View {
+struct ClimbProfileView: View {
     let climb: ClimbProfileModel
     
     var body: some View {
@@ -17,18 +17,6 @@ struct ClimbProfile: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .shadow(color: .black, radius: 2, x: 0, y: 0)
-                ZStack {
-                    Rectangle()
-                        .fill(Color.white.opacity(0.5))
-                        .frame(width: 80, height: 30)
-                    Button(action: {
-                        //Go To Previous Screen
-                    }) {
-                        Label("Back", systemImage: "chevron.left")
-                    }
-                }
-                    .padding(.bottom, 280.0)
-                    .padding(.trailing, 300)
             }
             HStack {
                 Text("\(climb.Name!) | \(climb.Grade!)")
@@ -61,6 +49,6 @@ struct ClimbProfile: View {
 
 struct ClimbProfile_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbProfile()
+        ClimbProfileView(climb: ClimbProfileModel())
     }
 }

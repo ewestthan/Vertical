@@ -12,4 +12,5 @@ class User: ObservableObject {
     
     @Published var email = ""
     
+    @Published var uid = ""
 }

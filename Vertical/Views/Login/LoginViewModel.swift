@@ -21,6 +21,7 @@ class LoginViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    // Gets updated when view is loaded, since cannot pass environmental object directly
     @Published var localUser = User()
     
     init() {
@@ -38,7 +39,6 @@ class LoginViewModel: ObservableObject {
     @MainActor
     func login() async {
         self.loading = true
-        print("Hello")
         do {
             print("Signin in...")
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
@@ -50,6 +50,7 @@ class LoginViewModel: ObservableObject {
             
             self.localUser.isAuthenticated = true
             self.localUser.email = userFire.email ?? ""
+            self.localUser.uid = userFire.uid
             
         } catch {
             print(error)

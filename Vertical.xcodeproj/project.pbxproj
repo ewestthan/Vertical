@@ -124,7 +124,7 @@
 		795660512911BC9500D747AF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		795660532911C5E000D747AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79CBE8C8291839A800D43A08 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
-		79CBE8CA29183A7600D43A08 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = Vertical/Views/Feed/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
+		79CBE8CA29183A7600D43A08 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = Vertical/Services/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
 		79CBE8CC29183D0F00D43A08 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 		046ADF4F28F85D4D007616A2 /* Vertical */ = {
 			isa = PBXGroup;
 			children = (
+				79CBE8CE29186B5200D43A08 /* Services */,
 				795660532911C5E000D747AF /* GoogleService-Info.plist */,
-				795660312911B10700D747AF /* Services */,
 				795660302911AFCC00D747AF /* Views */,
 				7956602B2911AF6300D747AF /* Models */,
 				046E334829007E7200EAC8DC /* Resources */,
@@ -366,7 +366,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		795660312911B10700D747AF /* Services */ = {
+		79CBE8CE29186B5200D43A08 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				79CBE8CA29183A7600D43A08 /* FirestoreService.swift */,

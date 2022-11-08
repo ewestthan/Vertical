@@ -275,9 +275,9 @@
 			children = (
 				046E333D2900655D00EAC8DC /* User Profile TaskBar */,
 				046E33362900496400EAC8DC /* UserProfilePic.swift */,
+				046E333829005F4200EAC8DC /* UserProfileBottom.swift */,
 				046E333A29005F5800EAC8DC /* UserProfile.swift */,
 				046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */,
-				046E333829005F4200EAC8DC /* UserProfileBottom.swift */,
 			);
 			path = "User Profile";
 			sourceTree = "<group>";

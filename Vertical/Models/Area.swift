@@ -7,15 +7,17 @@
 
 import Foundation
 
-struct Area: Hashable, Codable {
-    var id: Int
+struct Area: Hashable, Codable, Identifiable {
+    var id: String
     var name: String
     var location: String
+    var zip: Int
     var image: String
     var follower_count: Int
     var boulder_count: Int
     var rank: Float
     var description: String
+    var climbs: [Climb]
 }
 
-var areas: [Area] = load("Areas.json")
+//var areas: [Area] = load("Areas.json")

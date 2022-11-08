@@ -61,6 +61,7 @@
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
 		FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */; };
+		FDC58BD1291ACA8800A497DA /* Climb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC58BD0291ACA8800A497DA /* Climb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
 		FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileHeader.swift; sourceTree = "<group>"; };
+		FDC58BD0291ACA8800A497DA /* Climb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Climb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +182,6 @@
 				042B72D029108A7C007E1691 /* UserSearch.swift */,
 				04DD941F2910B8C300D36C2E /* SearchBar.swift */,
 				04DD942129115FDF00D36C2E /* ClimbsSearch.swift */,
-				04DD94232911653000D36C2E /* TestClimbSearch.swift */,
 				0474DAB52912EF9000C02360 /* AreaSearch.swift */,
 			);
 			path = Search;
@@ -338,6 +339,7 @@
 			children = (
 				7956602E2911AFB700D747AF /* User.swift */,
 				FD95C76C2911EE0800A54810 /* Area.swift */,
+				FDC58BD0291ACA8800A497DA /* Climb.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -543,6 +545,7 @@
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
+				FDC58BD1291ACA8800A497DA /* Climb.swift in Sources */,
 				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
 				FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */,
 				046E334529007C4E00EAC8DC /* LoadUserClimbs.swift in Sources */,

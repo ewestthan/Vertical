@@ -4,9 +4,10 @@
         "name": "Bolton",
         "location": "Vermont, USA",
         "image": "bolton",
+        "zip": "05465"
         "follower_count": 538,
         "boulder_count": 188,
-        "rank": 4.3,
+        "rank": 3,
         "description": "Bolton, VT climbing"
     },
     {
@@ -14,9 +15,10 @@
         "name": "Smugglers Notch",
         "location": "Vermont, USA",
         "image": "bolton",
+        "zip": "05444"
         "follower_count": 538,
         "boulder_count": 188,
-        "rank": 3.2,
+        "rank": 5,
         "description": "Smugglers Notch, VT climbing"
     }
 ]

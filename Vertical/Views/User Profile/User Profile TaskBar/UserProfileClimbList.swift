@@ -63,23 +63,22 @@ struct UserProfileClimbList: View {
     @State private var selection: Set<ClimbRow> = []
 
     var body: some View{
-        scrollForEach
-    }
-                       
-    var scrollForEach: some View {
-        ScrollView{
+        LazyVStack{
             ForEach(climbs, id: \.id){ climb in
                 UserProfileClimbRow(climb: climb, isExpanded: self.selection.contains(climb))
                     .onTapGesture{ self.selectDeselect(climb)}
                     .animation(.linear(duration: 0.3))
             }
-        }
+        }.frame(maxHeight: .infinity, alignment: .top)
     }
+                       
+    
     func selectDeselect(_ climb: ClimbRow){
         if selection.contains(climb){
             selection.remove(climb)
         }
         else{
+            selection.removeAll()
             selection.insert(climb)
         }
     }

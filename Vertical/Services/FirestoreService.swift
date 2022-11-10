@@ -25,6 +25,11 @@ class FirebaseService: ObservableObject {
         return try ref.data(as: UserInfo.self)
     }
     
+    func fetchAreaInfo(_ areaUID: String) async throws -> Area {
+        let ref = try await db.collection("areas").document(areaUID).getDocument()
+        return try ref.data(as: Area.self)
+    }
+    
     func fetchFollowingPosts(_ userUID: String) async throws -> [Post] {
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()
         

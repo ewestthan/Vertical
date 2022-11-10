@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411E80E291C237D00492C9F /* ImagePicker.swift */; };
 		042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E52911CDCB008C4E5B /* UserProfileFilter.swift */; };
 		042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E82911CEFD008C4E5B /* VideoPostForm.swift */; };
 		042B72C829107F7B007E1691 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72C729107F7B007E1691 /* Search.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0411E80E291C237D00492C9F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		042441E52911CDCB008C4E5B /* UserProfileFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileFilter.swift; sourceTree = "<group>"; };
 		042441E82911CEFD008C4E5B /* VideoPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPostForm.swift; sourceTree = "<group>"; };
 		042B72C729107F7B007E1691 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -180,7 +182,6 @@
 				042B72D029108A7C007E1691 /* UserSearch.swift */,
 				04DD941F2910B8C300D36C2E /* SearchBar.swift */,
 				04DD942129115FDF00D36C2E /* ClimbsSearch.swift */,
-				04DD94232911653000D36C2E /* TestClimbSearch.swift */,
 				0474DAB52912EF9000C02360 /* AreaSearch.swift */,
 			);
 			path = Search;
@@ -207,6 +208,7 @@
 		042D004A2911EA1900F907E2 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				0411E80E291C237D00492C9F /* ImagePicker.swift */,
 				795660292911AA4D00D747AF /* HexColor.swift */,
 				046E334B2900825700EAC8DC /* StarsView.swift */,
 			);
@@ -531,6 +533,7 @@
 				042B72D129108A7C007E1691 /* UserSearch.swift in Sources */,
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
+				0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,

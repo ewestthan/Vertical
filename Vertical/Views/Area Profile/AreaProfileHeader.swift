@@ -16,7 +16,7 @@ struct AreaProfileHeader: View {
         VStack {
             HStack(spacing: 40) {
                 HStack {
-                    Image(users[0].image)
+                    Image(area.image)
                         .resizable()
                         .frame(width: 75, height: 75)
                         .clipShape(Circle())

@@ -18,8 +18,8 @@ class AuthViewModel: ObservableObject{
         fetchUser()
     }
     
-    func login(withEmail email: String, password: String){
-        Auth.auth().signIn(withEmail: email, password: password){ result, error in
+    func login(withEmail email: String, password: String) async {
+        try await Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error{
                 print("DEBUG: Login Failed \(error.localizedDescription)")
                 return
@@ -31,11 +31,11 @@ class AuthViewModel: ObservableObject{
         
     }
     
-    func register(withEmail email: String, password: String, image: UIImage?, fullname: String, username: String){
+    func register(withEmail email: String, password: String, image: UIImage?, fullname: String, username: String) async{
         
         guard let image = image else {return}
         
-        ImageUploader.uploadImage(image: image) { imageUrl in
+        try await ImageUploader.uploadImage(image: image) { imageUrl in
             Auth.auth().createUser(withEmail: email, password: password) {result, error in
                 if let error = error{
                     print(error.localizedDescription)
@@ -60,12 +60,12 @@ class AuthViewModel: ObservableObject{
     func resetPassword(){
         
     }
-    func signout(){
+    func signout() async{
         self.userSession = nil
         try? Auth.auth().signOut()
     }
     
-    func fetchUser(){
+    func fetchUser() {
         
         guard let uid = userSession?.uid else {return}
         

@@ -77,9 +77,9 @@ struct RegistrationView: View {
                     .foregroundColor(.white)
                     .padding(.horizontal, 32)
                 
-                Button (action: {
-                    viewModel.register(withEmail: email, password: password, image: selectedImage, fullname: fullname, username: username)
-                }, label: {
+                Button (action:{ Task{
+                    await viewModel.register(withEmail: email, password: password, image: selectedImage, fullname: fullname, username: username)
+                }}, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.white)

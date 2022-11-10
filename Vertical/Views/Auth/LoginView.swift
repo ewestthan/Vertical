@@ -48,9 +48,9 @@ struct LoginView: View {
                         })
 
                     }
-                    Button (action: {
-                        viewModel.login(withEmail: email, password: password)
-                    }, label: {
+                    Button (action:{ Task {
+                        await viewModel.login(withEmail: email, password: password)
+                    }}, label: {
                         Text("Sign In")
                             .font(.headline)
                             .foregroundColor(.white)
@@ -87,7 +87,7 @@ struct LoginView_Previews: PreviewProvider {
 
 
 
-
+//
 //    @EnvironmentObject var user: User
 //
 //    @StateObject private var loginVM = LoginViewModel()

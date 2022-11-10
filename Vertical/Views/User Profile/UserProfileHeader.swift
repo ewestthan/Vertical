@@ -80,9 +80,9 @@ struct UserProfileHeader: View {
         }
     }
     var logoutButton: some View{
-        Button {
-            AuthViewModel.shared.signout()
-        } label: {
+        Button { Task{
+            try await AuthViewModel.shared.signout()
+        }} label: {
             Text("Logout").foregroundColor(.black)
         }
 

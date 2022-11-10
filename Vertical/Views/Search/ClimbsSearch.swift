@@ -65,16 +65,27 @@ struct ClimbSearch: View {
     }
                        
     var scrollForEach: some View {
+<<<<<<< Updated upstream
         ScrollView{
             LazyVStack{
                 ForEach(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ climb in
                     
                     NavigationLink(destination: ClimbProfile()){ SearchClimbRowView(climb: climb).animation(.linear(duration: 0.3))
                             .frame(maxHeight: 60)
+=======
+        NavigationView {
+            List {
+                ForEach(climbProfileListViewModel.climbProfiles.filter({ searchText.isEmpty ? true : $0.Name!.contains(searchText)}), id: \.id){ climb in
+                    NavigationLink(destination:
+                                    ClimbProfileView(climb: climb)) {
+                        SearchClimbRowView(climb: climb)
+                            .animation(.linear(duration: 0.3))
+>>>>>>> Stashed changes
                     }
                 }
             }
         }
+<<<<<<< Updated upstream
     }
 }
 
@@ -83,3 +94,11 @@ struct ClimbSearch_Previews: PreviewProvider {
         ClimbSearch(searchText: "")
     }
 }
+=======
+    }
+    }
+
+    
+    
+
+>>>>>>> Stashed changes

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E813291D715D004EE6F2 /* AuthViewModel.swift */; };
+		0414E816291D7322004EE6F2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E815291D7322004EE6F2 /* RegistrationView.swift */; };
+		0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E817291D7334004EE6F2 /* ResetPasswordView.swift */; };
+		0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E819291D7450004EE6F2 /* CustomSecureField.swift */; };
+		0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E81B291D746C004EE6F2 /* CustomTextField.swift */; };
 		042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E52911CDCB008C4E5B /* UserProfileFilter.swift */; };
 		042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E82911CEFD008C4E5B /* VideoPostForm.swift */; };
 		042B72C829107F7B007E1691 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72C729107F7B007E1691 /* Search.swift */; };
@@ -39,7 +44,6 @@
 		04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */; };
 		04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD941F2910B8C300D36C2E /* SearchBar.swift */; };
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
-		04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942629117B7B00D36C2E /* UserRegistration.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
 		5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */; };
 		5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF17291D3D65000639D0 /* ClimbProfile.swift */; };
@@ -94,6 +98,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0414E813291D715D004EE6F2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0414E815291D7322004EE6F2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		0414E817291D7334004EE6F2 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		0414E819291D7450004EE6F2 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		0414E81B291D746C004EE6F2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		042441E52911CDCB008C4E5B /* UserProfileFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileFilter.swift; sourceTree = "<group>"; };
 		042441E82911CEFD008C4E5B /* VideoPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPostForm.swift; sourceTree = "<group>"; };
 		042B72C729107F7B007E1691 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -129,7 +138,6 @@
 		04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVideos.swift; sourceTree = "<group>"; };
 		04DD941F2910B8C300D36C2E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
-		04DD942629117B7B00D36C2E /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
 		5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClimbSearch.swift; path = Vertical/ClimbSearch.swift; sourceTree = SOURCE_ROOT; };
 		5E33FF17291D3D65000639D0 /* ClimbProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfile.swift; sourceTree = "<group>"; };
@@ -191,6 +199,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0414E812291D70F3004EE6F2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				793E15A8290CA05B00D4C774 /* LoginView.swift */,
+				795660512911BC9500D747AF /* LoginViewModel.swift */,
+				0414E813291D715D004EE6F2 /* AuthViewModel.swift */,
+				0414E815291D7322004EE6F2 /* RegistrationView.swift */,
+				0414E817291D7334004EE6F2 /* ResetPasswordView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		042441E72911CEDD008C4E5B /* Post Form */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,19 +245,19 @@
 		042D00492911E9B100F907E2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				795660512911BC9500D747AF /* LoginViewModel.swift */,
-				793E15A8290CA05B00D4C774 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		042D004A2911EA1900F907E2 /* Misc */ = {
+		042D004A2911EA1900F907E2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				795660292911AA4D00D747AF /* HexColor.swift */,
 				046E334B2900825700EAC8DC /* StarsView.swift */,
+				0414E819291D7450004EE6F2 /* CustomSecureField.swift */,
+				0414E81B291D746C004EE6F2 /* CustomTextField.swift */,
 			);
-			path = Misc;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		046ADF4428F85D4D007616A2 = {
@@ -335,14 +355,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		04DD942529117B6600D36C2E /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				04DD942629117B7B00D36C2E /* UserRegistration.swift */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
 		04DD94282911830500D36C2E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,10 +400,10 @@
 		795660302911AFCC00D747AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0414E812291D70F3004EE6F2 /* Auth */,
 				FD95C7702911EE5E00A54810 /* Area Profile */,
-				042D004A2911EA1900F907E2 /* Misc */,
+				042D004A2911EA1900F907E2 /* Utils */,
 				042B72C9291084EF007E1691 /* Tab Bars */,
-				04DD942529117B6600D36C2E /* Registration */,
 				5E630F7B2908AE6C00295FC3 /* Climb Profile */,
 				042441E72911CEDD008C4E5B /* Post Form */,
 				046E333C2900653B00EAC8DC /* User Profile */,
@@ -577,11 +589,13 @@
 				5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */,
 				042B72D129108A7C007E1691 /* UserSearch.swift in Sources */,
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
+				0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
+				0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */,
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
 				5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */,
@@ -591,6 +605,7 @@
 				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
 				04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */,
 				0455A7DD291D4E2700CEBDCD /* ClimbProfileViewModel.swift in Sources */,
+				0414E816291D7322004EE6F2 /* RegistrationView.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
 				0455A7DF291D4E7600CEBDCD /* ClimbProfileHeader.swift in Sources */,
@@ -605,7 +620,9 @@
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
 				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
+				0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */,
 				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
+				0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */,
 				79CBE8CB29183A7600D43A08 /* FirestoreService.swift in Sources */,
 				0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */,
 				046E333929005F4300EAC8DC /* UserProfileBottom.swift in Sources */,
@@ -614,7 +631,6 @@
 				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
 				5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */,
 				793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */,
-				04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */,
 				FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */,
 				046ADF5328F85D4D007616A2 /* ContentView.swift in Sources */,
 				0455A7E5291D590200CEBDCD /* ClimbProfileAscentsList.swift in Sources */,

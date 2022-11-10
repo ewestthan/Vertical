@@ -25,7 +25,7 @@ struct Feed: View {
                                 .frame(width: 40, height: 40)
                                 .clipped()
                                 .cornerRadius(100)
-                                
+                            
                                 .shadow(radius: 7)
                             Text(user.name)
                         }.padding(.leading, 10)
@@ -104,18 +104,18 @@ struct Feed: View {
                     }
                     .padding(.bottom, 10)
                     
-//                    Text(post.title).font(.title3)
-//                    Text(post.content).font(.caption)
-//                    FeedVideoCell()
+                    //                    Text(post.title).font(.title3)
+                    //                    Text(post.content).font(.caption)
+                    //                    FeedVideoCell()
                     
                 }
             }.padding(.top)
             
-            if feedVM.fetching {
-                ProgressView()
-            }
-        }.onAppear{ Task { await feedVM.loadPostsFollowing(userUID: user.uid)} }
-        
+            //            if feedVM.fetching {
+            //                ProgressView()
+            //            }
+            //        }.onAppear{ Task { await feedVM.loadPostsFollowing(userUID: user.uid)} }
+        }
     }
 }
 

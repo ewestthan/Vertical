@@ -8,15 +8,26 @@
 import SwiftUI
 
 struct AreaProfile: View {
+    
+    let id: String
+    var data: Area
+    
+    init(id: String) {
+        self.id = id
+        self.data = Area()
+    }
+    
     var body: some View {
         VStack{
-            AreaProfileHeader(area: areas[0])
+            AreaProfileHeader(area: self.data)
+            AreaProfileContent(area: self.data)
         }
     }
+    
 }
 
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfile()
+        AreaProfile(id: "nyeaiKZxDTg81GS1GYWV")
     }
 }

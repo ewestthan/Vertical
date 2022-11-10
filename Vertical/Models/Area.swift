@@ -7,15 +7,16 @@
 
 import Foundation
 
-struct Area: Hashable, Codable {
-    var id: Int
-    var name: String
-    var location: String
-    var image: String
-    var follower_count: Int
-    var boulder_count: Int
-    var rank: Float
-    var description: String
+struct Area: Hashable, Codable, Identifiable {
+    var id: String = "-1"
+    var name: String = "Bolton"
+    var location: String = "Vermont, USA"
+    var zip: String = "00000"
+    var image: String = "bolton"
+    var follower_count: Int = 100
+    var boulder_count: Int = 100
+    var rank: Int = 3
+    var description: String = "Bolton, VT is a great place to climb! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis sapien sodales."
 }
 
-var areas: [Area] = load("Areas.json")
+//var areas: [Area] = load("Areas.json")

@@ -12,12 +12,10 @@ struct UserProfile: View {
     var user: UserRow
     
     var body: some View {
-        
-            VStack{
+        VStack(spacing: 0){
                 UserProfileHeader(user: user)
                 UserProfileBottom()
-            }
-        
+        }
     }
 }
 

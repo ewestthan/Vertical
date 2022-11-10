@@ -21,6 +21,8 @@ class LoginViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    private let fs = FirebaseService()
+    
     // Gets updated when view is loaded, since cannot pass environmental object directly
     @Published var localUser = User()
     
@@ -49,8 +51,13 @@ class LoginViewModel: ObservableObject {
             self.loading = false
             
             self.localUser.isAuthenticated = true
-            self.localUser.email = userFire.email ?? ""
             self.localUser.uid = userFire.uid
+            
+            let userInfo = try await self.fs.fetchUserInfo(userFire.uid)
+            
+            self.localUser.email = userInfo.email
+            self.localUser.name = userInfo.name
+
             
         } catch {
             print(error)

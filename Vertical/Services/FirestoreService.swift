@@ -2,7 +2,7 @@
 //  Firestore.swift
 //  Vertical
 //
-//  Created by user227908 on 11/6/22.
+//  Created by Arthur on 11/6/22.
 //
 
 import SwiftUI
@@ -20,14 +20,12 @@ class FirebaseService: ObservableObject {
         //addListeners()
     }
     
-    func fetchPosts() async throws -> [Post] {
-        let snapshot = try await db.collection("posts").getDocuments()
-        
-        return snapshot.documents.compactMap{ document in try? document.data(as: Post.self) }
+    func fetchUserInfo(_ userUID: String) async throws -> UserInfo {
+        let ref = try await db.collection("users").document(userUID).getDocument()
+        return try ref.data(as: UserInfo.self)
     }
     
     func fetchFollowingPosts(_ userUID: String) async throws -> [Post] {
-        //CollectionReference userFollowingRef = rootRef.collection("following/" + uid + "/userFollowing");
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()
         
         let ids = refsFollowing.documents.compactMap{ document in document.documentID }
@@ -35,6 +33,8 @@ class FirebaseService: ObservableObject {
         
         var posts = [Post]()
         for id in ids {
+            //let t = try await db.collection("posts/\(id)/posts").getDocuments()
+            //print(t.documents[0].data(as: Post.self))
             let refsPosts = try await db.collection("posts/\(id)/posts").order(by: "date", descending: true).limit(to: 3).getDocuments()
             let recentPosts = refsPosts.documents.compactMap{ document in try? document.data(as: Post.self) }
             print(recentPosts)

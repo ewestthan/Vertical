@@ -11,5 +11,13 @@ class User: ObservableObject {
     @Published var isAuthenticated = false
     
     @Published var email = ""
+    @Published var name = ""
     
+    @Published var uid = ""
+    
+}
+
+struct UserInfo: Hashable, Codable {
+    var email: String
+    var name: String
 }

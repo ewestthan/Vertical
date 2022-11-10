@@ -1,20 +1,20 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Bolton",
         "location": "Vermont, USA",
-        "image": "bolton",
+        "image": "jimmy",
         "zip": "05465"
         "follower_count": 538,
         "boulder_count": 188,
         "rank": 3,
-        "description": "Bolton, VT climbing"
+        "description": "Bolton, VT is a great place to climb! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis sapien sodales."
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "Smugglers Notch",
         "location": "Vermont, USA",
-        "image": "bolton",
+        "image": "jimmy",
         "zip": "05444"
         "follower_count": 538,
         "boulder_count": 188,

@@ -1,7 +1,7 @@
 
 import FirebaseFirestoreSwift
 
-struct ClimbProfileModel: Identifiable, Codable {
+struct ClimbProfileViewModel: Identifiable, Codable {
     @DocumentID var id: String?
     var Name: String?
     var Grade: String?

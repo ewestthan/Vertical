@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Search: View {
     @State private var tabSelected: SearchTab = .users
+    @ObservedObject var climbSearch = ClimbSearchViewModel()
     
     @State var searchText = ""
     
@@ -27,19 +28,19 @@ struct Search: View {
                                     UserSearch(searchText: searchText)
                                 }
                                 if(tab.rawValue == "climbs"){
-                                    ClimbSearch(searchText: searchText)
+                                    ClimbSearch(climbs: climbSearch.climbs)
                                 }
                                 if(tab.rawValue == "areas"){
                                     AreaSearch(searchText: searchText)
                                 }
                             }.padding([.leading, .trailing], 10)
-                            .tag(tab)
+                                .tag(tab)
                         }
                     }
                 }.padding([.top], 10)
             }
         }
-        
+        .environmentObject(climbSearch)
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchClimbRowView: View {
-    var climb: ClimbRow
+    var climb: ClimbProfileModel
     
     var body: some View {
         HStack{
@@ -24,18 +24,18 @@ struct SearchClimbRowView: View {
     private var content: some View{
         VStack{
             HStack{
-                Image(climb.image)
+                Image("Figure out image")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
                     
                 VStack(alignment: .leading){
-                    Text(climb.name + " V" + String(climb.grade)).font(.system(size: 16))
-                    Text(climb.area).font(.system(size: 12))
+                    Text(climb.Name + " V" + String(climb.Grade)).font(.system(size: 16))
+                    Text(climb.Area).font(.system(size: 12))
                 }.padding(.leading, 10)
                 Spacer()
-                StarsView(rating: climb.stars).frame(maxHeight: 15)
+                StarsView(rating: climb.Rating).frame(maxHeight: 15)
             }
             .padding([.top, .bottom], 10)
             .padding([.leading, .trailing], 15)
@@ -45,8 +45,7 @@ struct SearchClimbRowView: View {
 
 struct ClimbSearch: View {
     
-    let searchText: String
-    @State var searchCollection = climbs
+    let climbs: [ClimbProfileModel]
 
     var body: some View{
         scrollForEach
@@ -54,7 +53,7 @@ struct ClimbSearch: View {
     
     var list: some View {
         NavigationView{
-            List(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id) { climb in
+            List(climbs) { climb in
                 NavigationLink{
                     Text("")
                 } label: {
@@ -67,8 +66,7 @@ struct ClimbSearch: View {
     var scrollForEach: some View {
         ScrollView{
             LazyVStack{
-                ForEach(climbs.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ climb in
-                    
+                ForEach(climbs){ climb in
                     NavigationLink(destination: ClimbProfile()){ SearchClimbRowView(climb: climb).animation(.linear(duration: 0.3))
                             .frame(maxHeight: 60)
                     }
@@ -80,6 +78,6 @@ struct ClimbSearch: View {
 
 struct ClimbSearch_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbSearch(searchText: "")
+        ClimbSearch(climbs: [ClimbProfileModel(Name: "Example", Grade: "V3", Rating: 4, Area: "Example Area", Picture_URL: "Something")])
     }
 }

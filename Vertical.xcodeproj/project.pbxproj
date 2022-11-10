@@ -41,6 +41,9 @@
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
 		04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942629117B7B00D36C2E /* UserRegistration.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
+		5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */; };
+		5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF17291D3D65000639D0 /* ClimbProfile.swift */; };
+		5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */; };
 		5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */; };
 		5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */; };
 		793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E15A8290CA05B00D4C774 /* LoginView.swift */; };
@@ -62,6 +65,11 @@
 		795660502911B89900D747AF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7956604F2911B89900D747AF /* FirebaseStorageCombine-Community */; };
 		795660522911BC9500D747AF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795660512911BC9500D747AF /* LoginViewModel.swift */; };
 		795660542911C5E000D747AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 795660532911C5E000D747AF /* GoogleService-Info.plist */; };
+		79CBE8C9291839A800D43A08 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE8C8291839A800D43A08 /* FeedViewModel.swift */; };
+		79CBE8CB29183A7600D43A08 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE8CA29183A7600D43A08 /* FirestoreService.swift */; };
+		79CBE8CD29183D0F00D43A08 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE8CC29183D0F00D43A08 /* Post.swift */; };
+		FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */; };
+		FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */; };
 		FD95C76D2911EE0800A54810 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C76C2911EE0800A54810 /* Area.swift */; };
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
@@ -123,6 +131,9 @@
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
 		04DD942629117B7B00D36C2E /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
+		5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClimbSearch.swift; path = Vertical/ClimbSearch.swift; sourceTree = SOURCE_ROOT; };
+		5E33FF17291D3D65000639D0 /* ClimbProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfile.swift; sourceTree = "<group>"; };
+		5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSearchViewModel.swift; sourceTree = "<group>"; };
 		5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileView.swift; sourceTree = "<group>"; };
 		5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileModel.swift; sourceTree = "<group>"; };
 		793E15A8290CA05B00D4C774 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -130,6 +141,11 @@
 		7956602E2911AFB700D747AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		795660512911BC9500D747AF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		795660532911C5E000D747AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		79CBE8C8291839A800D43A08 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		79CBE8CA29183A7600D43A08 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = Vertical/Services/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
+		79CBE8CC29183D0F00D43A08 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTabBar.swift; sourceTree = "<group>"; };
+		FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileContent.swift; sourceTree = "<group>"; };
 		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
@@ -201,6 +217,7 @@
 				046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */,
 				042B72CA29108502007E1691 /* SearchTabBar.swift */,
 				0455A7E2291D57B300CEBDCD /* ClimbProfileTabBar.swift */,
+				FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */,
 			);
 			path = "Tab Bars";
 			sourceTree = "<group>";
@@ -246,8 +263,9 @@
 		046ADF4F28F85D4D007616A2 /* Vertical */ = {
 			isa = PBXGroup;
 			children = (
+				5E33FF19291D55DB000639D0 /* ViewModel */,
+				79CBE8CE29186B5200D43A08 /* Services */,
 				795660532911C5E000D747AF /* GoogleService-Info.plist */,
-				795660312911B10700D747AF /* Services */,
 				795660302911AFCC00D747AF /* Views */,
 				7956602B2911AF6300D747AF /* Models */,
 				046E334829007E7200EAC8DC /* Resources */,
@@ -330,8 +348,17 @@
 			children = (
 				046E33342900424600EAC8DC /* Feed.swift */,
 				04DD94292911831700D36C2E /* FeedVideoCell.swift */,
+				79CBE8C8291839A800D43A08 /* FeedViewModel.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		5E33FF19291D55DB000639D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		5E630F7B2908AE6C00295FC3 /* Climb Profile */ = {
@@ -352,6 +379,8 @@
 				7956602E2911AFB700D747AF /* User.swift */,
 				FD95C76C2911EE0800A54810 /* Area.swift */,
 				0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */,
+				5E33FF17291D3D65000639D0 /* ClimbProfile.swift */,
+				79CBE8CC29183D0F00D43A08 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,9 +402,11 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		795660312911B10700D747AF /* Services */ = {
+		79CBE8CE29186B5200D43A08 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */,
+				79CBE8CA29183A7600D43A08 /* FirestoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -385,6 +416,7 @@
 			children = (
 				FD95C7712911EE6A00A54810 /* AreaProfile.swift */,
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
+				FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */,
 			);
 			path = "Area Profile";
 			sourceTree = "<group>";
@@ -542,9 +574,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */,
 				042B72D129108A7C007E1691 /* UserSearch.swift in Sources */,
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
+				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
@@ -561,21 +595,27 @@
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
 				0455A7DF291D4E7600CEBDCD /* ClimbProfileHeader.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
+				79CBE8CD29183D0F00D43A08 /* Post.swift in Sources */,
 				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
 				FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */,
 				046E334529007C4E00EAC8DC /* LoadUserClimbs.swift in Sources */,
+				79CBE8C9291839A800D43A08 /* FeedViewModel.swift in Sources */,
 				042B72CB29108502007E1691 /* SearchTabBar.swift in Sources */,
 				042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */,
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
+				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
 				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
+				79CBE8CB29183A7600D43A08 /* FirestoreService.swift in Sources */,
 				0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */,
 				046E333929005F4300EAC8DC /* UserProfileBottom.swift in Sources */,
 				FD95C76D2911EE0800A54810 /* Area.swift in Sources */,
 				046E333B29005F5800EAC8DC /* UserProfile.swift in Sources */,
 				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
+				5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */,
 				793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */,
 				04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */,
+				FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */,
 				046ADF5328F85D4D007616A2 /* ContentView.swift in Sources */,
 				0455A7E5291D590200CEBDCD /* ClimbProfileAscentsList.swift in Sources */,
 				046ADF5128F85D4D007616A2 /* VerticalApp.swift in Sources */,

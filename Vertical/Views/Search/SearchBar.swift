@@ -12,11 +12,16 @@ struct SearchBar: View {
     @Binding var text: String
      
     @State private var isEditing = false
+    
+    @EnvironmentObject var climbSearchViewModel: ClimbSearchViewModel
  
     var body: some View {
             HStack {
                 
                 TextField("Search ...", text: $text)
+                    .onSubmit {
+                        climbSearchViewModel.search(climbName: text)
+                    }
                     .padding(7)
                     .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
@@ -64,8 +69,3 @@ struct SearchBar: View {
         }
 }
 
-struct SearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar(text: .constant(""))
-    }
-}

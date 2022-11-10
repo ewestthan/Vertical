@@ -57,6 +57,8 @@
 		795660502911B89900D747AF /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7956604F2911B89900D747AF /* FirebaseStorageCombine-Community */; };
 		795660522911BC9500D747AF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795660512911BC9500D747AF /* LoginViewModel.swift */; };
 		795660542911C5E000D747AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 795660532911C5E000D747AF /* GoogleService-Info.plist */; };
+		FD73D081291C63B00087D3DB /* AreaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73D080291C63B00087D3DB /* AreaTabBar.swift */; };
+		FD73D083291C8D280087D3DB /* AreaProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD73D082291C8D280087D3DB /* AreaProfileContent.swift */; };
 		FD95C76D2911EE0800A54810 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C76C2911EE0800A54810 /* Area.swift */; };
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
@@ -121,6 +123,8 @@
 		7956602E2911AFB700D747AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		795660512911BC9500D747AF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		795660532911C5E000D747AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD73D080291C63B00087D3DB /* AreaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTabBar.swift; sourceTree = "<group>"; };
+		FD73D082291C8D280087D3DB /* AreaProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileContent.swift; sourceTree = "<group>"; };
 		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			children = (
 				046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */,
 				042B72CA29108502007E1691 /* SearchTabBar.swift */,
+				FD73D080291C63B00087D3DB /* AreaTabBar.swift */,
 			);
 			path = "Tab Bars";
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 			children = (
 				FD95C7712911EE6A00A54810 /* AreaProfile.swift */,
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
+				FD73D082291C8D280087D3DB /* AreaProfileContent.swift */,
 			);
 			path = "Area Profile";
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				042B72D129108A7C007E1691 /* UserSearch.swift in Sources */,
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
+				FD73D081291C63B00087D3DB /* AreaTabBar.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
@@ -557,6 +564,7 @@
 				0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */,
 				046E333929005F4300EAC8DC /* UserProfileBottom.swift in Sources */,
 				FD95C76D2911EE0800A54810 /* Area.swift in Sources */,
+				FD73D083291C8D280087D3DB /* AreaProfileContent.swift in Sources */,
 				046E333B29005F5800EAC8DC /* UserProfile.swift in Sources */,
 				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
 				793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */,

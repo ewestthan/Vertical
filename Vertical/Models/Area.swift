@@ -16,7 +16,7 @@ struct Area: Hashable, Codable, Identifiable {
     var follower_count: Int = 100
     var boulder_count: Int = 100
     var rank: Int = 3
-    var description: String = "None"
+    var description: String = "Bolton, VT is a great place to climb! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis sapien sodales."
 }
 
 var areas: [Area] = load("Areas.json")

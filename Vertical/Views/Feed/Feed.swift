@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Feed: View {
     
-    @EnvironmentObject var user: User
+//    @EnvironmentObject var user: User
     @StateObject private var feedVM = FeedViewModel()
     
     var body: some View {
@@ -27,7 +27,7 @@ struct Feed: View {
                                 .cornerRadius(100)
                             
                                 .shadow(radius: 7)
-                            Text(user.name)
+//                            Text(user.username)
                         }.padding(.leading, 10)
                         
                         

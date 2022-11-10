@@ -43,6 +43,8 @@
 		046E334C2900825700EAC8DC /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E334B2900825700EAC8DC /* StarsView.swift */; };
 		046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */; };
 		0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DAB52912EF9000C02360 /* AreaSearch.swift */; };
+		048F53E1291D9D3B0053F433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E0291D9D3B0053F433 /* Constants.swift */; };
+		048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E2291DA1A10053F433 /* SearchViewModel.swift */; };
 		04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */; };
 		04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD941F2910B8C300D36C2E /* SearchBar.swift */; };
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
@@ -139,6 +141,8 @@
 		046E334B2900825700EAC8DC /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTabBar.swift; sourceTree = "<group>"; };
 		0474DAB52912EF9000C02360 /* AreaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearch.swift; sourceTree = "<group>"; };
+		048F53E0291D9D3B0053F433 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		048F53E2291DA1A10053F433 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVideos.swift; sourceTree = "<group>"; };
 		04DD941F2910B8C300D36C2E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				04DD941F2910B8C300D36C2E /* SearchBar.swift */,
 				04DD942129115FDF00D36C2E /* ClimbsSearch.swift */,
 				0474DAB52912EF9000C02360 /* AreaSearch.swift */,
+				048F53E2291DA1A10053F433 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				0414E81B291D746C004EE6F2 /* CustomTextField.swift */,
 				0446164B291D8C9D00ABCD06 /* ImagePicker.swift */,
 				0446164D291D8D9A00ABCD06 /* ImageUploader.swift */,
+				048F53E0291D9D3B0053F433 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 				0414E816291D7322004EE6F2 /* RegistrationView.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
+				048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */,
 				0455A7DF291D4E7600CEBDCD /* ClimbProfileHeader.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
 				79CBE8CD29183D0F00D43A08 /* Post.swift in Sources */,
@@ -642,6 +649,7 @@
 				FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */,
 				046ADF5328F85D4D007616A2 /* ContentView.swift in Sources */,
 				0455A7E5291D590200CEBDCD /* ClimbProfileAscentsList.swift in Sources */,
+				048F53E1291D9D3B0053F433 /* Constants.swift in Sources */,
 				046ADF5128F85D4D007616A2 /* VerticalApp.swift in Sources */,
 				042B72C829107F7B007E1691 /* Search.swift in Sources */,
 			);

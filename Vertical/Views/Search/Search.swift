@@ -9,9 +9,11 @@ import SwiftUI
 
 struct Search: View {
     @State private var tabSelected: SearchTab = .users
-    @ObservedObject var climbSearch = ClimbSearchViewModel()
-    
     @State var searchText = ""
+    
+    @ObservedObject var climbSearch = ClimbSearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel()
+    
     
     var body: some View {
         NavigationView{
@@ -25,7 +27,7 @@ struct Search: View {
                         ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                             HStack{
                                 if(tab.rawValue == "users"){
-                                    UserSearch(searchText: searchText)
+                                    UserSearch(searchText: searchText, viewModel: viewModel)
                                 }
                                 if(tab.rawValue == "climbs"){
                                     ClimbSearch(climbs: climbSearch.climbs)

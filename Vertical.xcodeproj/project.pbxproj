@@ -60,6 +60,8 @@
 		79CBE8C9291839A800D43A08 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE8C8291839A800D43A08 /* FeedViewModel.swift */; };
 		79CBE8CB29183A7600D43A08 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE8CA29183A7600D43A08 /* FirestoreService.swift */; };
 		79CBE8CD29183D0F00D43A08 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE8CC29183D0F00D43A08 /* Post.swift */; };
+		FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */; };
+		FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */; };
 		FD95C76D2911EE0800A54810 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C76C2911EE0800A54810 /* Area.swift */; };
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
@@ -126,6 +128,8 @@
 		79CBE8C8291839A800D43A08 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		79CBE8CA29183A7600D43A08 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = Vertical/Services/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
 		79CBE8CC29183D0F00D43A08 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTabBar.swift; sourceTree = "<group>"; };
+		FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileContent.swift; sourceTree = "<group>"; };
 		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			children = (
 				046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */,
 				042B72CA29108502007E1691 /* SearchTabBar.swift */,
+				FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */,
 			);
 			path = "Tab Bars";
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 			children = (
 				FD95C7712911EE6A00A54810 /* AreaProfile.swift */,
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
+				FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */,
 			);
 			path = "Area Profile";
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 				042B72CB29108502007E1691 /* SearchTabBar.swift in Sources */,
 				042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */,
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
+				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
 				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
 				79CBE8CB29183A7600D43A08 /* FirestoreService.swift in Sources */,
@@ -569,6 +576,7 @@
 				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
 				793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */,
 				04DD942729117B7B00D36C2E /* UserRegistration.swift in Sources */,
+				FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */,
 				046ADF5328F85D4D007616A2 /* ContentView.swift in Sources */,
 				046ADF5128F85D4D007616A2 /* VerticalApp.swift in Sources */,
 				042B72C829107F7B007E1691 /* Search.swift in Sources */,

@@ -45,7 +45,7 @@ struct RegistrationView: View {
                             .frame(width: 140, height: 140)
                             .foregroundColor(.white)
                     })
-    //                .sheet(isPresented: $imagePickerPresented, onDismiss: loadImage, content: {ImagePicker(image: $selectedImage)})
+                    .sheet(isPresented: $imagePickerPresented, onDismiss: loadImage, content: {ImagePicker(image: $selectedImage)})
                     .padding()
                 }
                 
@@ -78,7 +78,7 @@ struct RegistrationView: View {
                     .padding(.horizontal, 32)
                 
                 Button (action: {
-                    viewModel.register(withEmail: email, password: password)
+                    viewModel.register(withEmail: email, password: password, image: selectedImage, fullname: fullname, username: username)
                 }, label: {
                     Text("Sign Up")
                         .font(.headline)

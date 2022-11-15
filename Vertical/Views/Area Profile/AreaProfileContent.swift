@@ -28,7 +28,7 @@ struct AreaProfileContent: View {
                             Text("Climbs")
                         }
                         if (tab.rawValue == "Map") {
-                            Text("Map")
+                            MapView()
                         }
                         if (tab.rawValue == "Weather") {
                             Text("Weather")

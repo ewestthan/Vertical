@@ -18,9 +18,13 @@ struct AreaProfile: View {
     }
     
     var body: some View {
-        VStack{
-            AreaProfileHeader(area: self.data)
-            AreaProfileContent(area: self.data)
+        NavigationView {
+            ZStack {
+                VStack {
+                    AreaProfileHeader(area: self.data)
+                    AreaProfileContent(area: self.data)
+                }
+            }
         }
     }
     

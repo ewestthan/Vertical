@@ -25,7 +25,8 @@ struct AreaProfileContent: View {
                 ForEach(AreaTab.allCases, id: \.rawValue) { tab in
                     HStack {
                         if (tab.rawValue == "Climbs") {
-                            Text("Climbs")
+                            UserProfileClimbList()
+                                .padding()
                         }
                         if (tab.rawValue == "Map") {
                             Text("Map")
@@ -34,7 +35,10 @@ struct AreaProfileContent: View {
                             Text("Weather")
                         }
                         if (tab.rawValue == "Info") {
-                            Text("Info")
+                            Text("Located just 30 minutes from downtown Burlington, Bolton has some of the most extensive options for climbing in the Green Mountain State. ")
+                                .padding(40)
+                                .multilineTextAlignment(.center)
+                                .frame(maxHeight: .infinity, alignment: .top)
                         }
                     }
                     .tag(tab)

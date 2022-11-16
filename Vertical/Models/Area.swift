@@ -11,7 +11,7 @@ struct Area: Hashable, Codable, Identifiable {
     var id: String = "-1"
     var name: String = "Bolton"
     var location: String = "Vermont, USA"
-    var image: String = "jimmy"
+    var image: String = "bolton"
     var zip: String = "05466"
     var follower_count: Int = 100
     var boulder_count: Int = 100

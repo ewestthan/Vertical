@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ClimbProfileHeader: View {
+    var climb: ClimbProfileModel
+    @EnvironmentObject var climbSearchViewModel: ClimbSearchViewModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Image("exampleClimb")
+            WebImage(url: climbSearchViewModel.climbImages[climb.Picture_URL] == nil ? nil : climbSearchViewModel.climbImages[climb.Picture_URL]!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxHeight: 200)
@@ -18,13 +22,13 @@ struct ClimbProfileHeader: View {
                 .clipped()
             HStack(alignment: .top){
                 VStack(alignment: .leading, spacing: 5){
-                    Text("Shark Fin").font(.system(size: 32))
+                    Text(climb.Name).font(.system(size: 32))
                         .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                     HStack{
-                        Text("V3").font(.system(size: 14))
-                        Text("Bolton VT").font(.system(size: 14)).foregroundColor(.gray)
+                        Text(climb.Grade).font(.system(size: 14))
+                        Text(climb.Area).font(.system(size: 14)).foregroundColor(.gray)
                     }
-                    StarsView(rating: 5).frame(width: 100)
+                    StarsView(rating: climb.Rating).frame(width: 100)
                 }.padding(.leading)
                     .padding(.top, 10)
                 
@@ -56,6 +60,6 @@ struct ClimbProfileHeader: View {
 
 struct ClimbProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbProfileHeader()
+        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: "V4", Rating: 4, Area: "Test", Picture_URL: "Test"))
     }
 }

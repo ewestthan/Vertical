@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ClimbProfile: View {
+    var climb: ClimbProfileModel
+    
     var body: some View {
         VStack{
-            ClimbProfileHeader()
+            ClimbProfileHeader(climb: climb)
             ClimbProfileBottom()
         }
     }
@@ -18,6 +20,6 @@ struct ClimbProfile: View {
 
 struct ClimbProfile_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbProfile()
+        ClimbProfile(climb: ClimbProfileModel(Name: "test", Grade: "V4", Rating: 4, Area: "Test", Picture_URL: "Test"))
     }
 }

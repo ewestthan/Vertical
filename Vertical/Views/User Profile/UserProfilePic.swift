@@ -11,9 +11,13 @@ struct UserProfilePic: View {
     var pic: String
     
     var body: some View {
-        Image(pic)
-            .resizable()
-            .scaledToFill()
+        AsyncImage(url: URL(string: pic)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+        } placeholder: {
+            Color.gray
+        }
             .frame(width: 115, height: 115)
             .clipShape(Circle())
             .overlay{
@@ -24,6 +28,6 @@ struct UserProfilePic: View {
 
 struct UserProfilePic_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfilePic(pic: users[0].image)
+        UserProfilePic(pic: "test Image")
     }
 }

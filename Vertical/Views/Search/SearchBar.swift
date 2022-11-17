@@ -10,17 +10,24 @@ import SwiftUI
 struct SearchBar: View {
     
     @Binding var text: String
+    @Binding var tabSelected: SearchTab
      
     @State private var isEditing = false
     
     @EnvironmentObject var climbSearchViewModel: ClimbSearchViewModel
+    @EnvironmentObject var userSearchViewModel: UserSearchViewModel
  
     var body: some View {
             HStack {
                 
                 TextField("Search ...", text: $text)
                     .onSubmit {
-                        climbSearchViewModel.search(climbName: text)
+                        if ($tabSelected.wrappedValue == .climbs) {
+                            climbSearchViewModel.search(climbName: text)
+                        }
+                        if ($tabSelected.wrappedValue == .users) {
+                            userSearchViewModel.search(userName: text)
+                        }
                     }
                     .padding(7)
                     .padding(.horizontal, 25)

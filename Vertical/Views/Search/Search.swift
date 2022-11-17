@@ -10,6 +10,7 @@ import SwiftUI
 struct Search: View {
     @State private var tabSelected: SearchTab = .users
     @ObservedObject var climbSearch = ClimbSearchViewModel()
+    @ObservedObject var userSearch = UserSearchViewModel()
     
     @State var searchText = ""
     
@@ -17,7 +18,7 @@ struct Search: View {
         NavigationView{
             ZStack {
                 VStack {
-                    SearchBar(text: $searchText)
+                    SearchBar(text: $searchText, tabSelected: $tabSelected)
                     
                     SearchTabBar(selectedTab: $tabSelected)
                     Divider()
@@ -25,10 +26,10 @@ struct Search: View {
                         ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                             HStack{
                                 if(tab.rawValue == "users"){
-                                    UserSearch(searchText: searchText)
+                                    UserSearch(users: userSearch.users)
                                 }
                                 if(tab.rawValue == "climbs"){
-                                    ClimbSearch(climbs: climbSearch.climbs)
+                                    ClimbSearch(climbs: climbSearch.climbs, images: climbSearch.climbImages)
                                 }
                                 if(tab.rawValue == "areas"){
                                     AreaSearch(searchText: searchText)
@@ -41,6 +42,7 @@ struct Search: View {
             }
         }
         .environmentObject(climbSearch)
+        .environmentObject(userSearch)
     }
 }
 

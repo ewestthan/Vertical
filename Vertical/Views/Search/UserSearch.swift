@@ -7,30 +7,8 @@
 
 import SwiftUI
 
-struct UserRow: Hashable, Codable {
-    var id: Int
-    var name: String
-    var handle: String
-    var location: String
-    var image: String
-    var description: String
-    var followers: Int
-    var following: Int
-    var ascents: Int
-    
-    struct Climbs: Hashable, Codable {
-        var id: Int
-        var name: String
-        var grade: Int
-        var stars: Int
-        var area: String
-        var image: String
-        var description: String
-    }
-}
-
 struct SearchUserRow: View {
-    var user: UserRow
+    var user: UserInfo
     
     var body: some View {
         HStack{
@@ -45,14 +23,18 @@ struct SearchUserRow: View {
     private var content: some View{
         VStack{
             HStack{
-                Image(user.image)
-                    .resizable()
-                    .scaledToFill()
+                AsyncImage(url: URL(string: user.profileImageUrl)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                } placeholder: {
+                    Color.gray
+                }
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
 
                 VStack(alignment: .leading){
-                    Text(user.handle).font(.system(size: 16))
+                    Text(user.username).font(.system(size: 16))
                     Text(user.location).font(.system(size: 12))
                 }.padding(.leading, 10)
                 Spacer()
@@ -65,8 +47,7 @@ struct SearchUserRow: View {
 
 struct UserSearch: View {
     
-    let searchText: String
-    @State var searchCollection = users
+    let users: [UserInfo]
     
     var body: some View{
         scrollForEach
@@ -75,7 +56,7 @@ struct UserSearch: View {
     var scrollForEach: some View {
         ScrollView{
             LazyVStack{
-                ForEach(users.filter({ searchText.isEmpty ? true : $0.handle.contains(searchText)}), id: \.id){ user in
+                ForEach(users, id: \.id){ user in
                     NavigationLink(destination: UserProfile(user: user))
                     { SearchUserRow(user: user).animation(.linear(duration: 0.3))
                             .frame(maxHeight: 60)
@@ -88,6 +69,6 @@ struct UserSearch: View {
 
 struct UserSearch_Previews: PreviewProvider {
     static var previews: some View {
-        UserSearch(searchText: "")
+        UserSearch(users: [UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5)])
     }
 }

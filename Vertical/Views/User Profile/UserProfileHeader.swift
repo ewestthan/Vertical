@@ -9,7 +9,7 @@ import Foundation
 
 struct UserProfileHeader: View {
     
-    let user: UserRow
+    let user: UserInfo
     
     var body: some View {
         ZStack{
@@ -68,11 +68,11 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
-                Text(user.name).font(.system(size: 32))
+                Text(user.fullname).font(.system(size: 32))
                     .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
-                Text("@" + user.handle).font(.system(size: 14)).foregroundColor(.gray)
+                Text("@" + user.username).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)
-                UserProfilePic(pic: user.image)
+                UserProfilePic(pic: user.profileImageUrl)
             }.offset(y: -75)
                 .frame(maxHeight: 100)
                 
@@ -82,6 +82,6 @@ struct UserProfileHeader: View {
 
 struct UserProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileHeader(user: users[0])
+        UserProfileHeader(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
     }
 }

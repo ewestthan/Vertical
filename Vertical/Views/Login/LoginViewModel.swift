@@ -56,7 +56,7 @@ class LoginViewModel: ObservableObject {
             let userInfo = try await self.fs.fetchUserInfo(userFire.uid)
             
             self.localUser.email = userInfo.email
-            self.localUser.name = userInfo.name
+            self.localUser.name = userInfo.fullname
 
             
         } catch {

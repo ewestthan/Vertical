@@ -15,7 +15,7 @@ struct ContentView: View {
                     .tabItem(){Image(systemName: "house")}
                 Search()
                     .tabItem(){Image(systemName: "magnifyingglass")}
-                UserProfile(user: users[0])
+                UserProfile(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
                     .tabItem(){Image(systemName: "person")}
             }.frame(alignment: .bottomLeading)
                 .accentColor(.gray)

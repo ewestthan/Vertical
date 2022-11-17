@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestoreSwift
 
 class User: ObservableObject {
     @Published var isAuthenticated = false
@@ -17,7 +18,15 @@ class User: ObservableObject {
     
 }
 
-struct UserInfo: Hashable, Codable {
+struct UserInfo: Hashable, Codable, Identifiable {
+    @DocumentID var id: String?
     var email: String
-    var name: String
+    var username: String
+    var fullname: String
+    var profileImageUrl: String
+    var location: String
+    var description: String
+    var followers: Int
+    var following: Int
+    var ascents: Int
 }

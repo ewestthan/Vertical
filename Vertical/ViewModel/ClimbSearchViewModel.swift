@@ -6,10 +6,12 @@
 //
 
 import Combine
+import Firebase
 
 final class ClimbSearchViewModel: ObservableObject {
-    @Published var climbSearchRepository = ClimbSearchService()
+    @Published var climbSearchRepository = SearchService()
     @Published var climbs: [ClimbProfileModel] = []
+    @Published var climbImages: [String: URL?] = [:]
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -17,9 +19,17 @@ final class ClimbSearchViewModel: ObservableObject {
         climbSearchRepository.$climbs
             .assign(to: \.climbs, on: self)
             .store(in: &cancellables)
+        
+        climbSearchRepository.$climbImages
+            .assign(to: \.climbImages, on:self)
+            .store(in: &cancellables)
     }
     
     func search(climbName: String) {
-        climbSearchRepository.search(climbName: climbName)
+        climbSearchRepository.climbSearch(climbName: climbName)
+    }
+    
+    func resetCache() {
+        climbSearchRepository.clearClimbCache()
     }
 }

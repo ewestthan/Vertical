@@ -68,13 +68,30 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
-                logoutButton.frame(alignment: .leading)
+                HStack{
+                    Menu {
+                        logoutButton
+                        
+                        NavigationLink( destination: EditUserProfile(), label: {
+                            Text("Edit Profile")
+                        })
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.gray)
+                            .frame(width: 25, height: 25)
+                            .background(.gray.opacity(0.2))
+                            .cornerRadius(100)
+                    }
+
+                    
+                }.frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 20)
                 Text(user.name).font(.system(size: 32))
                     .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                 Text("@" + user.handle).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)
                 UserProfilePic(pic: user.image)
-            }.offset(y: -75)
+            }.offset(y: -95)
                 .frame(maxHeight: 100)
             
         }

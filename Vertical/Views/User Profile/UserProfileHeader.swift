@@ -86,7 +86,7 @@ struct UserProfileHeader: View {
                     
                 }.frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.trailing, 20)
-                Text(user.name).font(.system(size: 32))
+                Text(user.fullname).font(.system(size: 32))
                     .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                 Text("@" + user.username).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)

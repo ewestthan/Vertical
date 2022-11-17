@@ -12,6 +12,7 @@
 		0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E817291D7334004EE6F2 /* ResetPasswordView.swift */; };
 		0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E819291D7450004EE6F2 /* CustomSecureField.swift */; };
 		0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E81B291D746C004EE6F2 /* CustomTextField.swift */; };
+		0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411E80E291C237D00492C9F /* ImagePicker.swift */; };
 		042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E52911CDCB008C4E5B /* UserProfileFilter.swift */; };
 		042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E82911CEFD008C4E5B /* VideoPostForm.swift */; };
 		042B72C829107F7B007E1691 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72C729107F7B007E1691 /* Search.swift */; };
@@ -107,6 +108,7 @@
 		0414E817291D7334004EE6F2 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		0414E819291D7450004EE6F2 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		0414E81B291D746C004EE6F2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0411E80E291C237D00492C9F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		042441E52911CDCB008C4E5B /* UserProfileFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileFilter.swift; sourceTree = "<group>"; };
 		042441E82911CEFD008C4E5B /* VideoPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPostForm.swift; sourceTree = "<group>"; };
 		042B72C729107F7B007E1691 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		042D004A2911EA1900F907E2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0411E80E291C237D00492C9F /* ImagePicker.swift */,
 				795660292911AA4D00D747AF /* HexColor.swift */,
 				046E334B2900825700EAC8DC /* StarsView.swift */,
 				0414E819291D7450004EE6F2 /* CustomSecureField.swift */,
@@ -606,6 +609,7 @@
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
+				0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,

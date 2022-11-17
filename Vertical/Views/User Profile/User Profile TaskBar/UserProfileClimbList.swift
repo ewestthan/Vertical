@@ -38,7 +38,10 @@ struct UserProfileClimbRow: View {
                 Spacer()
                 Text(climb.name)
                 Spacer()
-                Text(">")
+                Image("arrow").resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: 10, maxHeight: 10 )
+                    .rotationEffect(Angle(degrees: 180))
             }
             .padding([.top, .bottom], 10)
             .padding([.leading, .trailing], 25.0)

@@ -30,7 +30,7 @@ struct UserRow: Hashable, Codable {
 }
 
 struct SearchUserRow: View {
-    var user: UserRow
+    var user: User
     
     var body: some View {
         HStack{
@@ -45,15 +45,15 @@ struct SearchUserRow: View {
     private var content: some View{
         VStack{
             HStack{
-                Image(user.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 35, height: 35)
-                    .clipShape(Circle())
+//                Image(user.image)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 35, height: 35)
+//                    .clipShape(Circle())
 
                 VStack(alignment: .leading){
-                    Text(user.handle).font(.system(size: 16))
-                    Text(user.location).font(.system(size: 12))
+                    Text(user.username).font(.system(size: 16))
+//                    Text(user.location).font(.system(size: 12))
                 }.padding(.leading, 10)
                 Spacer()
             }
@@ -67,7 +67,8 @@ struct UserSearch: View {
     
     let searchText: String
     @State var searchCollection = users
-    
+    @ObservedObject var viewModel: SearchViewModel
+
     var body: some View{
         scrollForEach
     }
@@ -75,9 +76,10 @@ struct UserSearch: View {
     var scrollForEach: some View {
         ScrollView{
             LazyVStack{
-                ForEach(users.filter({ searchText.isEmpty ? true : $0.handle.contains(searchText)}), id: \.id){ user in
-                    NavigationLink(destination: UserProfile(user: user))
-                    { SearchUserRow(user: user).animation(.linear(duration: 0.3))
+                ForEach(viewModel.users.filter({ searchText.isEmpty ? true : $0.username.contains(searchText)}), id: \.id){ user in
+                    NavigationLink(
+                        destination: Text("")){
+                        SearchUserRow(user: user).animation(.linear(duration: 0.3))
                             .frame(maxHeight: 60)
                     }
                 }
@@ -88,6 +90,6 @@ struct UserSearch: View {
 
 struct UserSearch_Previews: PreviewProvider {
     static var previews: some View {
-        UserSearch(searchText: "")
+        UserSearch(searchText: "", viewModel: SearchViewModel())
     }
 }

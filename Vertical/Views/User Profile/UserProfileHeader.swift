@@ -68,6 +68,7 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
+                logoutButton.frame(alignment: .leading)
                 Text(user.name).font(.system(size: 32))
                     .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                 Text("@" + user.handle).font(.system(size: 14)).foregroundColor(.gray)
@@ -75,8 +76,16 @@ struct UserProfileHeader: View {
                 UserProfilePic(pic: user.image)
             }.offset(y: -75)
                 .frame(maxHeight: 100)
-                
+            
         }
+    }
+    var logoutButton: some View{
+        Button { Task{
+            try await AuthViewModel.shared.signout()
+        }} label: {
+            Text("Logout").foregroundColor(.black)
+        }
+
     }
 }
 

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411E80E291C237D00492C9F /* ImagePicker.swift */; };
 		0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E813291D715D004EE6F2 /* AuthViewModel.swift */; };
 		0414E816291D7322004EE6F2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E815291D7322004EE6F2 /* RegistrationView.swift */; };
 		0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E817291D7334004EE6F2 /* ResetPasswordView.swift */; };
 		0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E819291D7450004EE6F2 /* CustomSecureField.swift */; };
 		0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E81B291D746C004EE6F2 /* CustomTextField.swift */; };
-		0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411E80E291C237D00492C9F /* ImagePicker.swift */; };
 		042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E52911CDCB008C4E5B /* UserProfileFilter.swift */; };
 		042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042441E82911CEFD008C4E5B /* VideoPostForm.swift */; };
 		042B72C829107F7B007E1691 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72C729107F7B007E1691 /* Search.swift */; };
@@ -46,6 +46,7 @@
 		0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DAB52912EF9000C02360 /* AreaSearch.swift */; };
 		048F53E1291D9D3B0053F433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E0291D9D3B0053F433 /* Constants.swift */; };
 		048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E2291DA1A10053F433 /* SearchViewModel.swift */; };
+		04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */; };
 		04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */; };
 		04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD941F2910B8C300D36C2E /* SearchBar.swift */; };
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
@@ -103,12 +104,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0411E80E291C237D00492C9F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0414E813291D715D004EE6F2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0414E815291D7322004EE6F2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		0414E817291D7334004EE6F2 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		0414E819291D7450004EE6F2 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		0414E81B291D746C004EE6F2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		0411E80E291C237D00492C9F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		042441E52911CDCB008C4E5B /* UserProfileFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileFilter.swift; sourceTree = "<group>"; };
 		042441E82911CEFD008C4E5B /* VideoPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPostForm.swift; sourceTree = "<group>"; };
 		042B72C729107F7B007E1691 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		0474DAB52912EF9000C02360 /* AreaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearch.swift; sourceTree = "<group>"; };
 		048F53E0291D9D3B0053F433 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		048F53E2291DA1A10053F433 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVideos.swift; sourceTree = "<group>"; };
 		04DD941F2910B8C300D36C2E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				042441E82911CEFD008C4E5B /* VideoPostForm.swift */,
+				04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */,
 			);
 			path = "Post Form";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
+				04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
 				0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */,
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,

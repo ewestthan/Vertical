@@ -10,7 +10,8 @@ import Firebase
 class AuthViewModel: ObservableObject{
     
     @Published var userSession: FirebaseAuth.User?
-
+    @Published var currentUser: User?
+    
     static let shared = AuthViewModel()
     
     init(){
@@ -35,7 +36,7 @@ class AuthViewModel: ObservableObject{
         
         guard let image = image else {return}
         
-        try await ImageUploader.uploadImage(image: image) { imageUrl in
+        try await ImageUploader.uploadImage(image: image, type: .profile) { imageUrl in
             Auth.auth().createUser(withEmail: email, password: password) {result, error in
                 if let error = error{
                     print(error.localizedDescription)
@@ -71,7 +72,7 @@ class AuthViewModel: ObservableObject{
         
         COLLECTION_USERS.document(uid).getDocument{ snapshot, _ in
             guard let user = try? snapshot?.data(as: User.self) else {return}
-            print("DEBUG: User is \(user)")
+            self.currentUser = user
         }
     }
 }

@@ -12,6 +12,12 @@ struct User: Identifiable, Decodable{
     let email: String
     let profileImageUrl: String
     let fullname: String
+    let location: String
+    let description: String
+    let followers: Int
+    let following: Int
+    let ascents: Int
+    
     @DocumentID var id: String?
 }
 

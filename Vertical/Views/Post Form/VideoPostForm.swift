@@ -19,6 +19,8 @@ struct VideoPostForm: View {
     @State private var grade: Int = 0
     @State private var sliderValue: Double = 0
     @State private var selectedDate = Date()
+    @Binding var tabIndex: Int
+    @ObservedObject var viewModel = UploadPostViewModel()
     
     var body: some View {
         
@@ -92,7 +94,18 @@ struct VideoPostForm: View {
                     DatePicker("", selection: $selectedDate, displayedComponents: .date)
                         .frame(maxWidth: 120)
                 }
-                Button(action: {}, label:{ Text("Share")
+                Button(action: {
+                    Task{
+                        if let image = selectedImage {
+                            await viewModel.uploadPost(description: description, grade: grade, rating: Int(sliderValue), date: selectedDate, image: image)
+                            { _ in
+                                description = ""
+                                postImage = nil
+                                tabIndex = 0
+                            }
+                        }
+                    }
+                }, label:{ Text("Share")
                         .frame(maxWidth: 120, maxHeight: 35)
                         .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                         .foregroundColor(.white)
@@ -114,6 +127,6 @@ extension VideoPostForm{
 
 struct VideoPostForm_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPostForm()
+        VideoPostForm(tabIndex: .constant(0))
     }
 }

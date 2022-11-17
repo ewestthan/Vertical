@@ -6,10 +6,12 @@
 //
 
 import Combine
+import Firebase
 
 final class UserSearchViewModel: ObservableObject {
     @Published var userSearchRepository = SearchService()
     @Published var users: [UserInfo] = []
+    @Published var userImages: [String: URL?] = [:]
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -17,6 +19,11 @@ final class UserSearchViewModel: ObservableObject {
         userSearchRepository.$users
             .assign(to: \.users, on: self)
             .store(in: &cancellables)
+        
+        userSearchRepository.$userImages
+            .assign(to: \.userImages, on: self)
+            .store(in: &cancellables)
+        
     }
     
     func search(userName: String) {

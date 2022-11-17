@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SearchUserRow: View {
     var user: UserInfo
+    @EnvironmentObject var userSearchViewModel: UserSearchViewModel
     
     var body: some View {
         HStack{
@@ -23,13 +25,8 @@ struct SearchUserRow: View {
     private var content: some View{
         VStack{
             HStack{
-                AsyncImage(url: URL(string: user.profileImageUrl)) { image in
-                        image
-                            .resizable()
+                WebImage(url: userSearchViewModel.userImages[user.profileImageUrl] == nil ? nil : userSearchViewModel.userImages[user.profileImageUrl]!)                            .resizable()
                             .scaledToFill()
-                } placeholder: {
-                    Color.gray
-                }
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
 

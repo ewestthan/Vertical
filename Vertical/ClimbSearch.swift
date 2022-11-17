@@ -16,7 +16,7 @@ class SearchService: ObservableObject {
     @Published var climbImages: [String: URL?] = [:]
     @Published var userImages: [String: URL?] = [:]
     let climbPath = "ClimbProfile"
-    let userPath = "User"
+    let userPath = "users"
     
     init() {
         // Something
@@ -31,7 +31,9 @@ class SearchService: ObservableObject {
             } else {
                 for document in querySnapshot!.documents {
                     do {
-                        try self.users.append(document.data(as: UserInfo.self))
+                        let user = try document.data(as: UserInfo.self)
+                        self.users.append(user)
+                        self.getUserURL(path: user.profileImageUrl)
                     } catch {
                         print(error)
                     }
@@ -62,7 +64,6 @@ class SearchService: ObservableObject {
     func getClimbURL(path: String) {
             storage.reference(forURL: path).downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
-                    print(error)
                     return
                 }
                 if self.climbImages[path] == nil {
@@ -72,7 +73,7 @@ class SearchService: ObservableObject {
         }
     
     func getUserURL(path: String) {
-            storage.reference().child(path).downloadURL(completion: { url, error in
+        storage.reference(forURL: path).downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     return
                 }

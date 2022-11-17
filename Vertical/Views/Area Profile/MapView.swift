@@ -12,7 +12,7 @@ struct MapView: View {
     
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 44.4778528, longitude: -73.1964637),
-        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
     )
 
     var body: some View {

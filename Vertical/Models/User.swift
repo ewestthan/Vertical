@@ -5,17 +5,31 @@
 //  Created by user227908 on 11/1/22.
 //
 
-import SwiftUI
+import FirebaseFirestoreSwift
 
-class User: ObservableObject {
-    @Published var isAuthenticated = false
+struct User: Identifiable, Decodable{
+    let username: String
+    let email: String
+    let profileImageUrl: String
+    let fullname: String
+    let location: String
+    let description: String
+    let followers: Int
+    let following: Int
+    let ascents: Int
     
-    @Published var email = ""
-    @Published var name = ""
-    
-    @Published var uid = ""
-    
+    @DocumentID var id: String?
 }
+
+//class User: ObservableObject {
+//    @Published var isAuthenticated = false
+//    
+//    @Published var email = ""
+//    @Published var name = ""
+//    
+//    @Published var uid = ""
+//    
+//}
 
 struct UserInfo: Hashable, Codable {
     var email: String

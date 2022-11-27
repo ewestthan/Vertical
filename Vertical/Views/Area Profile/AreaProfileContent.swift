@@ -15,7 +15,7 @@ struct AreaProfileContent: View {
     
     var body: some View {
         VStack {
-            Text(self.area.description)
+            Text(self.area.bio)
                 .padding()
                 .frame(width: .infinity)
                 .multilineTextAlignment(.center)
@@ -35,10 +35,10 @@ struct AreaProfileContent: View {
                             Text("Weather")
                         }
                         if (tab.rawValue == "Info") {
-                            Text("Located just 30 minutes from downtown Burlington, Bolton has some of the most extensive options for climbing in the Green Mountain State. ")
+                            Text(self.area.description)
                                 .padding(40)
                                 .multilineTextAlignment(.center)
-                                .frame(maxHeight: .infinity, alignment: .top)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                         }
                     }
                     .tag(tab)

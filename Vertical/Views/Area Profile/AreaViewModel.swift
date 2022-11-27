@@ -12,13 +12,12 @@ import Combine
 class AreaViewModel: ObservableObject {
     
     @Published var area: Area = Area()
-    @Published public var id: String = "Ngyru3cnP0fjmnOzL5CY"
     
     private let store = FirebaseService()
     
-    func loadArea() async {
+    func loadArea(id: String) async {
         do {
-            self.area = try await store.fetchAreaInfo(self.id)
+            self.area = try await store.fetchAreaInfo(id)
         } catch {
             print(error)
         }

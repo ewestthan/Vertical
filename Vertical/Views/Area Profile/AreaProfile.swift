@@ -14,7 +14,6 @@ struct AreaProfile: View {
     
     init(id: String) {
         self.id = id
-        areaVM.id = id
     }
     
     var body: some View {
@@ -24,6 +23,9 @@ struct AreaProfile: View {
                     AreaProfileHeader(area: areaVM.area)
                     AreaProfileContent(area: areaVM.area)
                 }
+                .onAppear{ Task {
+                    await areaVM.loadArea(id: self.id)
+                }}
             }
         }
     }
@@ -32,6 +34,6 @@ struct AreaProfile: View {
 
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfile(id: "nyeaiKZxDTg81GS1GYWV")
+        AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
     }
 }

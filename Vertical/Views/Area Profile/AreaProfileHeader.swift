@@ -85,7 +85,7 @@ struct AreaProfileHeader: View {
                             isFollowing = false
                         })
                     }
-                    NavigationLink(destination: VideoPostForm()) {
+                    NavigationLink(destination: VideoPostForm(tabIndex: .constant(0))) {
                         Text("+")
                             .padding([.leading, .trailing], 15)
                             .padding([.bottom, .top], 10)

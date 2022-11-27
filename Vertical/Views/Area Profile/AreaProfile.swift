@@ -9,20 +9,20 @@ import SwiftUI
 
 struct AreaProfile: View {
     
-    let id: String
-    var data: Area
+    var id: String
+    @StateObject private var areaVM = AreaViewModel()
     
     init(id: String) {
         self.id = id
-        self.data = Area()
+        areaVM.id = id
     }
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    AreaProfileHeader(area: self.data)
-                    AreaProfileContent(area: self.data)
+                    AreaProfileHeader(area: areaVM.area)
+                    AreaProfileContent(area: areaVM.area)
                 }
             }
         }

@@ -24,7 +24,7 @@ struct AreaProfileHeader: View {
                 .clipped()
             HStack(spacing: 70) {
                 VStack(alignment: .leading) {
-                    Text("Bolton Valley")
+                    Text(area.name)
                         .font(.system(size: 24, weight: .heavy))
                         .multilineTextAlignment(.leading)
                     Text(area.location)

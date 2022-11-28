@@ -9,18 +9,24 @@ import SwiftUI
 
 struct AreaProfile: View {
     
-    let id: String
-    var data: Area
+    var id: String
+    @StateObject private var areaVM = AreaViewModel()
     
     init(id: String) {
         self.id = id
-        self.data = Area()
     }
     
     var body: some View {
-        VStack{
-            AreaProfileHeader(area: self.data)
-            AreaProfileContent(area: self.data)
+        NavigationView {
+            ZStack {
+                VStack {
+                    AreaProfileHeader(area: areaVM.area)
+                    AreaProfileContent(area: areaVM.area)
+                }
+                .onAppear{ Task {
+                    await areaVM.loadArea(id: self.id)
+                }}
+            }
         }
     }
     
@@ -28,6 +34,6 @@ struct AreaProfile: View {
 
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfile(id: "nyeaiKZxDTg81GS1GYWV")
+        AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
     }
 }

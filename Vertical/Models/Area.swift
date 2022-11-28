@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Area: Hashable, Codable, Identifiable {
-    var id: String = "-1"
-    var name: String = "Bolton"
-    var location: String = "Vermont, USA"
-    var image: String = "jimmy"
-    var zip: String = "05466"
+public struct Area: Hashable, Codable, Identifiable {
+    @DocumentID public var id: String?
+    var name: String = "Uninitialized"
+    var location: String = "Uninitialized"
+    var image: String = "bolton"
+    var zip: String = "Uninitialized"
+    var bio: String = "Uninitialized"
     var follower_count: Int = 100
     var boulder_count: Int = 100
-    var rank: Int = 4
-    var description: String = "Bolton, VT is a great place to climb! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis sapien sodales."
+    var rank: Int = 3
+    var description: String = "Uninitialized"
+    var elevation: Int = 100
 }
 
 func loadAreas() -> [Area]{
@@ -26,5 +29,4 @@ func loadAreas() -> [Area]{
     return areas
 }
 
-//var areas: [Area] = load("Areas.json")
 var areas: [Area] = loadAreas()

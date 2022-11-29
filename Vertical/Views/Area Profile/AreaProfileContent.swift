@@ -29,7 +29,7 @@ struct AreaProfileContent: View {
                                 .padding()
                         }
                         if (tab.rawValue == "Map") {
-                            MapView()
+                            MapView(area: area)
                         }
                         if (tab.rawValue == "Weather") {
                             Text("Weather")

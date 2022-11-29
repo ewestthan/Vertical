@@ -16,6 +16,7 @@ struct SearchBar: View {
     
     @EnvironmentObject var climbSearchViewModel: ClimbSearchViewModel
     @EnvironmentObject var userSearchViewModel: UserSearchViewModel
+    @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
  
     var body: some View {
             HStack {
@@ -27,6 +28,9 @@ struct SearchBar: View {
                         }
                         if ($tabSelected.wrappedValue == .users) {
                             userSearchViewModel.search(userName: text)
+                        }
+                        if ($tabSelected.wrappedValue == .areas) {
+                            areaSearchViewModel.search(areaName: text)
                         }
                     }
                     .padding(7)

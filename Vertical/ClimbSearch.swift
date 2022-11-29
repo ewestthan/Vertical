@@ -13,10 +13,13 @@ class SearchService: ObservableObject {
     let storage = Storage.storage()
     @Published var climbs: [ClimbProfileModel] = []
     @Published var users: [UserInfo] = []
+    @Published var areas: [Area] = []
     @Published var climbImages: [String: URL?] = [:]
     @Published var userImages: [String: URL?] = [:]
+    @Published var areaImages: [String: URL?] = [:]
     let climbPath = "ClimbProfile"
     let userPath = "users"
+    let areaPath = "areas"
     
     init() {
         // Something
@@ -44,7 +47,7 @@ class SearchService: ObservableObject {
     
     func climbSearch(climbName: String) {
         self.climbs = []
-        firestore.collection(self.climbPath).whereField("Name", isEqualTo: climbName).getDocuments() { (querySnapshot, error) in
+        firestore.collection(self.climbPath).whereField("Name", isEqualTo: climbName).getDocuments { (querySnapshot, error) in
                 if let error = error {
                     print(error)
                 } else {
@@ -58,6 +61,25 @@ class SearchService: ObservableObject {
                         }
                     }
                 }
+        }
+    }
+
+    func areaSearch(areaName: String) {
+        self.areas = []
+        firestore.collection(self.areaPath).whereField("name", isEqualTo: areaName).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print(error)
+            } else {
+                for document in querySnapshot!.documents {
+                    do {
+                        let area = try document.data(as: Area.self)
+                        self.areas.append(area)
+                        self.getAreaURL(path: area.image)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
         }
     }
     
@@ -79,6 +101,17 @@ class SearchService: ObservableObject {
                 }
                 if self.userImages[path] == nil {
                     self.userImages[path] = url
+                }
+            })
+        }
+    
+    func getAreaURL(path: String) {
+        storage.reference(forURL: path).downloadURL(completion: { url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                if self.areaImages[path] == nil {
+                    self.areaImages[path] = url
                 }
             })
         }

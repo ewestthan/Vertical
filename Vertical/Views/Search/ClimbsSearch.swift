@@ -51,7 +51,6 @@ struct SearchClimbRowView: View {
 struct ClimbSearch: View {
     
     let climbs: [ClimbProfileModel]
-    let images: [String: URL?]
 
     var body: some View{
         scrollForEach
@@ -84,6 +83,6 @@ struct ClimbSearch: View {
 
 struct ClimbSearch_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbSearch(climbs: [ClimbProfileModel(Name: "Example", Grade: "V3", Rating: 4, Area: "Example Area", Picture_URL: "Something")], images: [:])
+        ClimbSearch(climbs: [ClimbProfileModel(Name: "Example", Grade: "V3", Rating: 4, Area: "Example Area", Picture_URL: "Something")])
     }
 }

@@ -11,6 +11,7 @@ struct Search: View {
     @State private var tabSelected: SearchTab = .users
     @ObservedObject var climbSearch = ClimbSearchViewModel()
     @ObservedObject var userSearch = UserSearchViewModel()
+    @ObservedObject var areaSearch = AreaSearchViewModel()
     
     @State var searchText = ""
     
@@ -29,10 +30,10 @@ struct Search: View {
                                     UserSearch(users: userSearch.users)
                                 }
                                 if(tab.rawValue == "climbs"){
-                                    ClimbSearch(climbs: climbSearch.climbs, images: climbSearch.climbImages)
+                                    ClimbSearch(climbs: climbSearch.climbs)
                                 }
                                 if(tab.rawValue == "areas"){
-                                    AreaSearch(searchText: searchText)
+                                    AreaSearch(areas: areaSearch.areas)
                                 }
                             }.padding([.leading, .trailing], 10)
                                 .tag(tab)
@@ -43,6 +44,7 @@ struct Search: View {
         }
         .environmentObject(climbSearch)
         .environmentObject(userSearch)
+        .environmentObject(areaSearch)
     }
 }
 

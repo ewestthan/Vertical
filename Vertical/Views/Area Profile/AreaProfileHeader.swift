@@ -7,16 +7,18 @@
 
 import SwiftUI
 import Foundation
+import SDWebImageSwiftUI
 
 struct AreaProfileHeader: View {
     
     let area: Area
+    @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
 
     var body: some View {
         VStack {
             HStack(spacing: 40) {
                 HStack {
-                    Image(area.image)
+                    WebImage(url: areaSearchViewModel.areaImages[area.image] == nil ? nil : areaSearchViewModel.areaImages[area.image]!)
                         .resizable()
                         .frame(width: 75, height: 75)
                         .clipShape(Circle())
@@ -78,6 +80,6 @@ struct AreaProfileHeader: View {
 
 struct AreaProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfileHeader(area: Area())
+        AreaProfileHeader(area: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
     }
 }

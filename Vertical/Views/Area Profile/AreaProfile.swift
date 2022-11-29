@@ -9,13 +9,7 @@ import SwiftUI
 
 struct AreaProfile: View {
     
-    let id: String
     var data: Area
-    
-    init(id: String) {
-        self.id = id
-        self.data = Area()
-    }
     
     var body: some View {
         VStack{
@@ -28,6 +22,6 @@ struct AreaProfile: View {
 
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfile(id: "nyeaiKZxDTg81GS1GYWV")
+        AreaProfile(data: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
     }
 }

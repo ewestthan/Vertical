@@ -50,6 +50,6 @@ struct AreaProfileContent: View {
 
 struct AreaProfileContent_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfileContent(area: Area())
+        AreaProfileContent(area: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
     }
 }

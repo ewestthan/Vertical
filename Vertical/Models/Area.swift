@@ -6,19 +6,22 @@
 //
 
 import Foundation
-import SwiftUI
 import FirebaseFirestoreSwift
 
-struct Area: Hashable, Codable, Identifiable {
-    @DocumentID var id: String?
-    var name: String
-    var location: String
-    var image: String
-    var zip: String
-    var follower_count: Int
-    var boulder_count: Int
-    var rank: Int
-    var elevation: Int
-    var bio: String
-    var description: String
+public struct Area: Hashable, Codable, Identifiable {
+    @DocumentID public var id: String?
+    var name: String = "Uninitialized"
+    var location: String = "Uninitialized"
+    var image: String = "bolton"
+    var zip: String = "Uninitialized"
+    var bio: String = "Uninitialized"
+    var follower_count: Int = 100
+    var boulder_count: Int = 100
+    var rank: Int = 3
+    var description: String = "Uninitialized"
+    var elevation: Int = 100
 }
+
+var url = "bolton"
+
+var emptyArea = Area(name: "Uninitialized", location: "Uninitialized", image: url, zip: "06070", bio: "bio", follower_count: 100, boulder_count: 100, rank: 4, description: "desc", elevation: 100)

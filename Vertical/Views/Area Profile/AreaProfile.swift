@@ -8,24 +8,56 @@
 import SwiftUI
 
 struct AreaProfile: View {
-    var data: Area
     
+    @StateObject private var areaVM = AreaViewModel(area: emptyArea)
+    var area: Area
+    var id: String
+    var loadFromId: Bool
+    
+    
+    init(id: String) {
+        self.id = id
+        self.loadFromId = true
+        self.area = emptyArea
+    }
+    
+    init(area: Area) {
+        self.id = "-1"
+        self.loadFromId = false
+        self.area = area
+    }
 
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    AreaProfileHeader(area: data)
-                    AreaProfileContent(area: data)
+                    if (self.loadFromId) {
+                        AreaProfileHeader(area: areaVM.area)
+                            .edgesIgnoringSafeArea(.top)
+                        AreaProfileContent(area: areaVM.area)
+                    }
+                    else {
+                        AreaProfileHeader(area: self.area)
+                            .edgesIgnoringSafeArea(.top)
+                        AreaProfileContent(area: self.area)
+                    }
                 }
+                .onAppear{ Task {
+                    if (self.loadFromId) {
+                        await areaVM.loadArea(id: self.id)
+                    }
+                }}
             }
         }
+        .environmentObject(AreaSearchViewModel())
     }
     
 }
 
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfile(data: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
+        //AreaProfile(area: emptyArea)
+        AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
+        //AreaProfile(id: "YacnDtXEvP8FdA8nG8K9")
     }
 }

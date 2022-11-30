@@ -56,7 +56,7 @@ struct AreaSearch: View {
         ScrollView{
             LazyVStack{
                 ForEach(areas) { area in
-                    NavigationLink(destination: AreaProfile(data: area)) {
+                    NavigationLink(destination: AreaProfile(area: area)) {
                         SearchAreaRowView(area: area).animation(.linear(duration: 0.3)).frame(maxHeight: 60)
                     }
                 }

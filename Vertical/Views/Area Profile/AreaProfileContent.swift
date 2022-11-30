@@ -15,7 +15,7 @@ struct AreaProfileContent: View {
     
     var body: some View {
         VStack {
-            Text(self.area.description)
+            Text(self.area.bio)
                 .padding()
                 .frame(width: .infinity)
                 .multilineTextAlignment(.center)
@@ -25,7 +25,8 @@ struct AreaProfileContent: View {
                 ForEach(AreaTab.allCases, id: \.rawValue) { tab in
                     HStack {
                         if (tab.rawValue == "Climbs") {
-                            Text("Climbs")
+                            UserProfileClimbList()
+                                .padding()
                         }
                         if (tab.rawValue == "Map") {
                             Text("Map")
@@ -34,7 +35,10 @@ struct AreaProfileContent: View {
                             Text("Weather")
                         }
                         if (tab.rawValue == "Info") {
-                            Text("Info")
+                            Text(self.area.description)
+                                .padding(40)
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                         }
                     }
                     .tag(tab)

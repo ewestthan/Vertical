@@ -11,23 +11,17 @@ import Firebase
 @main
 struct VerticalApp: App {
     
-    @StateObject var user = User()
-    
+//    @StateObject var user = User()
+    @EnvironmentObject var viewModel: AuthViewModel
+
     init() {
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
-            if user.isAuthenticated {
-                ContentView()
-                    .environmentObject(user)
-                
-            } else {
-                LoginView()
-                    .environmentObject(user)
-            }
-
+            ContentView()
+                .environmentObject(AuthViewModel.shared)
         }
     }
 }

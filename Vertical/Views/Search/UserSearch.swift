@@ -9,8 +9,12 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct SearchUserRow: View {
+<<<<<<< HEAD
     var user: UserInfo
     @EnvironmentObject var userSearchViewModel: UserSearchViewModel
+=======
+    var user: User
+>>>>>>> main
     
     var body: some View {
         HStack{
@@ -25,6 +29,7 @@ struct SearchUserRow: View {
     private var content: some View{
         VStack{
             HStack{
+<<<<<<< HEAD
                 WebImage(url: userSearchViewModel.userImages[user.profileImageUrl] == nil ? nil : userSearchViewModel.userImages[user.profileImageUrl]!)                            .resizable()
                             .scaledToFill()
                     .frame(width: 35, height: 35)
@@ -33,6 +38,17 @@ struct SearchUserRow: View {
                 VStack(alignment: .leading){
                     Text(user.username).font(.system(size: 16))
                     Text(user.location).font(.system(size: 12))
+=======
+//                Image(user.image)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 35, height: 35)
+//                    .clipShape(Circle())
+
+                VStack(alignment: .leading){
+                    Text(user.username).font(.system(size: 16))
+//                    Text(user.location).font(.system(size: 12))
+>>>>>>> main
                 }.padding(.leading, 10)
                 Spacer()
             }
@@ -44,8 +60,15 @@ struct SearchUserRow: View {
 
 struct UserSearch: View {
     
+<<<<<<< HEAD
     let users: [UserInfo]
     
+=======
+    let searchText: String
+    @State var searchCollection = users
+    @ObservedObject var viewModel: SearchViewModel
+
+>>>>>>> main
     var body: some View{
         scrollForEach
     }
@@ -53,9 +76,16 @@ struct UserSearch: View {
     var scrollForEach: some View {
         ScrollView{
             LazyVStack{
+<<<<<<< HEAD
                 ForEach(users, id: \.id){ user in
                     NavigationLink(destination: UserProfile(user: user))
                     { SearchUserRow(user: user).animation(.linear(duration: 0.3))
+=======
+                ForEach(viewModel.users.filter({ searchText.isEmpty ? true : $0.username.contains(searchText)}), id: \.id){ user in
+                    NavigationLink(
+                        destination: Text("")){
+                        SearchUserRow(user: user).animation(.linear(duration: 0.3))
+>>>>>>> main
                             .frame(maxHeight: 60)
                     }
                 }
@@ -66,6 +96,10 @@ struct UserSearch: View {
 
 struct UserSearch_Previews: PreviewProvider {
     static var previews: some View {
+<<<<<<< HEAD
         UserSearch(users: [UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5)])
+=======
+        UserSearch(searchText: "", viewModel: SearchViewModel())
+>>>>>>> main
     }
 }

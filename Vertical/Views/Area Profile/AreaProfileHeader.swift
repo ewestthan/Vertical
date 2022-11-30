@@ -12,6 +12,7 @@ import SDWebImageSwiftUI
 struct AreaProfileHeader: View {
     
     let area: Area
+<<<<<<< HEAD
     @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
 
     var body: some View {
@@ -30,6 +31,26 @@ struct AreaProfileHeader: View {
                         Text(area.location)
                             .font(.system(size: 14, weight: .medium))
                     }
+=======
+    @State private var isFollowing: Bool = false
+    @State private var unfollowConfirm: Bool = false
+
+    var body: some View {
+        VStack {
+            Image(area.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxHeight: 100)
+                .shadow(color: .black, radius: 2, x: 0, y: 0)
+                .clipped()
+            HStack(spacing: 70) {
+                VStack(alignment: .leading) {
+                    Text(area.name)
+                        .font(.system(size: 24, weight: .heavy))
+                        .multilineTextAlignment(.leading)
+                    Text(area.location)
+                        .font(.system(size: 14, weight: .medium))
+>>>>>>> main
                 }
                 HStack {
                     VStack {
@@ -46,30 +67,57 @@ struct AreaProfileHeader: View {
                     }
                 }
             }
-            HStack(spacing: 70) {
-                HStack {
+            HStack(spacing: 0) {
+                HStack(alignment: .center) {
                     Button(action:{
-                        
+                        if (isFollowing) {
+                            unfollowConfirm = true
+                        }
+                        if (!isFollowing) {
+                            isFollowing = true
+                        }
                     }, label: {
-                        Text("Follow")
-                            .padding([.leading, .trailing], 20)
-                            .padding([.bottom, .top], 10)
-                            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
+                        if (isFollowing) {
+                            Text("Following")
+                                .padding([.leading, .trailing], 20)
+                                .padding([.bottom, .top], 10)
+                                .background(.white)
+                                .foregroundColor(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
+                                .cornerRadius(20)
+                                .overlay(
+                                    Capsule(style: .continuous)
+                                        .stroke(.purple, lineWidth: 2)
+                                )
+                        }
+                        else {
+                            Text("Follow")
+                                .padding([.leading, .trailing], 20)
+                                .padding([.bottom, .top], 10)
+                                .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                        }
                     })
-                    Button(action:{
-                        
-                    }, label: {
+                    .confirmationDialog(
+                        "Unfollow this area?",
+                        isPresented: $unfollowConfirm,
+                        titleVisibility: .visible
+                    ) {
+                        Button("Yes", role: .destructive, action: {
+                            isFollowing = false
+                        })
+                    }
+                    NavigationLink(destination: VideoPostForm(tabIndex: .constant(0))) {
                         Text("+")
                             .padding([.leading, .trailing], 15)
                             .padding([.bottom, .top], 10)
                             .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                             .foregroundColor(.white)
                             .cornerRadius(20)
-                    })
+                    }
                     Text("•••")
                 }
+                .frame(width: 260, alignment: .leading)
                 StarsView(rating: area.rank)
                     .frame(width: 100)
             }

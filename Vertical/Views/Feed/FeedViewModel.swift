@@ -14,7 +14,6 @@ class FeedViewModel: ObservableObject {
     
     private let fs = FirebaseService()
 
-    
     @MainActor
     func loadPostsFollowing(userUID: String) async {
         do {

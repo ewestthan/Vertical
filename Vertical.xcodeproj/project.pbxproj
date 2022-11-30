@@ -53,6 +53,7 @@
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
 		5E15EDA02922D7B700CCA5C4 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */; };
+		495C26892936D33800169AE8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C26882936D33800169AE8 /* MapView.swift */; };
 		5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */; };
 		5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF17291D3D65000639D0 /* ClimbProfile.swift */; };
 		5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */; };
@@ -158,6 +159,7 @@
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
 		5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
+		495C26882936D33800169AE8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClimbSearch.swift; path = Vertical/ClimbSearch.swift; sourceTree = SOURCE_ROOT; };
 		5E33FF17291D3D65000639D0 /* ClimbProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfile.swift; sourceTree = "<group>"; };
 		5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSearchViewModel.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				FD95C7712911EE6A00A54810 /* AreaProfile.swift */,
+				495C26882936D33800169AE8 /* MapView.swift */,
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
 				FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */,
 				FD31467F293302D700FD815D /* AreaViewModel.swift */,
@@ -661,6 +664,7 @@
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
 				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
+				495C26892936D33800169AE8 /* MapView.swift in Sources */,
 				0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */,
 				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
 				0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */,

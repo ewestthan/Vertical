@@ -12,11 +12,33 @@ struct AreaProfileContent: View {
     
     @State private var tabSelected: AreaTab = .Climbs
     var area: Area
+    var bio: String
+    var description: String
+    
+    init(area: Area) {
+        
+        self.area = area
+        
+        if let bio = area.bio {
+            self.bio = bio
+        }
+        else {
+            self.bio = "None"
+        }
+        
+        if let description = area.description {
+            self.description = description
+        }
+        else {
+            self.description = "None"
+        }
+        
+    }
     
     var body: some View {
         VStack {
-            Text(self.area.bio)
-                .padding()
+            Text(self.bio)
+                .padding(20)
                 .frame(width: .infinity)
                 .multilineTextAlignment(.center)
             Divider()
@@ -29,13 +51,13 @@ struct AreaProfileContent: View {
                                 .padding()
                         }
                         if (tab.rawValue == "Map") {
-                            Text("Map")
+                            MapView()
                         }
                         if (tab.rawValue == "Weather") {
                             Text("Weather")
                         }
                         if (tab.rawValue == "Info") {
-                            Text(self.area.description)
+                            Text(self.description)
                                 .padding(40)
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -54,6 +76,6 @@ struct AreaProfileContent: View {
 
 struct AreaProfileContent_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfileContent(area: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
+        AreaProfileContent(area: Area())
     }
 }

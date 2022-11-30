@@ -11,37 +11,94 @@ import SDWebImageSwiftUI
 
 struct AreaProfileHeader: View {
     
-    let area: Area
     @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
     @State private var isFollowing: Bool = false
     @State private var unfollowConfirm: Bool = false
     
+    let area: Area
+    var name: String
+    var location: String
+    var image: String
+    var follower_count: Int
+    var boulder_count: Int
+    var rank: Int
+    
+    init(area: Area) {
+        
+        self.area = area
+        
+        if let name = area.name {
+            self.name = name
+        }
+        else {
+            self.name = "None"
+        }
+        
+        if let location = area.location {
+            self.location = location
+        }
+        else {
+            self.location = "None"
+        }
+        
+        if let image = area.image {
+            self.image = image
+        }
+        else {
+            self.image = "smuggs"
+        }
+        
+        if let follower_count = area.follower_count {
+            self.follower_count = follower_count
+        }
+        else {
+            self.follower_count = -1
+        }
+        
+        if let boulder_count = area.boulder_count {
+            self.boulder_count = boulder_count
+        }
+        else {
+            self.boulder_count = -1
+        }
+        
+        if let rank = area.rank {
+            self.rank = rank
+        }
+        else {
+            self.rank = 5
+        }
+        
+    }
+    
+    
     var body: some View {
         VStack {
-            HStack(spacing: 40) {
-                HStack {
-                    WebImage(url: areaSearchViewModel.areaImages[area.image] == nil ? nil : areaSearchViewModel.areaImages[area.image]!)
-                        .resizable()
-                        .frame(width: 75, height: 75)
-                        .clipShape(Circle())
-                        .shadow(radius: 7)
-                    VStack {
-                        Text(area.name)
-                            .font(.system(size: 26, weight: .heavy))
-                            .frame(width: .infinity, alignment: .leading)
-                        Text(area.location)
-                            .font(.system(size: 14, weight: .medium))
-                    }
+            //WebImage(url: areaSearchViewModel.areaImages[self.image] == nil ? nil : areaSearchViewModel.areaImages[self.image]!)
+            Image("smuggs")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxHeight: 200)
+                .shadow(color: .black, radius: 2, x: 0, y: 0)
+                .clipped()
+            HStack(spacing: 70) {
+                VStack(alignment: .leading) {
+                    
+                    Text(self.name)
+                        .font(.system(size: 20, weight: .heavy))
+                        .multilineTextAlignment(.leading)
+                    Text(self.location)
+                        .font(.system(size: 14, weight: .medium))
                 }
                 HStack {
                     VStack {
-                        Text(String(area.follower_count))
+                        Text(String(self.follower_count))
                             .font(.system(size: 18, weight: .heavy))
                         Text("Followers")
                             .font(.system(size: 14, weight: .regular))
                     }
                     VStack {
-                        Text(String(area.boulder_count))
+                        Text(String(self.boulder_count))
                             .font(.system(size: 18, weight: .heavy))
                         Text("Boulders")
                             .font(.system(size: 14, weight: .regular))
@@ -99,7 +156,7 @@ struct AreaProfileHeader: View {
                     Text("•••")
                 }
                 .frame(width: 260, alignment: .leading)
-                StarsView(rating: area.rank)
+                StarsView(rating: self.rank)
                     .frame(width: 100)
             }
         }
@@ -109,6 +166,7 @@ struct AreaProfileHeader: View {
 
 struct AreaProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfileHeader(area: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
+        AreaProfileHeader(area: Area())
+            .environmentObject(AreaSearchViewModel())
     }
 }

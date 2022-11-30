@@ -22,7 +22,6 @@ struct Search: View {
             ZStack {
                 VStack {
                     SearchBar(text: $searchText, tabSelected: $tabSelected)
-                    
                     SearchTabBar(selectedTab: $tabSelected)
                     Divider()
                     TabView(selection: $tabSelected) {

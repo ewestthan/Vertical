@@ -74,7 +74,7 @@ class SearchService: ObservableObject {
                     do {
                         let area = try document.data(as: Area.self)
                         self.areas.append(area)
-                        self.getAreaURL(path: area.image)
+                        self.getAreaURL(path: area.image!)
                     } catch {
                         print(error)
                     }

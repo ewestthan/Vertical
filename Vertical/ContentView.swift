@@ -13,18 +13,6 @@ struct ContentView: View {
     @State var selectedIndex = 1
     
     var body: some View {
-<<<<<<< HEAD
-        NavigationView{
-            TabView(){
-                Feed()
-                    .tabItem(){Image(systemName: "house")}
-                Search()
-                    .tabItem(){Image(systemName: "magnifyingglass")}
-                UserProfile(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
-                    .tabItem(){Image(systemName: "person")}
-            }.frame(alignment: .bottomLeading)
-                .accentColor(.gray)
-=======
         Group{
             if viewModel.userSession == nil {
                 LoginView()
@@ -62,7 +50,6 @@ struct ContentView: View {
                     }
                 }
             }
->>>>>>> main
         }
     }
 }

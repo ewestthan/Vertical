@@ -12,12 +12,9 @@ struct Search: View {
     @State var searchText = ""
     
     @ObservedObject var climbSearch = ClimbSearchViewModel()
-<<<<<<< HEAD
     @ObservedObject var userSearch = UserSearchViewModel()
     @ObservedObject var areaSearch = AreaSearchViewModel()
-=======
     @ObservedObject var viewModel = SearchViewModel()
->>>>>>> main
     
     
     var body: some View {
@@ -32,11 +29,7 @@ struct Search: View {
                         ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                             HStack{
                                 if(tab.rawValue == "users"){
-<<<<<<< HEAD
                                     UserSearch(users: userSearch.users)
-=======
-                                    UserSearch(searchText: searchText, viewModel: viewModel)
->>>>>>> main
                                 }
                                 if(tab.rawValue == "climbs"){
                                     ClimbSearch(climbs: climbSearch.climbs)

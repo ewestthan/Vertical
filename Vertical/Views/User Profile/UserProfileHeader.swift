@@ -8,12 +8,9 @@ import SwiftUI
 import Foundation
 
 struct UserProfileHeader: View {
-    
-<<<<<<< HEAD
+
     let user: UserInfo
-=======
-    let user: User
->>>>>>> main
+
     
     var body: some View {
         ZStack{
@@ -72,8 +69,7 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
-<<<<<<< HEAD
-=======
+
                 HStack{
                     Menu {
                         logoutButton
@@ -92,39 +88,29 @@ struct UserProfileHeader: View {
                     
                 }.frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.trailing, 20)
->>>>>>> main
                 Text(user.fullname).font(.system(size: 32))
                     .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                 Text("@" + user.username).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)
-<<<<<<< HEAD
                 UserProfilePic(pic: user.profileImageUrl)
-=======
-//                UserProfilePic(pic: user.profileImageUrl)
->>>>>>> main
             }.offset(y: -75)
                 .frame(maxHeight: 100)
             
         }
     }
-    var logoutButton: some View{
+    
+    var logoutButton: some View {
         Button { Task{
             try await AuthViewModel.shared.signout()
         }} label: {
             Text("Logout").foregroundColor(.black)
         }
+    }
 
-<<<<<<< HEAD
+}
+
 struct UserProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
         UserProfileHeader(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
-=======
->>>>>>> main
     }
 }
-
-//struct UserProfileHeader_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserProfileHeader(user: user)
-//    }
-//}

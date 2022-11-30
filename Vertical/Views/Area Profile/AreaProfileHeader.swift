@@ -12,9 +12,10 @@ import SDWebImageSwiftUI
 struct AreaProfileHeader: View {
     
     let area: Area
-<<<<<<< HEAD
     @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
-
+    @State private var isFollowing: Bool = false
+    @State private var unfollowConfirm: Bool = false
+    
     var body: some View {
         VStack {
             HStack(spacing: 40) {
@@ -31,26 +32,6 @@ struct AreaProfileHeader: View {
                         Text(area.location)
                             .font(.system(size: 14, weight: .medium))
                     }
-=======
-    @State private var isFollowing: Bool = false
-    @State private var unfollowConfirm: Bool = false
-
-    var body: some View {
-        VStack {
-            Image(area.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxHeight: 100)
-                .shadow(color: .black, radius: 2, x: 0, y: 0)
-                .clipped()
-            HStack(spacing: 70) {
-                VStack(alignment: .leading) {
-                    Text(area.name)
-                        .font(.system(size: 24, weight: .heavy))
-                        .multilineTextAlignment(.leading)
-                    Text(area.location)
-                        .font(.system(size: 14, weight: .medium))
->>>>>>> main
                 }
                 HStack {
                     VStack {

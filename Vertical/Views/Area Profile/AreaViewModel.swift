@@ -11,7 +11,11 @@ import Combine
 
 class AreaViewModel: ObservableObject {
     
-    @Published var area: Area = Area()
+    @Published var area: Area
+    
+    init(area: Area) {
+        self.area = area
+    }
     
     private let store = FirebaseService()
     

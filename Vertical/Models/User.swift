@@ -4,11 +4,7 @@
 //
 //  Created by user227908 on 11/1/22.
 //
-
-<<<<<<< HEAD
 import SwiftUI
-=======
->>>>>>> main
 import FirebaseFirestoreSwift
 
 struct User: Identifiable, Decodable{
@@ -25,22 +21,8 @@ struct User: Identifiable, Decodable{
     @DocumentID var id: String?
 }
 
-<<<<<<< HEAD
 struct UserInfo: Hashable, Codable, Identifiable {
     @DocumentID var id: String?
-=======
-//class User: ObservableObject {
-//    @Published var isAuthenticated = false
-//    
-//    @Published var email = ""
-//    @Published var name = ""
-//    
-//    @Published var uid = ""
-//    
-//}
-
-struct UserInfo: Hashable, Codable {
->>>>>>> main
     var email: String
     var username: String
     var fullname: String

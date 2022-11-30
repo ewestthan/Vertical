@@ -7,28 +7,31 @@
 
 import SwiftUI
 import Foundation
+import SDWebImageSwiftUI
 
 struct AreaProfileHeader: View {
     
     let area: Area
+    @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
     @State private var isFollowing: Bool = false
     @State private var unfollowConfirm: Bool = false
-
+    
     var body: some View {
         VStack {
-            Image(area.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxHeight: 100)
-                .shadow(color: .black, radius: 2, x: 0, y: 0)
-                .clipped()
-            HStack(spacing: 70) {
-                VStack(alignment: .leading) {
-                    Text(area.name)
-                        .font(.system(size: 24, weight: .heavy))
-                        .multilineTextAlignment(.leading)
-                    Text(area.location)
-                        .font(.system(size: 14, weight: .medium))
+            HStack(spacing: 40) {
+                HStack {
+                    WebImage(url: areaSearchViewModel.areaImages[area.image] == nil ? nil : areaSearchViewModel.areaImages[area.image]!)
+                        .resizable()
+                        .frame(width: 75, height: 75)
+                        .clipShape(Circle())
+                        .shadow(radius: 7)
+                    VStack {
+                        Text(area.name)
+                            .font(.system(size: 26, weight: .heavy))
+                            .frame(width: .infinity, alignment: .leading)
+                        Text(area.location)
+                            .font(.system(size: 14, weight: .medium))
+                    }
                 }
                 HStack {
                     VStack {
@@ -106,6 +109,6 @@ struct AreaProfileHeader: View {
 
 struct AreaProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfileHeader(area: Area())
+        AreaProfileHeader(area: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
     }
 }

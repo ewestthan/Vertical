@@ -8,8 +8,9 @@ import SwiftUI
 import Foundation
 
 struct UserProfileHeader: View {
-    
-    let user: User
+
+    let user: UserInfo
+
     
     var body: some View {
         ZStack{
@@ -68,6 +69,7 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
+
                 HStack{
                     Menu {
                         logoutButton
@@ -90,24 +92,25 @@ struct UserProfileHeader: View {
                     .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                 Text("@" + user.username).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)
-//                UserProfilePic(pic: user.profileImageUrl)
+                UserProfilePic(pic: user.profileImageUrl)
             }.offset(y: -75)
                 .frame(maxHeight: 100)
             
         }
     }
-    var logoutButton: some View{
+    
+    var logoutButton: some View {
         Button { Task{
             try await AuthViewModel.shared.signout()
         }} label: {
             Text("Logout").foregroundColor(.black)
         }
-
     }
+
 }
 
-//struct UserProfileHeader_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserProfileHeader(user: user)
-//    }
-//}
+struct UserProfileHeader_Previews: PreviewProvider {
+    static var previews: some View {
+        UserProfileHeader(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
+    }
+}

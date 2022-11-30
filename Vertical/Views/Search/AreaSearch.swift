@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SearchAreaRowView: View {
     var area: Area
+    @EnvironmentObject var areaSearchViewModel: AreaSearchViewModel
     
     var body: some View {
         HStack{
@@ -23,7 +25,7 @@ struct SearchAreaRowView: View {
     private var content: some View{
         VStack{
             HStack{
-                Image(area.image)
+                WebImage(url: areaSearchViewModel.areaImages[area.image] == nil ? nil : areaSearchViewModel.areaImages[area.image]!)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35, height: 35)
@@ -44,8 +46,7 @@ struct SearchAreaRowView: View {
 
 struct AreaSearch: View {
     
-    let searchText: String
-    @State var searchCollection = areas
+    let areas: [Area]
     
     var body: some View{
         scrollForEach
@@ -54,9 +55,9 @@ struct AreaSearch: View {
     var scrollForEach: some View {
         ScrollView{
             LazyVStack{
-                ForEach(areas.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.id){ area in
-                    NavigationLink(destination: AreaProfile(id: "nyeaiKZxDTg81GS1GYWV"))
-                    { SearchAreaRowView(area: area).animation(.linear(duration: 0.3)).frame(maxHeight: 60)
+                ForEach(areas) { area in
+                    NavigationLink(destination: AreaProfile(data: area)) {
+                        SearchAreaRowView(area: area).animation(.linear(duration: 0.3)).frame(maxHeight: 60)
                     }
                 }
             }
@@ -66,7 +67,7 @@ struct AreaSearch: View {
 
 struct AreaSearch_Previews: PreviewProvider {
     static var previews: some View {
-        AreaSearch(searchText: "")
+        AreaSearch(areas: [])
     }
 }
 

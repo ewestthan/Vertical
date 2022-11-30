@@ -8,24 +8,16 @@
 import SwiftUI
 
 struct AreaProfile: View {
+    var data: Area
     
-    var id: String
-    @StateObject private var areaVM = AreaViewModel()
-    
-    init(id: String) {
-        self.id = id
-    }
-    
+
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    AreaProfileHeader(area: areaVM.area)
-                    AreaProfileContent(area: areaVM.area)
+                    AreaProfileHeader(area: data)
+                    AreaProfileContent(area: data)
                 }
-                .onAppear{ Task {
-                    await areaVM.loadArea(id: self.id)
-                }}
             }
         }
     }
@@ -34,6 +26,6 @@ struct AreaProfile: View {
 
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
-        AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
+        AreaProfile(data: Area(name: "test", location: "test", image: "test", zip: "test", follower_count: 100, boulder_count: 100, rank: 4, elevation: 100, bio: "test", description: "test"))
     }
 }

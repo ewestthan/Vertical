@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct VerticalApp: App {
-    
 //    @StateObject var user = User()
     @EnvironmentObject var viewModel: AuthViewModel
 

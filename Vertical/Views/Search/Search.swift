@@ -12,6 +12,8 @@ struct Search: View {
     @State var searchText = ""
     
     @ObservedObject var climbSearch = ClimbSearchViewModel()
+    @ObservedObject var userSearch = UserSearchViewModel()
+    @ObservedObject var areaSearch = AreaSearchViewModel()
     @ObservedObject var viewModel = SearchViewModel()
     
     
@@ -19,7 +21,7 @@ struct Search: View {
         NavigationView{
             ZStack {
                 VStack {
-                    SearchBar(text: $searchText)
+                    SearchBar(text: $searchText, tabSelected: $tabSelected)
                     
                     SearchTabBar(selectedTab: $tabSelected)
                     Divider()
@@ -27,13 +29,13 @@ struct Search: View {
                         ForEach(SearchTab.allCases, id: \.rawValue) { tab in
                             HStack{
                                 if(tab.rawValue == "users"){
-                                    UserSearch(searchText: searchText, viewModel: viewModel)
+                                    UserSearch(users: userSearch.users)
                                 }
                                 if(tab.rawValue == "climbs"){
                                     ClimbSearch(climbs: climbSearch.climbs)
                                 }
                                 if(tab.rawValue == "areas"){
-                                    AreaSearch(searchText: searchText)
+                                    AreaSearch(areas: areaSearch.areas)
                                 }
                             }.padding([.leading, .trailing], 10)
                                 .tag(tab)
@@ -43,6 +45,8 @@ struct Search: View {
             }
         }
         .environmentObject(climbSearch)
+        .environmentObject(userSearch)
+        .environmentObject(areaSearch)
     }
 }
 

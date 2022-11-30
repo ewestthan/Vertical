@@ -16,7 +16,7 @@ struct AreaProfileContent: View {
     var body: some View {
         VStack {
             Text(self.area.bio)
-                .padding()
+                .padding(20)
                 .frame(width: .infinity)
                 .multilineTextAlignment(.center)
             Divider()

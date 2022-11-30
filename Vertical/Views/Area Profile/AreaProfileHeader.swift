@@ -19,7 +19,7 @@ struct AreaProfileHeader: View {
     var body: some View {
         VStack {
             //WebImage(url: areaSearchViewModel.areaImages[area.image] == nil ? nil : areaSearchViewModel.areaImages[area.image]!)
-            Image(area.image)
+            Image("smuggs")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxHeight: 200)

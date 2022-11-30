@@ -57,7 +57,7 @@ struct AreaProfile: View {
 struct AreaProfile_Previews: PreviewProvider {
     static var previews: some View {
         //AreaProfile(area: emptyArea)
-        AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
-        //AreaProfile(id: "YacnDtXEvP8FdA8nG8K9")
+        //AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
+        AreaProfile(id: "YacnDtXEvP8FdA8nG8K9")
     }
 }

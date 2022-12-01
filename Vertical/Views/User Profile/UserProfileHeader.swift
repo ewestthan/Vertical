@@ -15,7 +15,7 @@ struct UserProfileHeader: View {
     var body: some View {
         ZStack{
             VStack{
-                HStack(spacing: 25){
+                HStack{
                     Button(action:{
                     }, label: {
                         Text("Follow")
@@ -25,10 +25,12 @@ struct UserProfileHeader: View {
                             .cornerRadius(20)
                             .fontWeight(.bold)
                     })
+                    Spacer()
                     Text(user.location)
                         .foregroundColor(.gray)
                         .offset(y: 15)
                         .font(.system(size: 14))
+                    Spacer()
                     Button(action:{
                         
                     }, label: {
@@ -39,7 +41,7 @@ struct UserProfileHeader: View {
                             .cornerRadius(20)
                             .fontWeight(.bold)
                     })
-                }
+                }.padding([.trailing, .leading], 10)
                 
                 HStack(spacing: 60){
                     VStack{
@@ -69,11 +71,15 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
-
-                HStack{
+                HStack(spacing: 0){
+                    Text("")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    Text(user.fullname).font(.system(size: 32))
+                        .foregroundColor(.black)
+                        .fontWeight(.bold).offset(y: 5)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     Menu {
                         logoutButton
-                        
                         NavigationLink( destination: EditUserProfile(), label: {
                             Text("Edit Profile")
                         })
@@ -83,17 +89,13 @@ struct UserProfileHeader: View {
                             .frame(width: 25, height: 25)
                             .background(.gray.opacity(0.2))
                             .cornerRadius(100)
-                    }
-
-                    
-                }.frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing, 20)
-                Text(user.fullname).font(.system(size: 32))
-                    .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
+                    }.frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.trailing, 15)
+                }
                 Text("@" + user.username).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)
                 UserProfilePic(pic: user.profileImageUrl)
-            }.offset(y: -75)
+            }.offset(y: -85)
                 .frame(maxHeight: 100)
             
         }

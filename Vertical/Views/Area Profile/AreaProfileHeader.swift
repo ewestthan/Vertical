@@ -45,28 +45,28 @@ struct AreaProfileHeader: View {
             self.image = image
         }
         else {
-            self.image = "smuggs"
+            self.image = "gs://climbing-app-a374f.appspot.com/area_images/stowe.jpeg"
         }
         
         if let follower_count = area.follower_count {
             self.follower_count = follower_count
         }
         else {
-            self.follower_count = -1
+            self.follower_count = 0
         }
         
         if let boulder_count = area.boulder_count {
             self.boulder_count = boulder_count
         }
         else {
-            self.boulder_count = -1
+            self.boulder_count = 0
         }
         
         if let rank = area.rank {
             self.rank = rank
         }
         else {
-            self.rank = 5
+            self.rank = 0
         }
         
     }
@@ -81,15 +81,14 @@ struct AreaProfileHeader: View {
                 .frame(maxHeight: 200)
                 .shadow(color: .black, radius: 2, x: 0, y: 0)
                 .clipped()
-            HStack(spacing: 70) {
+            HStack{
                 VStack(alignment: .leading) {
-                    
                     Text(self.name)
                         .font(.system(size: 20, weight: .heavy))
-                        .multilineTextAlignment(.leading)
                     Text(self.location)
                         .font(.system(size: 14, weight: .medium))
                 }
+                .frame(width: 250, alignment: .leading)
                 HStack {
                     VStack {
                         Text(String(self.follower_count))
@@ -155,7 +154,7 @@ struct AreaProfileHeader: View {
                     }
                     Text("•••")
                 }
-                .frame(width: 260, alignment: .leading)
+                .frame(width: 290, alignment: .leading)
                 StarsView(rating: self.rank)
                     .frame(width: 100)
             }

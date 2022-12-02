@@ -31,14 +31,9 @@ struct AreaProfile: View {
         NavigationView {
             ZStack {
                 VStack {
-                    if (self.loadFromId) {
-                        AreaProfileHeader(area: areaVM.area)
-                        AreaProfileContent(area: areaVM.area)
-                    }
-                    else {
-                        AreaProfileHeader(area: self.area)
-                        AreaProfileContent(area: self.area)
-                    }
+                    let areaLoad = self.loadFromId ? areaVM.area : self.area
+                    AreaProfileHeader(area: areaLoad)
+                    AreaProfileContent(area: areaLoad)
                 }
                 .onAppear{ Task {
                     if (self.loadFromId) {
@@ -58,5 +53,6 @@ struct AreaProfile_Previews: PreviewProvider {
         //AreaProfile(area: Area())
         //AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
         AreaProfile(id: "YacnDtXEvP8FdA8nG8K9")
+        //AreaProfile(id: "RnUrssPzHHBxDKfRYJTt")
     }
 }

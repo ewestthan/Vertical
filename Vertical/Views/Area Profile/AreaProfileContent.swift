@@ -62,7 +62,8 @@ struct AreaProfileContent: View {
                             MapView()
                         }
                         if (tab.rawValue == "Weather") {
-                            Text("Weather")
+                            Text("Weather in Bolton: \n 34 degrees F").multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         }
                         if (tab.rawValue == "Info") {
                             Text(self.description)

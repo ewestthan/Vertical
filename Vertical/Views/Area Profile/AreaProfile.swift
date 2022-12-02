@@ -33,12 +33,10 @@ struct AreaProfile: View {
                 VStack {
                     if (self.loadFromId) {
                         AreaProfileHeader(area: areaVM.area)
-                            .edgesIgnoringSafeArea(.top)
                         AreaProfileContent(area: areaVM.area)
                     }
                     else {
                         AreaProfileHeader(area: self.area)
-                            .edgesIgnoringSafeArea(.top)
                         AreaProfileContent(area: self.area)
                     }
                 }
@@ -48,6 +46,7 @@ struct AreaProfile: View {
                     }
                 }}
             }
+            .edgesIgnoringSafeArea(.top)
         }
         .environmentObject(AreaSearchViewModel())
     }

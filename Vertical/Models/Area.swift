@@ -20,4 +20,5 @@ public struct Area: Hashable, Codable, Identifiable {
     var rank: Int?
     var description: String?
     var elevation: Int?
+    var climbs: [AreaClimb]?
 }

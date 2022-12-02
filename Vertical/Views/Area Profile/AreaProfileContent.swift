@@ -14,6 +14,7 @@ struct AreaProfileContent: View {
     var area: Area
     var bio: String
     var description: String
+    var climbs: [AreaClimb]
     
     init(area: Area) {
         
@@ -33,6 +34,13 @@ struct AreaProfileContent: View {
             self.description = "None"
         }
         
+        if let climbs = area.climbs {
+            self.climbs = climbs
+        }
+        else {
+            self.climbs = [AreaClimb]()
+        }
+        
     }
     
     var body: some View {
@@ -47,7 +55,7 @@ struct AreaProfileContent: View {
                 ForEach(AreaTab.allCases, id: \.rawValue) { tab in
                     HStack {
                         if (tab.rawValue == "Climbs") {
-                            UserProfileClimbList()
+                            AreaProfileClimbList(climbs: self.climbs)
                                 .padding()
                         }
                         if (tab.rawValue == "Map") {

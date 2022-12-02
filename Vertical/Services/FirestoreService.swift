@@ -30,23 +30,22 @@ class FirebaseService: ObservableObject {
         return try ref.data(as: Area.self)
     }
     
-//    func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
-//        var climbs = [AreaClimb]()
-//        db.collection("areas/\(areaID)/climbs").addSnapshotListener { querySnapshot, error in
-//            guard let documents = querySnapshot?.documents else {
-//                print("No climbs")
-//                return
-//            }
-//            climbs = documents.map { (queryDocumentSnapshot) -> AreaClimb in
-//                let data = queryDocumentSnapshot.data()
-//                let id = data["id"] as? String ?? ""
-//                let name = data["name"] as? String ?? ""
-//                let rank = data["rank"] as? Int ?? 0
-//                return AreaClimb(id: id, name: name, rank: rank)
-//            }
-//        }
-//        return climbs
-//    }
+    func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
+        var climbs = [AreaClimb]()
+        db.collection("areas/\(areaID)/climbs").addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                return
+            }
+            climbs = documents.map { (queryDocumentSnapshot) -> AreaClimb in
+                let data = queryDocumentSnapshot.data()
+                let id = data["id"] as? String ?? ""
+                let name = data["name"] as? String ?? ""
+                let rank = data["rank"] as? Int ?? 0
+                return AreaClimb(id: id, name: name, rank: rank)
+            }
+        }
+        return climbs
+    }
     
     func fetchFollowingPosts(_ userUID: String) async throws -> [Post] {
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()

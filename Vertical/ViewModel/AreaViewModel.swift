@@ -22,7 +22,7 @@ class AreaViewModel: ObservableObject {
     func loadArea(id: String) async {
         do {
             self.area = try await store.fetchAreaInfo(id)
-            //self.area.climbs = try await store.fetchAreaClimbs(id)
+            self.area.climbs = try await store.fetchAreaClimbs(id)
         } catch {
             print(error)
         }

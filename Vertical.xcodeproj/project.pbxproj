@@ -53,11 +53,15 @@
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
 		495567A72924354C00F77D51 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495567A62924354C00F77D51 /* MapView.swift */; };
+		495C26892936D33800169AE8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C26882936D33800169AE8 /* MapView.swift */; };
+		5E15EDA02922D7B700CCA5C4 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */; };
 		5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */; };
 		5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF17291D3D65000639D0 /* ClimbProfile.swift */; };
 		5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */; };
 		5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */; };
 		5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */; };
+		5E988E92292695E200ADF7ED /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */; };
+		5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */; };
 		793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E15A8290CA05B00D4C774 /* LoginView.swift */; };
 		7956602A2911AA4D00D747AF /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795660292911AA4D00D747AF /* HexColor.swift */; };
 		7956602F2911AFB700D747AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956602E2911AFB700D747AF /* User.swift */; };
@@ -87,6 +91,8 @@
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
 		FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */; };
+		FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */; };
+		FDF77ACE2939B0D700F0F2F1 /* AreaClimb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,11 +162,14 @@
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
 		495567A62924354C00F77D51 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		495C26882936D33800169AE8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
 		5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClimbSearch.swift; path = Vertical/ClimbSearch.swift; sourceTree = SOURCE_ROOT; };
 		5E33FF17291D3D65000639D0 /* ClimbProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfile.swift; sourceTree = "<group>"; };
 		5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSearchViewModel.swift; sourceTree = "<group>"; };
 		5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileView.swift; sourceTree = "<group>"; };
 		5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileModel.swift; sourceTree = "<group>"; };
+		5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearchViewModel.swift; sourceTree = "<group>"; };
 		793E15A8290CA05B00D4C774 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		795660292911AA4D00D747AF /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		7956602E2911AFB700D747AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -176,6 +185,8 @@
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
 		FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileHeader.swift; sourceTree = "<group>"; };
+		FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileClimbList.swift; sourceTree = "<group>"; };
+		FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaClimb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E988E92292695E200ADF7ED /* SDWebImageSwiftUI in Frameworks */,
 				795660422911B89900D747AF /* FirebaseDatabaseSwift in Frameworks */,
 				795660402911B89900D747AF /* FirebaseDatabase in Frameworks */,
 				795660382911B89900D747AF /* FirebaseAnalyticsSwift in Frameworks */,
@@ -394,6 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */,
+				5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */,
+				5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */,
+				FD31467F293302D700FD815D /* AreaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -418,6 +433,7 @@
 				0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */,
 				5E33FF17291D3D65000639D0 /* ClimbProfile.swift */,
 				79CBE8CC29183D0F00D43A08 /* Post.swift */,
+				FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,10 +468,12 @@
 			isa = PBXGroup;
 			children = (
 				FD95C7712911EE6A00A54810 /* AreaProfile.swift */,
+				495C26882936D33800169AE8 /* MapView.swift */,
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
 				FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */,
 				495567A62924354C00F77D51 /* MapView.swift */,
 				FD31467F293302D700FD815D /* AreaViewModel.swift */,
+				FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */,
 			);
 			path = "Area Profile";
 			sourceTree = "<group>";
@@ -491,6 +509,7 @@
 				7956604B2911B89900D747AF /* FirebaseFunctionsCombine-Community */,
 				7956604D2911B89900D747AF /* FirebaseStorage */,
 				7956604F2911B89900D747AF /* FirebaseStorageCombine-Community */,
+				5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */,
 			);
 			productName = Vertical;
 			productReference = 046ADF4D28F85D4D007616A2 /* Vertical.app */;
@@ -566,6 +585,7 @@
 			mainGroup = 046ADF4428F85D4D007616A2;
 			packageReferences = (
 				795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 046ADF4E28F85D4D007616A2 /* Products */;
 			projectDirPath = "";
@@ -620,6 +640,7 @@
 				0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */,
 				FD314680293302D700FD815D /* AreaViewModel.swift in Sources */,
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
+				FDF77ACE2939B0D700F0F2F1 /* AreaClimb.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
 				0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */,
@@ -631,6 +652,7 @@
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
 				04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
+				FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */,
 				5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
 				0455A7E3291D57B300CEBDCD /* ClimbProfileTabBar.swift in Sources */,
@@ -654,6 +676,7 @@
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
 				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
+				495C26892936D33800169AE8 /* MapView.swift in Sources */,
 				0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */,
 				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
 				0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */,
@@ -663,6 +686,7 @@
 				FD95C76D2911EE0800A54810 /* Area.swift in Sources */,
 				046E333B29005F5800EAC8DC /* UserProfile.swift in Sources */,
 				046E333128FF6ED100EAC8DC /* UserProfileHeader.swift in Sources */,
+				5E15EDA02922D7B700CCA5C4 /* UserSearchViewModel.swift in Sources */,
 				5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */,
 				495567A72924354C00F77D51 /* MapView.swift in Sources */,
 				793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */,
@@ -672,6 +696,7 @@
 				048F53E1291D9D3B0053F433 /* Constants.swift in Sources */,
 				046ADF5128F85D4D007616A2 /* VerticalApp.swift in Sources */,
 				042B72C829107F7B007E1691 /* Search.swift in Sources */,
+				5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,6 +1023,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1009,6 +1042,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		795660352911B89900D747AF /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

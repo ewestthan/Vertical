@@ -14,10 +14,42 @@
             filePath = "Vertical/Views/Area Profile/AreaProfile.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "init(id:)"
-            landmarkType = "7">
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "28B24CA9-8FB2-44F8-A62E-15D0CBF1258B - 3249200d0aafdbb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vertical.AreaProfile.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/directedbyshawn/Documents/personal/program/Vertical/Vertical/Views/Area%20Profile/AreaProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1022">
+               </Location>
+               <Location
+                  uuid = "28B24CA9-8FB2-44F8-A62E-15D0CBF1258B - 3c45451f76cc56f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.edgesIgnoringSafeArea(SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0 in Vertical.AreaProfile.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/directedbyshawn/Documents/personal/program/Vertical/Vertical/Views/Area%20Profile/AreaProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "723">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

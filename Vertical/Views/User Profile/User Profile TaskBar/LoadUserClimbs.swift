@@ -8,7 +8,7 @@
 import Foundation
 
 var climbs: [ClimbRow] = load("Climbs.json")
-var users: [UserRow] = load("Users.json")
+//var users: [UserRow] = load("Users.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

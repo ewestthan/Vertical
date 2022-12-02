@@ -88,7 +88,7 @@ struct AreaProfileHeader: View {
                     Text(self.location)
                         .font(.system(size: 14, weight: .medium))
                 }
-                .frame(width: 250, alignment: .leading)
+                .frame(width: 240, alignment: .leading)
                 HStack {
                     VStack {
                         Text(String(self.follower_count))
@@ -154,7 +154,7 @@ struct AreaProfileHeader: View {
                     }
                     Text("•••")
                 }
-                .frame(width: 290, alignment: .leading)
+                .frame(width: 280, alignment: .leading)
                 StarsView(rating: self.rank)
                     .frame(width: 100)
             }

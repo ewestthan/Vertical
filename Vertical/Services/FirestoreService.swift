@@ -30,29 +30,23 @@ class FirebaseService: ObservableObject {
         return try ref.data(as: Area.self)
     }
     
-    func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
-        var climbs = [AreaClimb]()
-        
-        do {
-            try await db.collection("areas/\(areaID)/climbs").getDocuments() { (querySnapshot, error) in
-                if let error = error {
-                    print("error")
-                }
-                else {
-                    if let snap = querySnapshot {
-                        for document in snap.documents {
-                            try climbs.append(document.data(as: AreaClimb.self))
-                        }
-                    }
-                }
-                
-            }
-            return climbs
-        }
-        catch {
-            print(error)
-        }
-    }
+//    func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
+//        var climbs = [AreaClimb]()
+//        db.collection("areas/\(areaID)/climbs").addSnapshotListener { querySnapshot, error in
+//            guard let documents = querySnapshot?.documents else {
+//                print("No climbs")
+//                return
+//            }
+//            climbs = documents.map { (queryDocumentSnapshot) -> AreaClimb in
+//                let data = queryDocumentSnapshot.data()
+//                let id = data["id"] as? String ?? ""
+//                let name = data["name"] as? String ?? ""
+//                let rank = data["rank"] as? Int ?? 0
+//                return AreaClimb(id: id, name: name, rank: rank)
+//            }
+//        }
+//        return climbs
+//    }
     
     func fetchFollowingPosts(_ userUID: String) async throws -> [Post] {
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()

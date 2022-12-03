@@ -9,3 +9,4 @@ import Firebase
 
 let COLLECTION_USERS = Firestore.firestore().collection("users")
 let COLLECTION_POSTS = Firestore.firestore().collection("posts")
+let COLLECTION_FOLLOWING = Firestore.firestore().collection("following")

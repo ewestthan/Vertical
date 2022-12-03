@@ -9,12 +9,21 @@ import SwiftUI
 
 struct UserProfile: View {
     
-    var user: UserInfo
+//    var user: UserInfo
+    let user: User
+    @ObservedObject var viewModel: ProfileViewModel
+    
+    init(user: User){
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
     
     var body: some View {
-        VStack(spacing: 0){
-                UserProfileHeader(user: user)
+        ScrollView{
+            VStack(spacing: 0){
+                UserProfileHeader(viewModel: viewModel)
                 UserProfileBottom()
+            }
         }
     }
 }
@@ -22,7 +31,7 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
+        UserProfile(user: User(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
     }
 }
 

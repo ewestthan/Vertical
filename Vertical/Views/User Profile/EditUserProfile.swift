@@ -8,8 +8,38 @@
 import SwiftUI
 
 struct EditUserProfile: View {
+    
+    @State private var description = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(){
+            HStack{
+                Button {
+                    
+                } label: {
+                    Text("Cancel")
+                }
+
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Text("Done").bold()
+                }
+
+            }.padding()
+            
+            TextField("Tell us about yourself...", text: $description, axis: .vertical)
+                .lineLimit(4, reservesSpace: true)
+                .padding(7)
+                .background(.gray).opacity(0.4)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+                .cornerRadius(10)
+                .frame(width: 350, height: 200)
+                .foregroundColor(.black)
+            Spacer()
+        }
     }
 }
 

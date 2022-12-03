@@ -19,11 +19,6 @@ struct UserProfileBottom: View{
                                 if(tab.rawValue == "videos"){
                                     UserProfileVideos()
                                 }
-                                if(tab.rawValue == "wishlist"){
-                                    Text("\(tab.rawValue.capitalized)")
-                                        .bold()
-                                        .animation(nil, value: tabSelected)
-                                }
                                 if(tab.rawValue == "info"){
                                     Text("\(tab.rawValue.capitalized)")
                                         .bold()

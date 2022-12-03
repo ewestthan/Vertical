@@ -3,8 +3,6 @@ import SwiftUI
 enum UserProfileTab: String, CaseIterable {
     case climbs
     case videos
-    case wishlist
-    case info
     case filter
 }
 
@@ -19,10 +17,6 @@ struct UserProfileTabBar: View {
             return .blue
         case .videos:
             return .indigo
-        case .wishlist:
-            return .purple
-        case .info:
-            return .green
         case .filter:
             return .orange
         }
@@ -30,7 +24,7 @@ struct UserProfileTabBar: View {
     }
     var body: some View {
         VStack {
-            HStack(spacing: 10){
+            HStack(spacing: 40){
                 ForEach(UserProfileTab.allCases, id: \.rawValue) { tab in
                     Text(tab.rawValue)
                         .onTapGesture {

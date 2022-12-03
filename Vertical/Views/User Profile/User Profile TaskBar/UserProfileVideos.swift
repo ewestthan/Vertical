@@ -52,15 +52,16 @@ struct UserProfileVideos: View {
     private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
     var body: some View {
-        
-        LazyVGrid(columns: columns, spacing: 7) {
-            ForEach(climbs, id: \.id){ climb in
-                NavigationLink(destination: FeedVideoCell().padding(.top)){
-                    UserProfileVideo(climb: climb)
+        ScrollView{
+            LazyVGrid(columns: columns, spacing: 7) {
+                ForEach(climbs, id: \.id){ climb in
+                    NavigationLink(destination: FeedVideoCell().padding(.top)){
+                        UserProfileVideo(climb: climb)
+                    }
                 }
-            }
-            
-        }.frame(maxHeight: .infinity, alignment: .top)
+                
+            }.frame(maxHeight: .infinity, alignment: .top)
+        }
     }
 }
 

@@ -49,6 +49,7 @@
 		04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */; };
 		04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F6322926F3E6004878D9 /* EditUserProfile.swift */; };
 		04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */; };
+		04D32C7D293BCD4900EC80F7 /* UserProfileClimbListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D32C7C293BCD4900EC80F7 /* UserProfileClimbListViewModel.swift */; };
 		04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD941F2910B8C300D36C2E /* SearchBar.swift */; };
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
@@ -155,6 +156,7 @@
 		04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		04A0F6322926F3E6004878D9 /* EditUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfile.swift; sourceTree = "<group>"; };
 		04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVideos.swift; sourceTree = "<group>"; };
+		04D32C7C293BCD4900EC80F7 /* UserProfileClimbListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileClimbListViewModel.swift; sourceTree = "<group>"; };
 		04DD941F2910B8C300D36C2E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
@@ -358,8 +360,8 @@
 				046E333D2900655D00EAC8DC /* User Profile TaskBar */,
 				046E33362900496400EAC8DC /* UserProfilePic.swift */,
 				046E333829005F4200EAC8DC /* UserProfileBottom.swift */,
-				046E333A29005F5800EAC8DC /* UserProfile.swift */,
 				046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */,
+				046E333A29005F5800EAC8DC /* UserProfile.swift */,
 				04A0F6322926F3E6004878D9 /* EditUserProfile.swift */,
 			);
 			path = "User Profile";
@@ -372,6 +374,7 @@
 				046E334429007C4E00EAC8DC /* LoadUserClimbs.swift */,
 				04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */,
 				042441E52911CDCB008C4E5B /* UserProfileFilter.swift */,
+				04D32C7C293BCD4900EC80F7 /* UserProfileClimbListViewModel.swift */,
 			);
 			path = "User Profile TaskBar";
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */,
 				042B72D129108A7C007E1691 /* UserSearch.swift in Sources */,
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
+				04D32C7D293BCD4900EC80F7 /* UserProfileClimbListViewModel.swift in Sources */,
 				0446164C291D8C9D00ABCD06 /* ImagePicker.swift in Sources */,
 				0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */,
 				FD314680293302D700FD815D /* AreaViewModel.swift in Sources */,

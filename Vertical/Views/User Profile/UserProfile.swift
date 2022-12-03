@@ -13,8 +13,8 @@ struct UserProfile: View {
     
     var body: some View {
         VStack(spacing: 0){
-                UserProfileHeader(user: user)
-                UserProfileBottom()
+            UserProfileHeader(user: user)
+            UserProfileBottom()
         }
     }
 }

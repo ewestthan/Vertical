@@ -61,6 +61,10 @@
 		5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */; };
 		5E988E92292695E200ADF7ED /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */; };
 		5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */; };
+		62111B74293BDEE5007B4EBA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B73293BDEE5007B4EBA /* DateExtensions.swift */; };
+		62111B76293BDFC4007B4EBA /* PostStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B75293BDFC4007B4EBA /* PostStore.swift */; };
+		62111B78293C0012007B4EBA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B77293C0012007B4EBA /* FeedCell.swift */; };
+		62111B7A293C00F5007B4EBA /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B79293C00F5007B4EBA /* FeedCellViewModel.swift */; };
 		793E15A9290CA05B00D4C774 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E15A8290CA05B00D4C774 /* LoginView.swift */; };
 		7956602A2911AA4D00D747AF /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795660292911AA4D00D747AF /* HexColor.swift */; };
 		7956602F2911AFB700D747AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956602E2911AFB700D747AF /* User.swift */; };
@@ -166,6 +170,10 @@
 		5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileView.swift; sourceTree = "<group>"; };
 		5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileModel.swift; sourceTree = "<group>"; };
 		5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearchViewModel.swift; sourceTree = "<group>"; };
+		62111B73293BDEE5007B4EBA /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		62111B75293BDFC4007B4EBA /* PostStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStore.swift; sourceTree = "<group>"; };
+		62111B77293C0012007B4EBA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		62111B79293C00F5007B4EBA /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		793E15A8290CA05B00D4C774 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		795660292911AA4D00D747AF /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		7956602E2911AFB700D747AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -286,6 +294,7 @@
 				0446164B291D8C9D00ABCD06 /* ImagePicker.swift */,
 				0446164D291D8D9A00ABCD06 /* ImageUploader.swift */,
 				048F53E0291D9D3B0053F433 /* Constants.swift */,
+				62111B73293BDEE5007B4EBA /* DateExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -392,6 +401,9 @@
 				046E33342900424600EAC8DC /* Feed.swift */,
 				04DD94292911831700D36C2E /* FeedVideoCell.swift */,
 				79CBE8C8291839A800D43A08 /* FeedViewModel.swift */,
+				62111B75293BDFC4007B4EBA /* PostStore.swift */,
+				62111B77293C0012007B4EBA /* FeedCell.swift */,
+				62111B79293C00F5007B4EBA /* FeedCellViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -636,8 +648,10 @@
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
 				04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */,
+				62111B74293BDEE5007B4EBA /* DateExtensions.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
 				0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */,
+				62111B7A293C00F5007B4EBA /* FeedCellViewModel.swift in Sources */,
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
 				04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
@@ -650,6 +664,8 @@
 				0455A7DD291D4E2700CEBDCD /* ClimbProfileViewModel.swift in Sources */,
 				0414E816291D7322004EE6F2 /* RegistrationView.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
+				62111B76293BDFC4007B4EBA /* PostStore.swift in Sources */,
+				62111B78293C0012007B4EBA /* FeedCell.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
 				048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */,
 				0455A7DF291D4E7600CEBDCD /* ClimbProfileHeader.swift in Sources */,

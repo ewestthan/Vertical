@@ -21,4 +21,5 @@ public struct Area: Hashable, Codable, Identifiable {
     var description: String?
     var elevation: Int?
     var climbs: [AreaClimb]?
+    var header_image: String?
 }

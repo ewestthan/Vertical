@@ -9,55 +9,31 @@ import Foundation
 
 struct UserProfileHeader: View {
 
-    let user: UserInfo
+    @ObservedObject var viewModel: ProfileViewModel
 
     
     var body: some View {
         ZStack{
             VStack{
-                HStack(spacing: 25){
-                    Button(action:{
-                    }, label: {
-                        Text("Follow")
-                            .frame(maxWidth: 120, maxHeight: 35)
-                            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-                            .fontWeight(.bold)
-                    })
-                    Text(user.location)
-                        .foregroundColor(.gray)
-                        .offset(y: 15)
-                        .font(.system(size: 14))
-                    Button(action:{
-                        
-                    }, label: {
-                        Text("Message")
-                            .frame(maxWidth: 120, maxHeight: 35)
-                            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-                            .fontWeight(.bold)
-                    })
-                }
-                
+
+                ProfileActionButtonView(viewModel: viewModel)
                 HStack(spacing: 60){
                     VStack{
-                        Text(String(user.followers)).font(.system(size: 24)).fontWeight(.bold)
+                        Text(String(viewModel.user.followers)).font(.system(size: 24)).fontWeight(.bold)
                         Text("Followers").font(.system(size: 14))
                     }
                     VStack{
-                        Text(String(user.ascents)).font(.system(size: 24)).fontWeight(.bold)
+                        Text(String(viewModel.user.ascents)).font(.system(size: 24)).fontWeight(.bold)
                         Text("Ascents").font(.system(size: 14))
                     }
                     VStack{
-                        Text(String(user.following)).font(.system(size: 24)).fontWeight(.bold)
+                        Text(String(viewModel.user.following)).font(.system(size: 24)).fontWeight(.bold)
                         Text("Following").font(.system(size: 14))
                     }
                 }
                 
                 VStack{
-                    Text(user.description)
+                    Text(viewModel.user.description)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .foregroundColor(.gray)
@@ -69,11 +45,15 @@ struct UserProfileHeader: View {
                 .background(Color(.gray).opacity(0.2))
                 .padding(.top, 160)
             VStack{
-
-                HStack{
+                HStack(spacing: 0){
+                    Text("")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    Text(viewModel.user.fullname).font(.system(size: 32))
+                        .foregroundColor(.black)
+                        .fontWeight(.bold).offset(y: 5)
+                        .frame(maxWidth: .infinity, alignment: .center)
                     Menu {
                         logoutButton
-                        
                         NavigationLink( destination: EditUserProfile(), label: {
                             Text("Edit Profile")
                         })
@@ -83,17 +63,13 @@ struct UserProfileHeader: View {
                             .frame(width: 25, height: 25)
                             .background(.gray.opacity(0.2))
                             .cornerRadius(100)
-                    }
-
-                    
-                }.frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.trailing, 20)
-                Text(user.fullname).font(.system(size: 32))
-                    .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
-                Text("@" + user.username).font(.system(size: 14)).foregroundColor(.gray)
+                    }.frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.trailing, 15)
+                }
+                Text("@" + viewModel.user.username).font(.system(size: 14)).foregroundColor(.gray)
                     .foregroundColor(.black).offset(y: 5)
-                UserProfilePic(pic: user.profileImageUrl)
-            }.offset(y: -75)
+                UserProfilePic(pic: viewModel.user.profileImageUrl)
+            }.offset(y: -85)
                 .frame(maxHeight: 100)
             
         }
@@ -109,8 +85,8 @@ struct UserProfileHeader: View {
 
 }
 
-struct UserProfileHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileHeader(user: UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
-    }
-}
+//struct UserProfileHeader_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserProfileHeader(user: User(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))
+//    }
+//}

@@ -12,7 +12,7 @@ class SearchService: ObservableObject {
     let firestore = Firestore.firestore()
     let storage = Storage.storage()
     @Published var climbs: [ClimbProfileModel] = []
-    @Published var users: [UserInfo] = []
+    @Published var users: [User] = []
     @Published var areas: [Area] = []
     @Published var climbImages: [String: URL?] = [:]
     @Published var userImages: [String: URL?] = [:]
@@ -34,7 +34,7 @@ class SearchService: ObservableObject {
             } else {
                 for document in querySnapshot!.documents {
                     do {
-                        let user = try document.data(as: UserInfo.self)
+                        let user = try document.data(as: User.self)
                         self.users.append(user)
                         self.getUserURL(path: user.profileImageUrl)
                     } catch {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411E80E291C237D00492C9F /* ImagePicker.swift */; };
 		0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E813291D715D004EE6F2 /* AuthViewModel.swift */; };
 		0414E816291D7322004EE6F2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E815291D7322004EE6F2 /* RegistrationView.swift */; };
 		0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414E817291D7334004EE6F2 /* ResetPasswordView.swift */; };
@@ -44,6 +43,9 @@
 		046E334C2900825700EAC8DC /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E334B2900825700EAC8DC /* StarsView.swift */; };
 		046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */; };
 		0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DAB52912EF9000C02360 /* AreaSearch.swift */; };
+		047FAD35293BE00C0015BC55 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FAD34293BE00C0015BC55 /* UserService.swift */; };
+		047FAD37293BE5630015BC55 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FAD36293BE5630015BC55 /* ProfileViewModel.swift */; };
+		047FAD39293BEB080015BC55 /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FAD38293BEB080015BC55 /* ProfileActionButtonView.swift */; };
 		048F53E1291D9D3B0053F433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E0291D9D3B0053F433 /* Constants.swift */; };
 		048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E2291DA1A10053F433 /* SearchViewModel.swift */; };
 		04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */; };
@@ -154,6 +156,9 @@
 		046E334B2900825700EAC8DC /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTabBar.swift; sourceTree = "<group>"; };
 		0474DAB52912EF9000C02360 /* AreaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearch.swift; sourceTree = "<group>"; };
+		047FAD34293BE00C0015BC55 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		047FAD36293BE5630015BC55 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		047FAD38293BEB080015BC55 /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
 		048F53E0291D9D3B0053F433 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		048F53E2291DA1A10053F433 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
@@ -370,6 +375,8 @@
 				046E333A29005F5800EAC8DC /* UserProfile.swift */,
 				046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */,
 				04A0F6322926F3E6004878D9 /* EditUserProfile.swift */,
+				047FAD36293BE5630015BC55 /* ProfileViewModel.swift */,
+				047FAD38293BEB080015BC55 /* ProfileActionButtonView.swift */,
 			);
 			path = "User Profile";
 			sourceTree = "<group>";
@@ -465,6 +472,7 @@
 			children = (
 				5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */,
 				79CBE8CA29183A7600D43A08 /* FirestoreService.swift */,
+				047FAD34293BE00C0015BC55 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -561,7 +569,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					046ADF4C28F85D4D007616A2 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -644,7 +652,6 @@
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
-				0411E80F291C237D00492C9F /* ImagePicker.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
 				04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */,
@@ -671,7 +678,6 @@
 				0455A7DF291D4E7600CEBDCD /* ClimbProfileHeader.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,
 				79CBE8CD29183D0F00D43A08 /* Post.swift in Sources */,
-				046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */,
 				FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */,
 				046E334529007C4E00EAC8DC /* LoadUserClimbs.swift in Sources */,
 				79CBE8C9291839A800D43A08 /* FeedViewModel.swift in Sources */,
@@ -683,9 +689,11 @@
 				495C26892936D33800169AE8 /* MapView.swift in Sources */,
 				0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */,
 				FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */,
+				047FAD35293BE00C0015BC55 /* UserService.swift in Sources */,
 				0414E81A291D7450004EE6F2 /* CustomSecureField.swift in Sources */,
 				79CBE8CB29183A7600D43A08 /* FirestoreService.swift in Sources */,
 				0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */,
+				047FAD37293BE5630015BC55 /* ProfileViewModel.swift in Sources */,
 				046E333929005F4300EAC8DC /* UserProfileBottom.swift in Sources */,
 				FD95C76D2911EE0800A54810 /* Area.swift in Sources */,
 				046E333B29005F5800EAC8DC /* UserProfile.swift in Sources */,
@@ -699,6 +707,7 @@
 				048F53E1291D9D3B0053F433 /* Constants.swift in Sources */,
 				046ADF5128F85D4D007616A2 /* VerticalApp.swift in Sources */,
 				042B72C829107F7B007E1691 /* Search.swift in Sources */,
+				047FAD39293BEB080015BC55 /* ProfileActionButtonView.swift in Sources */,
 				5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,9 +22,9 @@ class FirebaseService: ObservableObject {
         //addListeners()
     }
     
-    func fetchUserInfo(_ userUID: String) async throws -> UserInfo {
+    func fetchUserInfo(_ userUID: String) async throws -> User {
         let ref = try await db.collection("users").document(userUID).getDocument()
-        return try ref.data(as: UserInfo.self)
+        return try ref.data(as: User.self)
     }
     
     func fetchAreaInfo(_ areaID: String) async throws -> Area {

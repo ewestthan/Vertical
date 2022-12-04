@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 struct ClimbProfileModel: Hashable, Codable, Identifiable {
     @DocumentID var id: String?
     var Name: String
-    var Grade: String
+    var Grade: Int
     var Rating: Int
     var Area: String
     var Picture_URL: String

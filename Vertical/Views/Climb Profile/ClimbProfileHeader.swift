@@ -25,7 +25,7 @@ struct ClimbProfileHeader: View {
                     Text(climb.Name).font(.system(size: 32))
                         .foregroundColor(.black).fontWeight(.bold).offset(y: 5)
                     HStack{
-                        Text(climb.Grade).font(.system(size: 14))
+                        Text("V" + String(climb.Grade)).font(.system(size: 14))
                         Text(climb.Area).font(.system(size: 14)).foregroundColor(.gray)
                     }
                     StarsView(rating: climb.Rating).frame(width: 100)
@@ -43,15 +43,17 @@ struct ClimbProfileHeader: View {
                             .cornerRadius(20)
                             .fontWeight(.bold)
                     })
-                    Button(action:{
-                    }, label: {
+                    NavigationLink(destination:
+                                    VideoPostForm(tabIndex: .constant(3), grade: Int(exactly: climb.Grade)!, sliderValue: Double(climb.Rating), name: climb.Name, area: climb.Area))
+                                   {
                         Text("Add")
                             .frame(maxWidth: 120, maxHeight: 35)
                             .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                             .foregroundColor(.white)
                             .cornerRadius(20)
                             .fontWeight(.bold)
-                    })
+                        
+                    }
                 }.padding([.trailing, .top])
             }
         }
@@ -60,6 +62,6 @@ struct ClimbProfileHeader: View {
 
 struct ClimbProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: "V4", Rating: 4, Area: "Test", Picture_URL: "Test"))
+        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test"))
     }
 }

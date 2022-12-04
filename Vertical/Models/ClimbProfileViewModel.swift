@@ -6,4 +6,5 @@ struct ClimbProfileViewModel: Identifiable, Codable {
     var Name: String?
     var Grade: String?
     var Rating: Int?
+    var Area: Int?
 }

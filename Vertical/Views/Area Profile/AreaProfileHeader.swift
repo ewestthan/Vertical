@@ -13,7 +13,6 @@ struct AreaProfileHeader: View {
     
     @State private var isFollowing: Bool = false
     @State private var unfollowConfirm: Bool = false
-    @State private var imageURL: URL?
     
     let area: Area
     var name: String

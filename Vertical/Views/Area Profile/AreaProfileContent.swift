@@ -12,6 +12,8 @@ struct AreaProfileContent: View {
     
     @State private var tabSelected: AreaTab = .Climbs
     var area: Area
+    var weather: String
+    var loaded: String
     var bio: String
     var description: String
     var climbs: [AreaClimb]
@@ -19,6 +21,13 @@ struct AreaProfileContent: View {
     init(area: Area) {
         
         self.area = area
+        
+        if let name = area.name {
+            self.weather = "Weather in \(name): \n 34 degrees"
+        }
+        else {
+            self.weather = "Unable to load weather"
+        }
         
         if let bio = area.bio {
             self.bio = bio
@@ -36,9 +45,11 @@ struct AreaProfileContent: View {
         
         if let climbs = area.climbs {
             self.climbs = climbs
+            self.loaded = "yes"
         }
         else {
             self.climbs = [AreaClimb]()
+            self.loaded = "no"
         }
         
     }
@@ -62,7 +73,7 @@ struct AreaProfileContent: View {
                             MapView()
                         }
                         if (tab.rawValue == "Weather") {
-                            Text("Weather in Bolton: \n 34 degrees F").multilineTextAlignment(.center)
+                            Text(self.weather).multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                         }
                         if (tab.rawValue == "Info") {

@@ -28,5 +28,27 @@ class AreaViewModel: ObservableObject {
         }
     }
     
+    func setArea(area: Area) async {
+        self.area = area
+        self.area.climbs = await loadAreaClimbs(area: area)
+    }
+    
+    func loadAreaClimbs(area: Area) async -> [AreaClimb] {
+        var climbs = [AreaClimb]()
+        do {
+            if let id = area.id {
+                climbs = try await store.fetchAreaClimbs(id)
+            }
+        }
+        catch {
+            print(error)
+        }
+        return climbs
+    }
+    
+    
+    
+    
+    
     
 }

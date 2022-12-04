@@ -22,7 +22,12 @@ struct AreaProfile: View {
     }
     
     init(area: Area) {
-        self.id = "-1"
+        if let id = area.id {
+            self.id = id
+        }
+        else {
+            self.id = "-1"
+        }
         self.loadFromId = false
         self.area = area
     }
@@ -31,13 +36,15 @@ struct AreaProfile: View {
         NavigationView {
             ZStack {
                 VStack {
-                    let areaLoad = self.loadFromId ? areaVM.area : self.area
-                    AreaProfileHeader(area: areaLoad)
-                    AreaProfileContent(area: areaLoad)
+                    AreaProfileHeader(area: areaVM.area)
+                    AreaProfileContent(area: areaVM.area)
                 }
                 .onAppear{ Task {
                     if (self.loadFromId) {
                         await areaVM.loadArea(id: self.id)
+                    }
+                    else {
+                        await areaVM.setArea(area: self.area)
                     }
                 }}
             }

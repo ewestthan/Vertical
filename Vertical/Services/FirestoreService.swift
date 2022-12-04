@@ -32,14 +32,16 @@ class FirebaseService: ObservableObject {
     
     func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
         var climbs = [AreaClimb]()
-        db.collection("areas/\(areaID)/climbs").addSnapshotListener { querySnapshot, error in
+        let climb1 = AreaClimb(id: "id", name: "Name", rank: 3)
+        climbs.append(climb1)
+        db.collection("areas").document(areaID).collection("climbs").addSnapshotListener { querySnapshot, error in
             guard let documents = querySnapshot?.documents else {
                 return
             }
             climbs = documents.map { (queryDocumentSnapshot) -> AreaClimb in
                 let data = queryDocumentSnapshot.data()
-                let id = data["id"] as? String ?? ""
-                let name = data["name"] as? String ?? ""
+                let id = data["id"] as? String ?? "None"
+                let name = data["name"] as? String ?? "None"
                 let rank = data["rank"] as? Int ?? 0
                 return AreaClimb(id: id, name: name, rank: rank)
             }

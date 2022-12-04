@@ -13,7 +13,6 @@ struct AreaProfileContent: View {
     @State private var tabSelected: AreaTab = .Climbs
     var area: Area
     var weather: String
-    var loaded: String
     var bio: String
     var description: String
     var climbs: [AreaClimb]
@@ -45,11 +44,9 @@ struct AreaProfileContent: View {
         
         if let climbs = area.climbs {
             self.climbs = climbs
-            self.loaded = "yes"
         }
         else {
             self.climbs = [AreaClimb]()
-            self.loaded = "no"
         }
         
     }
@@ -66,8 +63,14 @@ struct AreaProfileContent: View {
                 ForEach(AreaTab.allCases, id: \.rawValue) { tab in
                     HStack {
                         if (tab.rawValue == "Climbs") {
-                            AreaProfileClimbList(climbs: self.climbs)
-                                .padding()
+                            if self.climbs.count > 0 {
+                                AreaProfileClimbList(climbs: self.climbs)
+                                    .padding()
+                            }
+                            else {
+                                Text("No climbs in this area")
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            }
                         }
                         if (tab.rawValue == "Map") {
                             MapView()

@@ -17,36 +17,12 @@ class FirebaseService: ObservableObject {
     private let db = Firestore.firestore()
     
     init() {
-        //addListeners()
+        
     }
     
     func fetchUserInfo(_ userUID: String) async throws -> UserInfo {
         let ref = try await db.collection("users").document(userUID).getDocument()
         return try ref.data(as: UserInfo.self)
-    }
-    
-    func fetchAreaInfo(_ areaID: String) async throws -> Area {
-        let ref = try await db.collection("areas").document(areaID).getDocument()
-        return try ref.data(as: Area.self)
-    }
-    
-    func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
-        var climbs = [AreaClimb]()
-        let climb1 = AreaClimb(id: "id", name: "Name", rank: 3)
-        climbs.append(climb1)
-        db.collection("areas").document(areaID).collection("climbs").addSnapshotListener { querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                return
-            }
-            climbs = documents.map { (queryDocumentSnapshot) -> AreaClimb in
-                let data = queryDocumentSnapshot.data()
-                let id = data["id"] as? String ?? "None"
-                let name = data["name"] as? String ?? "None"
-                let rank = data["rank"] as? Int ?? 0
-                return AreaClimb(id: id, name: name, rank: rank)
-            }
-        }
-        return climbs
     }
     
     func fetchFollowingPosts(_ userUID: String) async throws -> [Post] {

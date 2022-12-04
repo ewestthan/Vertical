@@ -47,8 +47,8 @@ struct AreaProfileContent: View {
                 ForEach(AreaTab.allCases, id: \.rawValue) { tab in
                     HStack {
                         if (tab.rawValue == "Climbs") {
-                            UserProfileClimbList()
-                                .padding()
+                            //UserProfileClimbList()
+                            //    .padding()
                         }
                         if (tab.rawValue == "Map") {
                             MapView()

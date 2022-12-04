@@ -39,7 +39,6 @@
 		046E333B29005F5800EAC8DC /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E333A29005F5800EAC8DC /* UserProfile.swift */; };
 		046E334129007AEC00EAC8DC /* Climbs.json in Resources */ = {isa = PBXBuildFile; fileRef = 046E334029007AEC00EAC8DC /* Climbs.json */; };
 		046E334529007C4E00EAC8DC /* LoadUserClimbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E334429007C4E00EAC8DC /* LoadUserClimbs.swift */; };
-		046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E33492900800E00EAC8DC /* UserProfileClimbList.swift */; };
 		046E334C2900825700EAC8DC /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E334B2900825700EAC8DC /* StarsView.swift */; };
 		046E335B2901AF1300EAC8DC /* UserProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */; };
 		0474DAB62912EF9000C02360 /* AreaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DAB52912EF9000C02360 /* AreaSearch.swift */; };
@@ -56,12 +55,16 @@
 		04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD94292911831700D36C2E /* FeedVideoCell.swift */; };
 		495C26892936D33800169AE8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495C26882936D33800169AE8 /* MapView.swift */; };
 		5E15EDA02922D7B700CCA5C4 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */; };
+		5E2DC66E293CF9EF0073BCAB /* ClimbRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2DC66D293CF9EF0073BCAB /* ClimbRow.swift */; };
+		5E2DC670293CFB710073BCAB /* UserProfileClimbList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2DC66F293CFB710073BCAB /* UserProfileClimbList.swift */; };
 		5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */; };
 		5E33FF18291D3D65000639D0 /* ClimbProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF17291D3D65000639D0 /* ClimbProfile.swift */; };
 		5E33FF1B291D55F8000639D0 /* ClimbSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */; };
 		5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */; };
 		5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */; };
 		5E988E92292695E200ADF7ED /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */; };
+		5EA4DAF1293C2D3D0008C66D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4DAF0293C2D3D0008C66D /* PostService.swift */; };
+		5EA4DAF3293C2D910008C66D /* UserPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4DAF2293C2D910008C66D /* UserPostViewModel.swift */; };
 		5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */; };
 		62111B74293BDEE5007B4EBA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B73293BDEE5007B4EBA /* DateExtensions.swift */; };
 		62111B76293BDFC4007B4EBA /* PostStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B75293BDFC4007B4EBA /* PostStore.swift */; };
@@ -152,7 +155,6 @@
 		046E333A29005F5800EAC8DC /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		046E334029007AEC00EAC8DC /* Climbs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Climbs.json; sourceTree = "<group>"; };
 		046E334429007C4E00EAC8DC /* LoadUserClimbs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserClimbs.swift; sourceTree = "<group>"; };
-		046E33492900800E00EAC8DC /* UserProfileClimbList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileClimbList.swift; sourceTree = "<group>"; };
 		046E334B2900825700EAC8DC /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		046E335A2901AF1300EAC8DC /* UserProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTabBar.swift; sourceTree = "<group>"; };
 		0474DAB52912EF9000C02360 /* AreaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearch.swift; sourceTree = "<group>"; };
@@ -169,11 +171,15 @@
 		04DD94292911831700D36C2E /* FeedVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVideoCell.swift; sourceTree = "<group>"; };
 		495C26882936D33800169AE8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
+		5E2DC66D293CF9EF0073BCAB /* ClimbRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbRow.swift; sourceTree = "<group>"; };
+		5E2DC66F293CFB710073BCAB /* UserProfileClimbList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileClimbList.swift; sourceTree = "<group>"; };
 		5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClimbSearch.swift; path = Vertical/ClimbSearch.swift; sourceTree = SOURCE_ROOT; };
 		5E33FF17291D3D65000639D0 /* ClimbProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfile.swift; sourceTree = "<group>"; };
 		5E33FF1A291D55F8000639D0 /* ClimbSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbSearchViewModel.swift; sourceTree = "<group>"; };
 		5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileView.swift; sourceTree = "<group>"; };
 		5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileModel.swift; sourceTree = "<group>"; };
+		5EA4DAF0293C2D3D0008C66D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		5EA4DAF2293C2D910008C66D /* UserPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostViewModel.swift; sourceTree = "<group>"; };
 		5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearchViewModel.swift; sourceTree = "<group>"; };
 		62111B73293BDEE5007B4EBA /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		62111B75293BDFC4007B4EBA /* PostStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStore.swift; sourceTree = "<group>"; };
@@ -384,10 +390,10 @@
 		046E333D2900655D00EAC8DC /* User Profile TaskBar */ = {
 			isa = PBXGroup;
 			children = (
-				046E33492900800E00EAC8DC /* UserProfileClimbList.swift */,
 				046E334429007C4E00EAC8DC /* LoadUserClimbs.swift */,
 				04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */,
 				042441E52911CDCB008C4E5B /* UserProfileFilter.swift */,
+				5E2DC66F293CFB710073BCAB /* UserProfileClimbList.swift */,
 			);
 			path = "User Profile TaskBar";
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				5E15ED9F2922D7B700CCA5C4 /* UserSearchViewModel.swift */,
 				5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */,
 				FD31467F293302D700FD815D /* AreaViewModel.swift */,
+				5EA4DAF2293C2D910008C66D /* UserPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -446,6 +453,7 @@
 				0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */,
 				5E33FF17291D3D65000639D0 /* ClimbProfile.swift */,
 				79CBE8CC29183D0F00D43A08 /* Post.swift */,
+				5E2DC66D293CF9EF0073BCAB /* ClimbRow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -473,6 +481,7 @@
 				5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */,
 				79CBE8CA29183A7600D43A08 /* FirestoreService.swift */,
 				047FAD34293BE00C0015BC55 /* UserService.swift */,
+				5EA4DAF0293C2D3D0008C66D /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -649,11 +658,12 @@
 				0446164C291D8C9D00ABCD06 /* ImagePicker.swift in Sources */,
 				0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */,
 				FD314680293302D700FD815D /* AreaViewModel.swift in Sources */,
+				5E2DC670293CFB710073BCAB /* UserProfileClimbList.swift in Sources */,
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
-				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
+				5EA4DAF3293C2D910008C66D /* UserPostViewModel.swift in Sources */,
 				04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */,
 				62111B74293BDEE5007B4EBA /* DateExtensions.swift in Sources */,
 				046E334C2900825700EAC8DC /* StarsView.swift in Sources */,
@@ -674,6 +684,8 @@
 				62111B76293BDFC4007B4EBA /* PostStore.swift in Sources */,
 				62111B78293C0012007B4EBA /* FeedCell.swift in Sources */,
 				042441E62911CDCB008C4E5B /* UserProfileFilter.swift in Sources */,
+				5EA4DAF1293C2D3D0008C66D /* PostService.swift in Sources */,
+				5E2DC66E293CF9EF0073BCAB /* ClimbRow.swift in Sources */,
 				048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */,
 				0455A7DF291D4E7600CEBDCD /* ClimbProfileHeader.swift in Sources */,
 				04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */,

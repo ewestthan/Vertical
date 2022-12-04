@@ -20,6 +20,6 @@ struct ClimbProfile: View {
 
 struct ClimbProfile_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbProfile(climb: ClimbProfileModel(Name: "test", Grade: "V4", Rating: 4, Area: "Test", Picture_URL: "Test"))
+        ClimbProfile(climb: ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test"))
     }
 }

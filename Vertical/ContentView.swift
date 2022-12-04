@@ -39,12 +39,6 @@ struct ContentView: View {
                                 }
                                 .tabItem(){Image(systemName: "person")}
                                 .tag(2)
-                            VideoPostForm(tabIndex: $selectedIndex)
-                                .onTapGesture {
-                                    selectedIndex = 3
-                                }
-                                .tabItem(){Image(systemName: "person")}
-                                .tag(3)
                         }.frame(alignment: .bottomLeading)
                             .accentColor(.gray)
                     }

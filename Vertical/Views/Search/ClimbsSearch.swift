@@ -33,7 +33,7 @@ struct SearchClimbRowView: View {
                 .clipShape(Circle())
                 
                 VStack(alignment: .leading) {
-                    Text(climb.Name + String(climb.Grade)).font(.system(size: 16))
+                    Text(climb.Name + "V" + String(climb.Grade)).font(.system(size: 16))
                     Text(climb.Area).font(.system(size: 12))
                 }.padding(.leading, 10)
                 Spacer()
@@ -83,6 +83,6 @@ struct ClimbSearch: View {
 
 struct ClimbSearch_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbSearch(climbs: [ClimbProfileModel(Name: "Example", Grade: "V3", Rating: 4, Area: "Example Area", Picture_URL: "Something")])
+        ClimbSearch(climbs: [ClimbProfileModel(Name: "Example", Grade: 3, Rating: 4, Area: "Example Area", Picture_URL: "Something")])
     }
 }

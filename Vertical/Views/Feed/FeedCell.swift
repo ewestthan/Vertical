@@ -61,7 +61,7 @@ struct FeedCell: View {
                                 Image(systemName: didLike ? "heart.fill" : "heart")
                                     .resizable()
                                     .frame(width: 30, height: 30)
-                                    .foregroundColor(didLike ? .red : .black)
+                                    .foregroundColor(didLike ? Color(hue: 0.72, saturation: 0.715, brightness: 0.956) : Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                                     .font(.system(size: 20))
                                     .scaledToFill()
                                     .padding(4)
@@ -69,7 +69,7 @@ struct FeedCell: View {
                             
                             Text(viewModel.likeString)
                                 .font(.system(size: 14, weight: .semibold))
-                                .foregroundColor(didLike ? .white : .red)
+                                .foregroundColor(didLike ? .white : Color(hue: 0.72, saturation: 0.715, brightness: 0.956))
                         }
                         
                     }

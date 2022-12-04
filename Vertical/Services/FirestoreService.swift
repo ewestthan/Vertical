@@ -14,7 +14,7 @@ class FirebaseService: ObservableObject {
     private let db = Firestore.firestore()
     
     init() {
-        //addListeners()
+        
     }
     
     func fetchUserInfo(_ userUID: String) async throws -> User {
@@ -28,6 +28,7 @@ class FirebaseService: ObservableObject {
     }
     
     func fetchFollowingPosts(_ userUID: String) async throws -> [PostData] {
+
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()
         
         let lastFetched: Date = UserDefaults.standard.object(forKey: "lastFeedFetch") as! Date

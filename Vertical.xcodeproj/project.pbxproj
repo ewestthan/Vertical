@@ -96,6 +96,8 @@
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
 		FD95C7742911EE7F00A54810 /* AreaProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */; };
+		FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */; };
+		FDF77ACE2939B0D700F0F2F1 /* AreaClimb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +196,8 @@
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
 		FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileHeader.swift; sourceTree = "<group>"; };
+		FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileClimbList.swift; sourceTree = "<group>"; };
+		FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaClimb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +450,7 @@
 				0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */,
 				5E33FF17291D3D65000639D0 /* ClimbProfile.swift */,
 				79CBE8CC29183D0F00D43A08 /* Post.swift */,
+				FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				495C26882936D33800169AE8 /* MapView.swift */,
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
 				FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */,
+				FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */,
 			);
 			path = "Area Profile";
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 				0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */,
 				FD314680293302D700FD815D /* AreaViewModel.swift in Sources */,
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
+				FDF77ACE2939B0D700F0F2F1 /* AreaClimb.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
 				046E334A2900800E00EAC8DC /* UserProfileClimbList.swift in Sources */,
@@ -662,6 +669,7 @@
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
 				04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
+				FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */,
 				5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
 				0455A7E3291D57B300CEBDCD /* ClimbProfileTabBar.swift in Sources */,

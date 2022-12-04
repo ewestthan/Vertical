@@ -22,7 +22,12 @@ struct AreaProfile: View {
     }
     
     init(area: Area) {
-        self.id = "-1"
+        if let id = area.id {
+            self.id = id
+        }
+        else {
+            self.id = "-1"
+        }
         self.loadFromId = false
         self.area = area
     }
@@ -31,23 +36,19 @@ struct AreaProfile: View {
         NavigationView {
             ZStack {
                 VStack {
-                    if (self.loadFromId) {
-                        AreaProfileHeader(area: areaVM.area)
-                            .edgesIgnoringSafeArea(.top)
-                        AreaProfileContent(area: areaVM.area)
-                    }
-                    else {
-                        AreaProfileHeader(area: self.area)
-                            .edgesIgnoringSafeArea(.top)
-                        AreaProfileContent(area: self.area)
-                    }
+                    AreaProfileHeader(area: areaVM.area)
+                    AreaProfileContent(area: areaVM.area)
                 }
                 .onAppear{ Task {
                     if (self.loadFromId) {
                         await areaVM.loadArea(id: self.id)
                     }
+                    else {
+                        areaVM.setArea(area: self.area)
+                    }
                 }}
             }
+            .edgesIgnoringSafeArea(.top)
         }
         .environmentObject(AreaSearchViewModel())
     }
@@ -59,5 +60,6 @@ struct AreaProfile_Previews: PreviewProvider {
         //AreaProfile(area: Area())
         //AreaProfile(id: "Ngyru3cnP0fjmnOzL5CY")
         AreaProfile(id: "YacnDtXEvP8FdA8nG8K9")
+        //AreaProfile(id: "RnUrssPzHHBxDKfRYJTt")
     }
 }

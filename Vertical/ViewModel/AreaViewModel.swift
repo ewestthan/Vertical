@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 import Combine
 import Firebase
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 class AreaViewModel: ObservableObject {
     
     @Published var area: Area
     @Published var areaClimbs: [AreaClimb]
     
-    private let db = Firestore.firestore()
+    private var db = Firestore.firestore()
     
     init(area: Area) {
         self.area = area
@@ -26,24 +26,19 @@ class AreaViewModel: ObservableObject {
     func loadArea(id: String) async {
         do {
             self.area = try await fetchAreaInfo(id)
-            try await fetchAreaClimbs(id)
+            fetchAreaClimbs(id)
             self.area.climbs = self.areaClimbs
         } catch {
             print(error)
         }
     }
     
-    func setArea(area: Area) async {
-        do {
-            self.area = area
-            if let id = area.id {
-                try await fetchAreaClimbs(id)
-            }
-            self.area.climbs = self.areaClimbs
+    func setArea(area: Area) {
+        self.area = area
+        if let id = area.id {
+            fetchAreaClimbs(id)
         }
-        catch {
-            print(error)
-        }
+        self.area.climbs = self.areaClimbs
     }
     
     func fetchAreaInfo(_ areaID: String) async throws -> Area {
@@ -51,8 +46,8 @@ class AreaViewModel: ObservableObject {
         return try ref.data(as: Area.self)
     }
     
-    func fetchAreaClimbs(_ areaID: String) async throws {
-        db.collection("areas/\(areaID)/climbs").addSnapshotListener { querySnapshot, error in
+    func fetchAreaClimbs(_ areaID: String) {
+        db.collection("test_climbs").getDocuments { querySnapshot, error in
             guard let documents = querySnapshot?.documents else {
                 print("no climbs")
                 return

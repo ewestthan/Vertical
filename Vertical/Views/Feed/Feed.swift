@@ -13,7 +13,7 @@ struct Feed: View {
     
     @EnvironmentObject var authModel: AuthViewModel
     @StateObject private var feedVM = FeedViewModel()
-        
+    
     var body: some View {
         ScrollView{
             LazyVStack(spacing: 15) {
@@ -25,13 +25,10 @@ struct Feed: View {
             if feedVM.fetching {
                 ProgressView()
             }
-        }.onAppear{ Task { await feedVM.loadPostsFollowing(userUID: authModel.currentUser?.id ?? "")} }
-//        }
-    }
-}
-
-struct Feed_Previews: PreviewProvider {
-    static var previews: some View {
-        Feed()
+        }
+        .onAppear{ Task { if !feedVM.fetchedBoot {await feedVM.loadPostsFollowing(userUID: authModel.currentUser?.id ?? "")}} }
+        .refreshable {
+            Task { await feedVM.loadPostsFollowing(userUID: authModel.currentUser?.id ?? "")}
+        }
     }
 }

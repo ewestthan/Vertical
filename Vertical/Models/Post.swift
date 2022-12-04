@@ -52,6 +52,14 @@ public struct PostData: Codable, Identifiable, Hashable {
         return self.date.formatted(.dateTime)
     }
     
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    public static func == (lhs: PostData, rhs: PostData) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     func toPost() -> Post {
         return Post(id: id, date: date, description: description, climbName: climbName, climbLocation: climbLocation, grade: grade, imageUrl: imageUrl, ownerId: ownerId, ownerImageUrl: ownerImageUrl, ownerUsername: ownerUsername, rating: rating, likes: likes)
     }

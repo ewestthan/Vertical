@@ -12,6 +12,7 @@ class FeedViewModel: ObservableObject {
     @Published var fetching = false
     @Published var posts = [PostData]()
     @Published var lastRefreshed = Date.now
+    @Published var fetchedBoot = false
     
     private let fs = FirebaseService()
 
@@ -19,6 +20,10 @@ class FeedViewModel: ObservableObject {
     func loadPostsFollowing(userUID: String) async {
         if userUID.isEmpty {
             return
+        }
+        
+        if !fetchedBoot {
+            self.fetchedBoot = true
         }
         
         if UserDefaults.standard.object(forKey: "lastFeedFetch") == nil {

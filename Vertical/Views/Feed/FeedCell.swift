@@ -51,6 +51,26 @@ struct FeedCell: View {
                         Spacer()
                         
                         StarsView(rating: 5).frame(height: 18)
+                                                
+                        ZStack {
+                            
+                            Button(action: {
+                                didLike ? viewModel.unlike() : viewModel.like()
+                             
+                            }, label: {
+                                Image(systemName: didLike ? "heart.fill" : "heart")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(didLike ? .red : .black)
+                                    .font(.system(size: 20))
+                                    .scaledToFill()
+                                    .padding(4)
+                            })
+                            
+                            Text(viewModel.likeString)
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(didLike ? .white : .red)
+                        }
                         
                     }
                     ZStack(alignment: .topLeading){
@@ -58,7 +78,6 @@ struct FeedCell: View {
                             .cornerRadius(10)
                             .frame(maxHeight: 1000)
                         HStack{
-                            //Text("jwebxl").font(.system(size: 14, weight: .semibold)) +
                             Text(viewModel.post.description).font(.system(size: 15))
                                 
                         }
@@ -71,17 +90,27 @@ struct FeedCell: View {
 
                 }.padding(.trailing, 15)
                 VStack(spacing: 8){
-                    Button(action: {
-                        didLike ? viewModel.unlike() : viewModel.like()
-                     
-                    }, label: {
-                        Image(systemName: "heart")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .font(.system(size: 20))
-                            .scaledToFill()
-                            .padding(4)
-                    })
+                    
+//                    ZStack {
+//
+//                        Button(action: {
+//                            didLike ? viewModel.unlike() : viewModel.like()
+//
+//                        }, label: {
+//                            Image(systemName: didLike ? "heart.fill" : "heart")
+//                                .resizable()
+//                                .frame(width: 30, height: 30)
+//                                .foregroundColor(didLike ? .red : .black)
+//                                .font(.system(size: 20))
+//                                .scaledToFill()
+//                                .padding(4)
+//                        })
+//
+//                        Text(viewModel.likeString)
+//                            .font(.system(size: 14, weight: .semibold))
+//                            .foregroundColor(didLike ? .white : .red)
+//                    }
+                    
 //                                Button {
 //
 //                                } label: {

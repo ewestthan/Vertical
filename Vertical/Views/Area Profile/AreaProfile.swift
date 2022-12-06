@@ -44,7 +44,7 @@ struct AreaProfile: View {
                         await areaVM.loadArea(id: self.id)
                     }
                     else {
-                        areaVM.setArea(area: self.area)
+                        await areaVM.setArea(area: self.area)
                     }
                 }}
             }

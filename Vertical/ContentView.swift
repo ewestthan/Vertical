@@ -18,7 +18,7 @@ struct ContentView: View {
                 LoginView()
             }
             else {
-                if let user = viewModel.currentUser{
+                if let user = viewModel.currentUser {
                     NavigationView{
                         TabView(selection: $selectedIndex){
                             Feed()

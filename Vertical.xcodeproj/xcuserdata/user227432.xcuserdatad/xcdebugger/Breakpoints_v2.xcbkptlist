@@ -500,5 +500,145 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C5A0E84-85DB-449D-BC6E-66772BA8F13B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vertical/Services/FirestoreService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "fetchFollowingPosts(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F59F0E70-6E6A-49CE-83B7-C9232BBC2610"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vertical/VerticalApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vertical/Views/Feed/Feed.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26 - c7f8ae57b1d2e060"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vertical.Feed.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user227432/Desktop/test_reclone/Vertical/Vertical/Views/Feed/Feed.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "780">
+               </Location>
+               <Location
+                  uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26 - 833bb8c01aa65ed2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Vertical.Feed.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user227432/Desktop/test_reclone/Vertical/Vertical/Views/Feed/Feed.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26 - fdfc129c50b825ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Vertical.Feed.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user227432/Desktop/test_reclone/Vertical/Vertical/Views/Feed/Feed.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26 - f417238dee9cd786"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Vertical.Feed.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user227432/Desktop/test_reclone/Vertical/Vertical/Views/Feed/Feed.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26 - 5ccd95a88ff93826"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Vertical.Feed.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user227432/Desktop/test_reclone/Vertical/Vertical/Views/Feed/Feed.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "B53CBD00-AC54-4198-830E-90E076F4DB26 - 3eaf26840af29a04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #2 () -&gt; () in Vertical.Feed.body.getter : some"
+                  moduleName = "Vertical"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user227432/Desktop/test_reclone/Vertical/Vertical/Views/Feed/Feed.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -21,8 +21,8 @@ class AreaViewModel: ObservableObject {
     
     init(area: Area) {
         self.area = area
-        self.areaClimbs = [AreaClimb(id: "EBSczr1BNlIimiAXUNT5", name: "Primate", rank: 5), AreaClimb(id: "cr50dO13IAczdhosJGQZ", name: "The Masochist", rank: 3), AreaClimb(id: "WU1KgVjqpaljL8ei1DVK", name: "Pac Man", rank: 5), AreaClimb(id: "W9nb7XnZt0ontEAV9rFi", name: "The Impossible Problem", rank: 3)]
-        //self.areaClimbs = [AreaClimb]()
+        //self.areaClimbs = [AreaClimb(id: "EBSczr1BNlIimiAXUNT5", name: "Primate", rank: 5), AreaClimb(id: "cr50dO13IAczdhosJGQZ", name: "The Masochist", rank: 3), AreaClimb(id: "WU1KgVjqpaljL8ei1DVK", name: "Pac Man", rank: 5), AreaClimb(id: "W9nb7XnZt0ontEAV9rFi", name: "The Impossible Problem", rank: 3)]
+        self.areaClimbs = [AreaClimb]()
         self.climb = ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test")
     }
     

@@ -62,8 +62,10 @@ struct AreaProfileClimbRow: View {
                 .padding([.top, .bottom], 10)
                 .padding([.leading, .trailing], 25.0)
             }
-            .onAppear{ Task {
-                try await areaVM.loadClimbFromId(self.id)
+            .onTapGesture { Task {
+                if self.id != "-1" {
+                    try await areaVM.loadClimbFromId(self.id)
+                }
             }}
         }
     }

@@ -60,6 +60,7 @@ struct SearchAreaRowView: View {
                 WebImage(url: areaSearchViewModel.areaImages[self.image] == nil ? nil : areaSearchViewModel.areaImages[self.image]!)
                     .resizable()
                     .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 35, height: 35)
                     .clipShape(Circle())
                 

@@ -14,7 +14,7 @@ class FirebaseService: ObservableObject {
     private let db = Firestore.firestore()
     
     init() {
-        //addListeners()
+        
     }
     
     func fetchUserInfo(_ userUID: String) async throws -> User {
@@ -22,12 +22,8 @@ class FirebaseService: ObservableObject {
         return try ref.data(as: User.self)
     }
     
-    func fetchAreaInfo(_ areaID: String) async throws -> Area {
-        let ref = try await db.collection("areas").document(areaID).getDocument()
-        return try ref.data(as: Area.self)
-    }
-    
     func fetchFollowingPosts(_ userUID: String) async throws -> [PostData] {
+    
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()
         
         let lastFetched: Date = UserDefaults.standard.object(forKey: "lastFeedFetch") as! Date

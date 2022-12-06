@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AreaProfile: View {
     
-    @StateObject private var areaVM = AreaViewModel(area: Area())
+    @ObservedObject private var areaVM = AreaViewModel(area: Area())
     var area: Area
     var id: String
     var loadFromId: Bool

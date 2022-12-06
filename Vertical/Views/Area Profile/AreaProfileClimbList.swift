@@ -8,7 +8,7 @@ import Foundation
 import SwiftUI
 
 struct AreaProfileClimbRow: View {
-    
+    @ObservedObject private var areaVM = AreaViewModel(area: Area())
     var climb: AreaClimb
     var id: String
     var name: String
@@ -47,19 +47,24 @@ struct AreaProfileClimbRow: View {
     }
     
     private var content: some View{
-        VStack{
-            HStack{
-                StarsView(rating: self.rank).frame(width:75)
-                Spacer()
-                Text(self.name)
-                Spacer()
-                Image("arrow").resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: 10, maxHeight: 10 )
-                    .rotationEffect(Angle(degrees: 180))
+        NavigationLink (destination: ClimbProfile(climb: areaVM.climb)) {
+            VStack{
+                HStack{
+                    StarsView(rating: self.rank).frame(width:75)
+                    Spacer()
+                    Text(self.name)
+                    Spacer()
+                    Image("arrow").resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: 10, maxHeight: 10 )
+                        .rotationEffect(Angle(degrees: 180))
+                }
+                .padding([.top, .bottom], 10)
+                .padding([.leading, .trailing], 25.0)
             }
-            .padding([.top, .bottom], 10)
-            .padding([.leading, .trailing], 25.0)
+            .onAppear{ Task {
+                try await areaVM.loadClimbFromId(self.id)
+            }}
         }
     }
 }

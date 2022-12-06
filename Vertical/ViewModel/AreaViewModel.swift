@@ -15,12 +15,20 @@ class AreaViewModel: ObservableObject {
     
     @Published var area: Area
     @Published var areaClimbs: [AreaClimb]
-    
-    private var db = Firestore.firestore()
+    @Published var climb: ClimbProfileModel
+
+    let AREAS_COLLECTION = Firestore.firestore().collection("areas")
     
     init(area: Area) {
         self.area = area
-        self.areaClimbs = [AreaClimb]()
+        self.areaClimbs = [AreaClimb(id: "EBSczr1BNlIimiAXUNT5", name: "Primate", rank: 5), AreaClimb(id: "cr50dO13IAczdhosJGQZ", name: "The Masochist", rank: 3), AreaClimb(id: "WU1KgVjqpaljL8ei1DVK", name: "Pac Man", rank: 5), AreaClimb(id: "W9nb7XnZt0ontEAV9rFi", name: "The Impossible Problem", rank: 3)]
+        //self.areaClimbs = [AreaClimb]()
+        self.climb = ClimbProfileModel(Name: "test", Grade: "V4", Rating: 4, Area: "Test", Picture_URL: "Test")
+    }
+    
+    func loadClimbFromId(_ climbID: String) async throws {
+        let ref = try await Firestore.firestore().collection("ClimbProfile").document(climbID).getDocument()
+        self.climb = try ref.data(as: ClimbProfileModel.self)
     }
     
     func loadArea(id: String) async {
@@ -42,12 +50,12 @@ class AreaViewModel: ObservableObject {
     }
     
     func fetchAreaInfo(_ areaID: String) async throws -> Area {
-        let ref = try await db.collection("areas").document(areaID).getDocument()
+        let ref = try await Firestore.firestore().collection("areas").document(areaID).getDocument()
         return try ref.data(as: Area.self)
     }
     
     func fetchAreaClimbs(_ areaID: String) {
-        db.collection("test_climbs").getDocuments { querySnapshot, error in
+        AREAS_COLLECTION.document(areaID).collection("climbs").getDocuments { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("no climbs")
                 return

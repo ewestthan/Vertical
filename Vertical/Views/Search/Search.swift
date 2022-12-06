@@ -16,7 +16,6 @@ struct Search: View {
     @ObservedObject var areaSearch = AreaSearchViewModel()
     @ObservedObject var viewModel = SearchViewModel()
     
-    
     var body: some View {
         NavigationView{
             ZStack {

@@ -125,4 +125,9 @@ class SearchService: ObservableObject {
         users = []
         userImages = [:]
     }
+    
+    func clearAreaCache() {
+        areas = []
+        areaImages = [:]
+    }
 }

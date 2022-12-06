@@ -10,12 +10,28 @@ import SwiftUI
 class FeedViewModel: ObservableObject {
     
     @Published var fetching = false
-    @Published var posts = [Post]()
+    @Published var posts = [PostData]()
+    @Published var lastRefreshed = Date.now
+    @Published var fetchedBoot = false
     
     private let fs = FirebaseService()
 
     @MainActor
     func loadPostsFollowing(userUID: String) async {
+        if userUID.isEmpty {
+            return
+        }
+        
+        if !fetchedBoot {
+            self.fetchedBoot = true
+        }
+        
+        if UserDefaults.standard.object(forKey: "lastFeedFetch") == nil {
+            
+            // If first time launching set it to last week to grab a little of old posts
+            UserDefaults.standard.set(Date.today().previous(.monday), forKey: "lastFeedFetch")
+        }
+        
         do {
             self.fetching = true
             self.posts = try await fs.fetchFollowingPosts(userUID)
@@ -23,6 +39,10 @@ class FeedViewModel: ObservableObject {
         } catch {
             print(error)
         }
+        
+        
+        
+        
         
     }
     

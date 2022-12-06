@@ -1,24 +1,8 @@
-//
-//  UserProfileClimbList.swift
-//  Vertical
-//
-//  Created by Ethan West on 10/19/22.
-//
-import Foundation
 import SwiftUI
-
-struct ClimbRow: Hashable, Codable {
-    var id: Int
-    var name: String
-    var grade: Int
-    var stars: Int
-    var area: String
-    var image: String
-    var description: String
-}
+import SDWebImageSwiftUI
 
 struct UserProfileClimbRow: View {
-    var climb: ClimbRow
+    var climb: Post
     let isExpanded: Bool
     
     var body: some View {
@@ -34,9 +18,9 @@ struct UserProfileClimbRow: View {
     private var content: some View{
         VStack{
             HStack{
-                StarsView(rating: climb.stars).frame(width:75)
+                StarsView(rating: climb.rating).frame(width:75)
                 Spacer()
-                Text(climb.name)
+                Text(climb.description)
                 Spacer()
                 Image("arrow").resizable()
                     .scaledToFill()
@@ -47,12 +31,12 @@ struct UserProfileClimbRow: View {
             .padding([.leading, .trailing], 25.0)
            
             if isExpanded{
-                Image(climb.image)
+                WebImage(url: URL(string: climb.imageUrl))
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .scaledToFill()
+                    .frame(maxWidth: 395, maxHeight: 440)
+                    .clipped()
                 VStack(alignment: .leading){
-                    Text(climb.area)
-                        .bold()
                     Text(climb.description)
                 }
                 .padding([.bottom], 20)
@@ -63,20 +47,23 @@ struct UserProfileClimbRow: View {
 
 struct UserProfileClimbList: View {
     
-    @State private var selection: Set<ClimbRow> = []
+    var userPosts: [Post]
+    @State private var selection: Set<Post> = []
 
     var body: some View{
-        LazyVStack{
-            ForEach(climbs, id: \.id){ climb in
-                UserProfileClimbRow(climb: climb, isExpanded: self.selection.contains(climb))
-                    .onTapGesture{ self.selectDeselect(climb)}
-                    .animation(.linear(duration: 0.3))
-            }
-        }.frame(maxHeight: .infinity, alignment: .top)
+        ScrollView {
+            LazyVStack{
+                ForEach(userPosts, id: \.id){ post in
+                    UserProfileClimbRow(climb: post, isExpanded: self.selection.contains(post))
+                        .onTapGesture{ self.selectDeselect(post)}
+                        .animation(.linear(duration: 0.3))
+                }
+            }.frame(maxHeight: .infinity, alignment: .top)
+        }
     }
                        
     
-    func selectDeselect(_ climb: ClimbRow){
+    func selectDeselect(_ climb: Post){
         if selection.contains(climb){
             selection.remove(climb)
         }
@@ -89,6 +76,6 @@ struct UserProfileClimbList: View {
 
 struct UserProfileClimbList_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileClimbList()
+        UserProfileClimbList(userPosts: [Post(date: Date(timeIntervalSince1970: TimeInterval(10)), description: "Test", climbName: "test", climbLocation: "test", grade: 5, imageUrl: "No Image", ownerId: "Test", ownerImageUrl: "no Image", ownerUsername: "test", rating: 3, likes: 2)])
     }
 }

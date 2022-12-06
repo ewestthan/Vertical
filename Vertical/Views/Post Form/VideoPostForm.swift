@@ -16,14 +16,17 @@ struct VideoPostForm: View {
     @State private var description: String = ""
 //    @FocusState private var emailFieldIsFocused: Bool = false
     
-    @State private var grade: Int = 0
-    @State private var sliderValue: Double = 0
     @State private var selectedDate = Date()
     @Binding var tabIndex: Int
     @ObservedObject var viewModel = UploadPostViewModel()
+    @ObservedObject var climbViewModel = ClimbSearchViewModel()
+    
+    @State var grade: Int
+    @State var sliderValue: Double
+    @State var name: String
+    @State var area: String
     
     var body: some View {
-        
             VStack{
                 if(postImage == nil){
                     Button(action: {
@@ -97,7 +100,7 @@ struct VideoPostForm: View {
                 Button(action: {
                     Task{
                         if let image = selectedImage {
-                            await viewModel.uploadPost(description: description, grade: grade, rating: Int(sliderValue), date: selectedDate, image: image)
+                            await viewModel.uploadPost(description: description, grade: grade, rating: Int(sliderValue), date: selectedDate, image: image, name: name, area: area)
                             { _ in
                                 description = ""
                                 postImage = nil
@@ -127,6 +130,6 @@ extension VideoPostForm{
 
 struct VideoPostForm_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPostForm(tabIndex: .constant(0))
+        VideoPostForm(tabIndex: .constant(3), grade: 0, sliderValue: 0.0, name: "", area: "")
     }
 }

@@ -55,7 +55,7 @@ struct AreaProfileContent: View {
         VStack {
             Text(self.bio)
                 .padding(20)
-                .frame(width: .infinity)
+//                .frame(width: .infinity)
                 .multilineTextAlignment(.center)
             Divider()
             AreaTabBar(selectedTab: $tabSelected)

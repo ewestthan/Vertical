@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
-    @State var selectedIndex = 1
+    @State var selectedIndex = 0
     
     var body: some View {
         Group{
@@ -21,12 +21,12 @@ struct ContentView: View {
                 if let user = viewModel.currentUser{
                     NavigationView{
                         TabView(selection: $selectedIndex){
-//                            Feed()
-//                                .onTapGesture {
-//                                    selectedIndex = 0
-//                                }
-//                                .tabItem(){Image(systemName: "house")}
-//                                .tag(0)
+                            Feed()
+                                .onTapGesture {
+                                    selectedIndex = 0
+                                }
+                                .tabItem(){Image(systemName: "house")}
+                                .tag(0)
                             Search()
                                 .onTapGesture {
                                     selectedIndex = 1
@@ -39,12 +39,6 @@ struct ContentView: View {
                                 }
                                 .tabItem(){Image(systemName: "person")}
                                 .tag(2)
-                            VideoPostForm(tabIndex: $selectedIndex)
-                                .onTapGesture {
-                                    selectedIndex = 3
-                                }
-                                .tabItem(){Image(systemName: "person")}
-                                .tag(3)
                         }.frame(alignment: .bottomLeading)
                             .accentColor(.gray)
                     }

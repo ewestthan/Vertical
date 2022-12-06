@@ -10,7 +10,7 @@ import Firebase
 
 final class UserSearchViewModel: ObservableObject {
     @Published var userSearchRepository = SearchService()
-    @Published var users: [UserInfo] = []
+    @Published var users: [User] = []
     @Published var userImages: [String: URL?] = [:]
     
     private var cancellables: Set<AnyCancellable> = []

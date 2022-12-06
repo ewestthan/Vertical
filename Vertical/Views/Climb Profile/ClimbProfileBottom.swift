@@ -20,7 +20,7 @@ struct ClimbProfileBottom: View {
                         ForEach(ClimbProfileTab.allCases, id: \.rawValue) { tab in
                             HStack {
                                 if(tab.rawValue == "climbs"){
-                                    UserProfileClimbList()
+                                    //UserProfileClimbList()
                                 }
                                 if(tab.rawValue == "filter"){
                                     UserProfileFilter()

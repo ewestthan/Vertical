@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct SearchUserRow: View {
-    var user: UserInfo
+    var user: User
     @EnvironmentObject var userSearchViewModel: UserSearchViewModel
     
     var body: some View {
@@ -45,7 +45,7 @@ struct SearchUserRow: View {
 
 struct UserSearch: View {
     
-    let users: [UserInfo]
+    let users: [User]
 
     var body: some View{
         scrollForEach
@@ -67,6 +67,6 @@ struct UserSearch: View {
 
 struct UserSearch_Previews: PreviewProvider {
     static var previews: some View {
-        UserSearch(users: [UserInfo(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5)])
+        UserSearch(users: [User(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5)])
     }
 }

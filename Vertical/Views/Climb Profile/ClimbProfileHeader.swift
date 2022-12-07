@@ -39,8 +39,7 @@ struct ClimbProfileHeader: View {
                         Text(climb.Area).font(.system(size: 14)).foregroundColor(.gray)
                     }
                     StarsView(rating: climb.Rating).frame(width: 100)
-                }.padding(.leading)
-                    .padding(.top, 10)
+                }
                 
                 Spacer()
                 VStack{
@@ -64,8 +63,10 @@ struct ClimbProfileHeader: View {
                             .fontWeight(.bold)
                         
                     }
-                }.padding([.trailing, .top])
+                }
+                .padding(.top, 5)
             }
+            .padding(15)
         }
     }
 }

@@ -8,7 +8,7 @@ import Foundation
 import SwiftUI
 
 struct AreaProfileClimbRow: View {
-    @ObservedObject private var areaVM = AreaViewModel(area: Area())
+    
     var climb: AreaClimb
     var id: String
     var name: String
@@ -47,31 +47,26 @@ struct AreaProfileClimbRow: View {
     }
     
     private var content: some View{
-        NavigationLink (destination: ClimbProfile(climb: areaVM.climb)) {
-            VStack{
-                HStack{
-                    StarsView(rating: self.rank).frame(width:75)
-                    Spacer()
-                    Text(self.name)
-                    Spacer()
-                    Image("arrow").resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: 10, maxHeight: 10 )
-                        .rotationEffect(Angle(degrees: 180))
-                }
-                .padding([.top, .bottom], 10)
-                .padding([.leading, .trailing], 25.0)
+        VStack{
+            HStack{
+                StarsView(rating: self.rank).frame(width:75)
+                Spacer()
+                Text(self.name)
+                Spacer()
+                Image("arrow").resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: 10, maxHeight: 10 )
+                    .rotationEffect(Angle(degrees: 180))
             }
-            .onTapGesture { Task {
-                if self.id != "-1" {
-                    try await areaVM.loadClimbFromId(self.id)
-                }
-            }}
+            .padding([.top, .bottom], 10)
+            .padding([.leading, .trailing], 25.0)
         }
     }
 }
 
 struct AreaProfileClimbList: View {
+    
+    @ObservedObject private var areaVM = AreaViewModel(area: Area())
     
     var climbs: [AreaClimb]
     
@@ -82,7 +77,15 @@ struct AreaProfileClimbList: View {
     var body: some View{
         LazyVStack{
             ForEach(self.climbs, id: \.id){ climb in
-                AreaProfileClimbRow(climb: climb)
+                NavigationLink (destination: ClimbProfile(climb: areaVM.climb)) {
+                    AreaProfileClimbRow(climb: climb)
+                        .onTapGesture { Task {
+                            if let id = climb.id {
+                                try await areaVM.loadClimbFromId(id)
+                            }
+                        }}
+                }
+                
             }
         }.frame(maxHeight: .infinity, alignment: .top)
     }

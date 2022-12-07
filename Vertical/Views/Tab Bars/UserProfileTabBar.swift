@@ -10,6 +10,7 @@ enum UserProfileTab: String, CaseIterable {
 
 struct UserProfileTabBar: View {
     @Binding var selectedTab: UserProfileTab
+    @EnvironmentObject var userPostsViewModel: UserPostViewModel
     private var fillImage: String {
         selectedTab.rawValue + ".fill"
     }
@@ -36,6 +37,8 @@ struct UserProfileTabBar: View {
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.1)) {
                                 selectedTab = tab
+                                guard let userId = AuthViewModel.shared.userSession?.uid else {return}
+                                userPostsViewModel.grabPosts(userId: userId)
                             }
                         }
                         .padding(10)

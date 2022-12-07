@@ -12,7 +12,6 @@ class FeedCellViewModel: ObservableObject {
     @Published var post: PostData
     
     var likeString: String {
-        let label = post.likes == 1 ? "like" : "likes"
         return "\(post.likes)"
     }
     
@@ -24,12 +23,12 @@ class FeedCellViewModel: ObservableObject {
     func like() {
         guard let uid = AuthViewModel.shared.currentUser?.id else { return }
                 
-        COLLECTION_POSTS.document(uid).collection("posts").document(self.post.id).collection("likes")
+        COLLECTION_POSTS.document(self.post.id).collection("likes")
             .document(uid).setData([:]) { _ in
                 COLLECTION_USERS.document(uid).collection("likes")
                     .document(self.post.id).setData([:]) { _ in
                         
-                        COLLECTION_POSTS.document(uid).collection("posts").document(self.post.id).updateData(["likes": self.post.likes + 1])
+                        COLLECTION_POSTS.document(self.post.id).updateData(["likes": self.post.likes + 1])
                         
                         self.post.didLike = true
                         self.post.likes += 1
@@ -40,9 +39,9 @@ class FeedCellViewModel: ObservableObject {
     func unlike() {
         guard let uid = AuthViewModel.shared.userSession?.uid else { return }
 
-        COLLECTION_POSTS.document(uid).collection("posts").document(self.post.id).collection("likes").document(uid).delete { _ in
+        COLLECTION_POSTS.document(self.post.id).collection("likes").document(uid).delete { _ in
             COLLECTION_USERS.document(uid).collection("likes").document(self.post.id).delete{ _ in
-                COLLECTION_POSTS.document(uid).collection("posts").document(self.post.id).updateData(["likes": self.post.likes - 1])
+                COLLECTION_POSTS.document(self.post.id).updateData(["likes": self.post.likes - 1])
                 
                 self.post.didLike = false
                 self.post.likes -= 1

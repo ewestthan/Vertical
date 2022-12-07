@@ -29,7 +29,7 @@ class FeedViewModel: ObservableObject {
         if UserDefaults.standard.object(forKey: "lastFeedFetch") == nil {
             
             // If first time launching set it to last week to grab a little of old posts
-            UserDefaults.standard.set(Date.today().previous(.monday), forKey: "lastFeedFetch")
+            UserDefaults.standard.set(Calendar.current.date(byAdding: .month, value: -1, to: Date()), forKey: "lastFeedFetch")
         }
         
         do {

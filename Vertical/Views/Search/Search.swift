@@ -17,7 +17,6 @@ struct Search: View {
     @ObservedObject var viewModel = SearchViewModel()
     
     var body: some View {
-        NavigationView{
             ZStack {
                 VStack {
                     SearchBar(text: $searchText, tabSelected: $tabSelected)
@@ -40,7 +39,6 @@ struct Search: View {
                         }
                     }
                 }.padding([.top], 10)
-            }
         }
         .environmentObject(climbSearch)
         .environmentObject(userSearch)

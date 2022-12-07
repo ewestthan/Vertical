@@ -14,12 +14,22 @@ struct ClimbProfileHeader: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            WebImage(url: climbSearchViewModel.climbImages[climb.Picture_URL] == nil ? nil : climbSearchViewModel.climbImages[climb.Picture_URL]!)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxHeight: 200)
-                .shadow(color: .black, radius: 2, x: 0, y: 0)
-                .clipped()
+            if let url = climb.header_image {
+                WebImage(url: URL(string: url))
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxHeight: 200)
+                    .shadow(color: .black, radius: 2, x: 0, y: 0)
+                    .clipped()
+            }
+            else {
+                WebImage(url: climbSearchViewModel.climbImages[climb.Picture_URL] == nil ? nil : climbSearchViewModel.climbImages[climb.Picture_URL]!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxHeight: 200)
+                    .shadow(color: .black, radius: 2, x: 0, y: 0)
+                    .clipped()
+            }
             HStack(alignment: .top){
                 VStack(alignment: .leading, spacing: 5){
                     Text(climb.Name).font(.system(size: 32))
@@ -60,8 +70,8 @@ struct ClimbProfileHeader: View {
     }
 }
 
-struct ClimbProfileHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test"))
-    }
-}
+//struct ClimbProfileHeader_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test"))
+//    }
+//}

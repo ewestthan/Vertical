@@ -95,6 +95,7 @@
 		FD314680293302D700FD815D /* AreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31467F293302D700FD815D /* AreaViewModel.swift */; };
 		FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */; };
 		FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */; };
+		FD81A47229404C6200B83243 /* ClimbProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81A47129404C6200B83243 /* ClimbProfileService.swift */; };
 		FD95C76D2911EE0800A54810 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C76C2911EE0800A54810 /* Area.swift */; };
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
@@ -198,6 +199,7 @@
 		FD31467F293302D700FD815D /* AreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewModel.swift; sourceTree = "<group>"; };
 		FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTabBar.swift; sourceTree = "<group>"; };
 		FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileContent.swift; sourceTree = "<group>"; };
+		FD81A47129404C6200B83243 /* ClimbProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileService.swift; sourceTree = "<group>"; };
 		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				79CBE8CA29183A7600D43A08 /* FirestoreService.swift */,
 				047FAD34293BE00C0015BC55 /* UserService.swift */,
 				5EA4DAF0293C2D3D0008C66D /* PostService.swift */,
+				FD81A47129404C6200B83243 /* ClimbProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
 				04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
+				FD81A47229404C6200B83243 /* ClimbProfileService.swift in Sources */,
 				FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */,
 				5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,

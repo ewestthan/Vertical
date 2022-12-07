@@ -28,6 +28,7 @@ class AuthViewModel: ObservableObject{
             guard let user = result?.user else { return }
 
             self.userSession = user
+            self.fetchUser()
         }
         
     }
@@ -49,10 +50,16 @@ class AuthViewModel: ObservableObject{
                             "username": username,
                             "fullname": fullname,
                             "profileImageUrl": imageUrl,
-                            "uid": user.uid]
+                            "uid": user.uid,
+                            "ascents": 0,
+                            "followers": 0,
+                            "following": 0,
+                            "location": "None",
+                            "description": "None"]
                 
                 COLLECTION_USERS.document(user.uid).setData(data){ _ in
                     self.userSession = user
+                    self.fetchUser()
                 }
             }
         }

@@ -42,7 +42,7 @@ class FirebaseService: ObservableObject {
                 
         var newPosts = false
         for id in ids {
-            let refsPosts = try await db.collection("posts/\(id)/posts").whereField("date", isGreaterThan: timestampLastFetched).order(by: "date", descending: true).limit(to: 20).getDocuments()
+            let refsPosts = try await db.collection("posts").whereField("ownerId", isEqualTo: id).limit(to: 20).getDocuments()
             let recentPosts = refsPosts.documents.compactMap{ document in try? document.data(as: Post.self) }
             
             for p in recentPosts {

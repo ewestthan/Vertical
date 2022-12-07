@@ -21,8 +21,7 @@ class AreaViewModel: ObservableObject {
     
     init(area: Area) {
         self.area = area
-        self.areaClimbs = [AreaClimb(id: "EBSczr1BNlIimiAXUNT5", name: "Primate", rank: 5), AreaClimb(id: "cr50dO13IAczdhosJGQZ", name: "The Masochist", rank: 3), AreaClimb(id: "WU1KgVjqpaljL8ei1DVK", name: "Pac Man", rank: 5), AreaClimb(id: "W9nb7XnZt0ontEAV9rFi", name: "The Impossible Problem", rank: 3)]
-        //self.areaClimbs = [AreaClimb]()
+        self.areaClimbs = [AreaClimb]()
         self.climb = ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test")
     }
     
@@ -34,19 +33,22 @@ class AreaViewModel: ObservableObject {
     func loadArea(id: String) async {
         do {
             self.area = try await fetchAreaInfo(id)
-            fetchAreaClimbs(id)
-            self.area.climbs = self.areaClimbs
+            self.area.climbs = try await fetchAreaClimbs(id)
         } catch {
             print(error)
         }
     }
     
-    func setArea(area: Area) {
+    func setArea(area: Area) async {
         self.area = area
         if let id = area.id {
-            fetchAreaClimbs(id)
+            do {
+                self.area.climbs = try await fetchAreaClimbs(id)
+            }
+            catch {
+                self.area.climbs = [AreaClimb]()
+            }
         }
-        self.area.climbs = self.areaClimbs
     }
     
     func fetchAreaInfo(_ areaID: String) async throws -> Area {
@@ -54,20 +56,23 @@ class AreaViewModel: ObservableObject {
         return try ref.data(as: Area.self)
     }
     
-    func fetchAreaClimbs(_ areaID: String) {
-        AREAS_COLLECTION.document(areaID).collection("climbs").getDocuments { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("no climbs")
-                return
-            }
-            self.areaClimbs = documents.map { (queryDocumentSnapshot) -> AreaClimb in
-                let data = queryDocumentSnapshot.data()
-                let id = data["id"] as? String ?? "None"
-                let name = data["name"] as? String ?? "None"
-                let rank = data["rank"] as? Int ?? 0
-                return AreaClimb(id: id, name: name, rank: rank)
-            }
+    func fetchAreaClimbs(_ areaID: String) async throws -> [AreaClimb] {
+        
+        var climbs = [AreaClimb]()
+        var climb = AreaClimb()
+        
+        let snapshot = try await AREAS_COLLECTION.document(areaID).collection("climbs").getDocuments()
+        snapshot.documents.forEach { docSnap in
+            let data = docSnap.data()
+            let id = data["id"] as? String ?? "None"
+            let name = data["name"] as? String ?? "None"
+            let rank = data["rank"] as? Int ?? 0
+            climb = AreaClimb(id: id, name: name, rank: rank)
+            climbs.append(climb)
         }
+        
+        return climbs
+        
     }
-    
+        
 }

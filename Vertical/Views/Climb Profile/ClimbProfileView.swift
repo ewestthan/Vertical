@@ -15,6 +15,7 @@ struct ClimbProfile: View {
             ClimbProfileHeader(climb: climb)
             ClimbProfileBottom()
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

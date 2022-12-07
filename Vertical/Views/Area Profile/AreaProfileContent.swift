@@ -74,6 +74,7 @@ struct AreaProfileContent: View {
                         }
                         if (tab.rawValue == "Map") {
                             MapView()
+                                .edgesIgnoringSafeArea(.bottom)
                         }
                         if (tab.rawValue == "Weather") {
                             Text(self.weather).multilineTextAlignment(.center)

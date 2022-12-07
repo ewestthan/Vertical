@@ -66,6 +66,7 @@
 		5EA4DAF1293C2D3D0008C66D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4DAF0293C2D3D0008C66D /* PostService.swift */; };
 		5EA4DAF3293C2D910008C66D /* UserPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4DAF2293C2D910008C66D /* UserPostViewModel.swift */; };
 		5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */; };
+		5EFE22B529401F5600B157A1 /* RefreshableScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 5EFE22B429401F5600B157A1 /* RefreshableScrollView */; };
 		62111B74293BDEE5007B4EBA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B73293BDEE5007B4EBA /* DateExtensions.swift */; };
 		62111B76293BDFC4007B4EBA /* PostStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B75293BDFC4007B4EBA /* PostStore.swift */; };
 		62111B78293C0012007B4EBA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B77293C0012007B4EBA /* FeedCell.swift */; };
@@ -215,6 +216,7 @@
 			files = (
 				5E988E92292695E200ADF7ED /* SDWebImageSwiftUI in Frameworks */,
 				795660422911B89900D747AF /* FirebaseDatabaseSwift in Frameworks */,
+				5EFE22B529401F5600B157A1 /* RefreshableScrollView in Frameworks */,
 				795660402911B89900D747AF /* FirebaseDatabase in Frameworks */,
 				795660382911B89900D747AF /* FirebaseAnalyticsSwift in Frameworks */,
 				795660462911B89900D747AF /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -538,6 +540,7 @@
 				7956604D2911B89900D747AF /* FirebaseStorage */,
 				7956604F2911B89900D747AF /* FirebaseStorageCombine-Community */,
 				5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */,
+				5EFE22B429401F5600B157A1 /* RefreshableScrollView */,
 			);
 			productName = Vertical;
 			productReference = 046ADF4D28F85D4D007616A2 /* Vertical.app */;
@@ -614,6 +617,7 @@
 			packageReferences = (
 				795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				5EFE22B329401F5600B157A1 /* XCRemoteSwiftPackageReference "RefreshableScrollView" */,
 			);
 			productRefGroup = 046ADF4E28F85D4D007616A2 /* Products */;
 			projectDirPath = "";
@@ -1067,6 +1071,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		5EFE22B329401F5600B157A1 /* XCRemoteSwiftPackageReference "RefreshableScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TariqAlmazyad/RefreshableScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1082,6 +1094,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		5EFE22B429401F5600B157A1 /* RefreshableScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EFE22B329401F5600B157A1 /* XCRemoteSwiftPackageReference "RefreshableScrollView" */;
+			productName = RefreshableScrollView;
 		};
 		795660352911B89900D747AF /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

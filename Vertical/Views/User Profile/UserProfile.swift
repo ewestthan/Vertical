@@ -24,7 +24,7 @@ struct UserProfile: View {
             VStack(spacing: 0){
                 UserProfileHeader(viewModel: viewModel)
                 UserProfileBottom(userPosts: postViewModel.userPosts, userId: user.id!)
-            }
+            }.environmentObject(postViewModel)
     }
 }
 

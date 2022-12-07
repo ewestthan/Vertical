@@ -49,7 +49,8 @@ struct UserProfileClimbList: View {
     
     var userPosts: [Post]
     @State private var selection: Set<Post> = []
-
+    @EnvironmentObject var postViewModel: UserPostViewModel
+    
     var body: some View{
         ScrollView {
             LazyVStack{
@@ -61,7 +62,8 @@ struct UserProfileClimbList: View {
             }.frame(maxHeight: .infinity, alignment: .top)
         }
     }
-                       
+    
+    
     
     func selectDeselect(_ climb: Post){
         if selection.contains(climb){

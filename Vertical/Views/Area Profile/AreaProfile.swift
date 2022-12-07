@@ -33,7 +33,6 @@ struct AreaProfile: View {
     }
 
     var body: some View {
-        NavigationView {
             ZStack {
                 VStack {
                     AreaProfileHeader(area: areaVM.area)
@@ -51,9 +50,6 @@ struct AreaProfile: View {
             .edgesIgnoringSafeArea(.top)
             .environmentObject(AreaSearchViewModel())
         }
-        
-    }
-        
     
 }
 

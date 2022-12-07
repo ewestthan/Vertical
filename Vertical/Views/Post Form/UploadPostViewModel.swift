@@ -30,9 +30,9 @@ class UploadPostViewModel: ObservableObject {
                         "ownerImageUrl": user.profileImageUrl,
                         "ownerUsername": user.username] as [String : Any]
             
-            guard let currentUid = AuthViewModel.shared.userSession?.uid else {return}
+            //guard let currentUid = AuthViewModel.shared.userSession?.uid else {return}
             
-            COLLECTION_POSTS.document(currentUid).collection("posts").addDocument(data: data) { _ in
+            COLLECTION_POSTS.addDocument(data: data) { _ in
                 print("DEBUG: Uploaded Post")
             }
          }

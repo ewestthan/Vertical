@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct ClimbProfileHeader: View {
     var climb: ClimbProfileModel
-    @EnvironmentObject var climbSearchViewModel: ClimbSearchViewModel
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -23,7 +23,7 @@ struct ClimbProfileHeader: View {
                     .clipped()
             }
             else {
-                WebImage(url: climbSearchViewModel.climbImages[climb.Picture_URL] == nil ? nil : climbSearchViewModel.climbImages[climb.Picture_URL]!)
+                WebImage(url: URL(string: ""))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(maxHeight: 200)
@@ -70,8 +70,8 @@ struct ClimbProfileHeader: View {
     }
 }
 
-//struct ClimbProfileHeader_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test"))
-//    }
-//}
+struct ClimbProfileHeader_Previews: PreviewProvider {
+    static var previews: some View {
+        ClimbProfileHeader(climb: ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test"))
+    }
+}

@@ -8,18 +8,31 @@
 import Foundation
 
 struct AreaService {
-    static func follow(aid: String, completion: ((Error?) -> Void)?){
+    static func follow(aid: String, completion: @escaping(Bool) -> Void){
         print("DEBUG: In Area Service")
         print(aid)
         guard let currentUid = AuthViewModel.shared.userSession?.uid else {return}
         print("DEBUG: Following Area")
         print(currentUid)
-        COLLECTION_FOLLOWING.document(currentUid).collection("followsArea").document(aid).setData([:])
+        COLLECTION_FOLLOWING.document(currentUid).collection("followsArea").document(aid).setData([:]) { err in
+            if let err = err {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
-    static func unfollow(aid: String, completion: ((Error?) -> Void)?){
+    
+    static func unfollow(aid: String, completion: @escaping(Bool) -> Void){
         guard let currentUid = AuthViewModel.shared.userSession?.uid else {return}
         print("DEBUG: unfollowing area")
-        COLLECTION_FOLLOWING.document(currentUid).collection("followsArea").document(aid).delete()
+        COLLECTION_FOLLOWING.document(currentUid).collection("followsArea").document(aid).delete() { err in
+            if let err = err {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
     
     static func checkIfUserIsFollowed(aid: String, completion: @escaping(Bool) -> Void){

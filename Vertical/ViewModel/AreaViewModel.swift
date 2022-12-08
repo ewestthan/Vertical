@@ -15,6 +15,7 @@ class AreaViewModel: ObservableObject {
     @Published var area: Area
     @Published var areaClimbs: [AreaClimb]
     @Published var climb: ClimbProfileModel
+    @Published var userFollows: Bool
 
     let AREAS_COLLECTION = Firestore.firestore().collection("areas")
     
@@ -22,6 +23,8 @@ class AreaViewModel: ObservableObject {
         self.area = area
         self.areaClimbs = [AreaClimb]()
         self.climb = ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test")
+        self.userFollows = false
+        self.checkIfUserIsFollowed()
     }
     
     func loadArea(id: String) async {
@@ -69,23 +72,26 @@ class AreaViewModel: ObservableObject {
     
     func follow(){
         guard let aid = self.area.id else {return}
-        print(aid)
-        AreaService.follow(aid: aid){ _ in
-            self.area.isFollowed = true
+        AreaService.follow(aid: aid){ followed in
+            if followed {
+                self.checkIfUserIsFollowed()
+            }
         }
     }
     
     func unfollow(){
         guard let aid = self.area.id else {return}
-        AreaService.unfollow(aid: aid){ _ in
-            self.area.isFollowed = false
+        AreaService.unfollow(aid: aid){ unfollowed in
+            if unfollowed {
+                self.checkIfUserIsFollowed()
+            }
         }
     }
     
     func checkIfUserIsFollowed(){
         guard let aid = self.area.id else{return}
         AreaService.checkIfUserIsFollowed(aid: aid){ isFollowed in
-            self.area.isFollowed = isFollowed
+            self.userFollows = isFollowed
         }
     }
 }

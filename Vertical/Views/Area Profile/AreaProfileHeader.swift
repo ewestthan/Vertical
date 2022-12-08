@@ -12,7 +12,7 @@ import SDWebImageSwiftUI
 struct AreaProfileHeader: View {
     
     @State private var unfollowConfirm: Bool = false
-    @ObservedObject private var areaVM = AreaViewModel(area: Area())
+    @ObservedObject private var areaVM: AreaViewModel
     
     let area: Area
     var name: String
@@ -68,6 +68,7 @@ struct AreaProfileHeader: View {
             self.rank = 0
         }
         
+        self.areaVM = AreaViewModel(area: area)
     }
     
     var body: some View {
@@ -104,7 +105,7 @@ struct AreaProfileHeader: View {
             }
             HStack(spacing: 0) {
                 HStack(alignment: .center) {
-                    AreaActionButtonView(viewModel: areaVM)
+                    AreaActionButtonView()
 //                    .confirmationDialog(
 //                        "Unfollow this area?",
 //                        isPresented: $unfollowConfirm,
@@ -125,6 +126,7 @@ struct AreaProfileHeader: View {
                     Text("•••")
                 }
                 .frame(width: 280, alignment: .leading)
+                .environmentObject(areaVM)
                 StarsView(rating: self.rank)
                     .frame(width: 100)
             }

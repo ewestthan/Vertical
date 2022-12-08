@@ -9,15 +9,14 @@ import SwiftUI
 
 struct AreaActionButtonView: View{
     
-    @ObservedObject var viewModel: AreaViewModel
-    var isFollowed: Bool { return viewModel.area.isFollowed ?? false }
+    @EnvironmentObject var areaVM: AreaViewModel
     
     var body: some View{
         HStack{
             Button(action:{
-                isFollowed ? viewModel.unfollow() : viewModel.follow()
+                areaVM.userFollows ? areaVM.unfollow() : areaVM.follow()
             }, label: {
-                if (isFollowed) {
+                if (areaVM.userFollows) {
                     Text("Following")
                         .frame(width: 120, height: 35)
                         .background(.white)

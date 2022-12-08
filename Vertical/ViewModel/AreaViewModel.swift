@@ -12,7 +12,6 @@ import Firebase
 import FirebaseFirestore
 
 class AreaViewModel: ObservableObject {
-    
     @Published var area: Area
     @Published var areaClimbs: [AreaClimb]
     @Published var climb: ClimbProfileModel
@@ -70,9 +69,28 @@ class AreaViewModel: ObservableObject {
             climb = AreaClimb(id: id, name: name, rank: rank)
             climbs.append(climb)
         }
-        
         return climbs
-        
     }
-        
+    
+    func follow(){
+        guard let aid = self.area.id else {return}
+        print(aid)
+        AreaService.follow(aid: aid){ _ in
+            self.area.isFollowed = true
+        }
+    }
+    
+    func unfollow(){
+        guard let aid = self.area.id else {return}
+        AreaService.unfollow(aid: aid){ _ in
+            self.area.isFollowed = false
+        }
+    }
+    
+    func checkIfUserIsFollowed(){
+        guard let aid = self.area.id else{return}
+        AreaService.checkIfUserIsFollowed(aid: aid){ isFollowed in
+            self.area.isFollowed = isFollowed
+        }
+    }
 }

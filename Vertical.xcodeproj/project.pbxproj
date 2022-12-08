@@ -18,6 +18,8 @@
 		042B72CB29108502007E1691 /* SearchTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72CA29108502007E1691 /* SearchTabBar.swift */; };
 		042B72CD2910871F007E1691 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = 042B72CC2910871F007E1691 /* Users.json */; };
 		042B72D129108A7C007E1691 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72D029108A7C007E1691 /* UserSearch.swift */; };
+		042BF07A2940198B00E4FE83 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF0792940198B00E4FE83 /* AreaService.swift */; };
+		042BF07C29401EE300E4FE83 /* AreaActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF07B29401EE300E4FE83 /* AreaActionButtonView.swift */; };
 		0446164C291D8C9D00ABCD06 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446164B291D8C9D00ABCD06 /* ImagePicker.swift */; };
 		0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446164D291D8D9A00ABCD06 /* ImageUploader.swift */; };
 		0455A7DD291D4E2700CEBDCD /* ClimbProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */; };
@@ -133,6 +135,8 @@
 		042B72CA29108502007E1691 /* SearchTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBar.swift; sourceTree = "<group>"; };
 		042B72CC2910871F007E1691 /* Users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
 		042B72D029108A7C007E1691 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
+		042BF0792940198B00E4FE83 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
+		042BF07B29401EE300E4FE83 /* AreaActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaActionButtonView.swift; sourceTree = "<group>"; };
 		0446164B291D8C9D00ABCD06 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0446164D291D8D9A00ABCD06 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileViewModel.swift; sourceTree = "<group>"; };
@@ -486,6 +490,7 @@
 				5E33FF15291D3CBD000639D0 /* ClimbSearch.swift */,
 				79CBE8CA29183A7600D43A08 /* FirestoreService.swift */,
 				047FAD34293BE00C0015BC55 /* UserService.swift */,
+				042BF0792940198B00E4FE83 /* AreaService.swift */,
 				5EA4DAF0293C2D3D0008C66D /* PostService.swift */,
 			);
 			path = Services;
@@ -499,6 +504,7 @@
 				FD95C7732911EE7F00A54810 /* AreaProfileHeader.swift */,
 				FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */,
 				FDF77ACB2939ACBE00F0F2F1 /* AreaProfileClimbList.swift */,
+				042BF07B29401EE300E4FE83 /* AreaActionButtonView.swift */,
 			);
 			path = "Area Profile";
 			sourceTree = "<group>";
@@ -663,6 +669,7 @@
 				04DD942A2911831700D36C2E /* FeedVideoCell.swift in Sources */,
 				0446164C291D8C9D00ABCD06 /* ImagePicker.swift in Sources */,
 				0414E818291D7334004EE6F2 /* ResetPasswordView.swift in Sources */,
+				042BF07C29401EE300E4FE83 /* AreaActionButtonView.swift in Sources */,
 				FD314680293302D700FD815D /* AreaViewModel.swift in Sources */,
 				5E2DC670293CFB710073BCAB /* UserProfileClimbList.swift in Sources */,
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
@@ -704,6 +711,7 @@
 				042B72CB29108502007E1691 /* SearchTabBar.swift in Sources */,
 				042441E92911CEFD008C4E5B /* VideoPostForm.swift in Sources */,
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
+				042BF07A2940198B00E4FE83 /* AreaService.swift in Sources */,
 				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
 				495C26892936D33800169AE8 /* MapView.swift in Sources */,

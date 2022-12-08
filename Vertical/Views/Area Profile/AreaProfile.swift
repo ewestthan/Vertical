@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AreaProfile: View {
     
-    @ObservedObject private var areaVM = AreaViewModel(area: Area())
+    @ObservedObject private var areaVM: AreaViewModel
     var area: Area
     var id: String
     var loadFromId: Bool
@@ -19,6 +19,7 @@ struct AreaProfile: View {
         self.id = id
         self.loadFromId = true
         self.area = Area()
+        self.areaVM = AreaViewModel(area: Area())
     }
     
     init(area: Area) {
@@ -30,6 +31,7 @@ struct AreaProfile: View {
         }
         self.loadFromId = false
         self.area = area
+        self.areaVM = AreaViewModel(area: Area())
     }
 
     var body: some View {

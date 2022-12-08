@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 public struct Area: Hashable, Codable, Identifiable {
     @DocumentID public var id: String?
     var name: String?
+    var isFollowed: Bool? = false
     var location: String?
     var image: String?
     var zip: String?

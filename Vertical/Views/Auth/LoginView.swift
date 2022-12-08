@@ -27,6 +27,8 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
+                        .autocorrectionDisabled(true)
+                        .textInputAutocapitalization(.never)
                     
                     CustomSecureField(text: $password, placeholder: Text("Password"))
                         .padding()
@@ -34,6 +36,8 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
+                        .autocorrectionDisabled(true)
+                        .textInputAutocapitalization(.never)
                     
                     HStack{
                         Spacer()

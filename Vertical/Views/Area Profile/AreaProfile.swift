@@ -35,24 +35,23 @@ struct AreaProfile: View {
     }
 
     var body: some View {
-        ZStack {
-            VStack {
-                AreaProfileHeader(area: areaVM.area)
-                AreaProfileContent(area: areaVM.area)
+            ZStack {
+                VStack {
+                    AreaProfileHeader(area: areaVM.area)
+                    AreaProfileContent(area: areaVM.area)
+                }
+                .onAppear{ Task {
+                    if (self.loadFromId) {
+                        await areaVM.loadArea(id: self.id)
+                    }
+                    else {
+                        await areaVM.setArea(area: self.area)
+                    }
+                }}
             }
-            .onAppear{ Task {
-                if (self.loadFromId) {
-                    await areaVM.loadArea(id: self.id)
-                }
-                else {
-                    await areaVM.setArea(area: self.area)
-                }
-            }}
+            .edgesIgnoringSafeArea(.top)
+            .environmentObject(AreaSearchViewModel())
         }
-        .edgesIgnoringSafeArea(.top)
-        .environmentObject(AreaSearchViewModel())
-    }
-        
     
 }
 

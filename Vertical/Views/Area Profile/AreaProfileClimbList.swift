@@ -77,15 +77,14 @@ struct AreaProfileClimbList: View {
     var body: some View{
         LazyVStack{
             ForEach(self.climbs, id: \.id){ climb in
-                NavigationLink (destination: ClimbProfile(climb: areaVM.climb)) {
-                    AreaProfileClimbRow(climb: climb)
-                        .onTapGesture { Task {
-                            if let id = climb.id {
-                                try await areaVM.loadClimbFromId(id)
-                            }
-                        }}
+                if let id = climb.id {
+                    NavigationLink (destination: ClimbProfile(id: id)) {
+                        AreaProfileClimbRow(climb: climb)
+                    }
                 }
-                
+                else {
+                    Text("Bad climb")
+                }
             }
         }.frame(maxHeight: .infinity, alignment: .top)
     }

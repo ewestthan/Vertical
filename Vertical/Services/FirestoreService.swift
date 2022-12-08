@@ -26,7 +26,7 @@ class FirebaseService: ObservableObject {
     
         let refsFollowing = try await db.collection("following/\(userUID)/follows").getDocuments()
         
-        let lastFetched: Date = UserDefaults.standard.object(forKey: "lastFeedFetch") as! Date
+        var lastFetched: Date = UserDefaults.standard.object(forKey: "lastFeedFetch") as! Date
                 
         let timestampLastFetched = Timestamp(date: lastFetched)
         
@@ -42,7 +42,8 @@ class FirebaseService: ObservableObject {
                 
         var newPosts = false
         for id in ids {
-            let refsPosts = try await db.collection("posts").whereField("ownerId", isEqualTo: id).limit(to: 20).getDocuments()
+            let refsPosts = try await COLLECTION_POSTS.whereField("ownerId", isEqualTo: id).whereField("date", isGreaterThan: timestampLastFetched).order(by: "date", descending: true).limit(to: 20).getDocuments()
+            
             let recentPosts = refsPosts.documents.compactMap{ document in try? document.data(as: Post.self) }
             
             for p in recentPosts {
@@ -55,7 +56,7 @@ class FirebaseService: ObservableObject {
         }
                 
         for (id, post) in postsDict {
-            var ref = try await COLLECTION_POSTS.document(post.ownerId).collection("posts").document(id).getDocument()
+            var ref = try await COLLECTION_POSTS.document(id).getDocument()
             if let p = try? ref.data(as: Post.self) {
                 postsDict.updateValue(p.toPostData(), forKey: id)
             }
@@ -63,11 +64,13 @@ class FirebaseService: ObservableObject {
         }
                 
         if newPosts {
+            print("Saving...")
             PostStore.save(posts: Array(postsDict.values)) { result in
                 if case .failure(let error) = result {
                     fatalError(error.localizedDescription)
                 }
             }
+            print("Saved")
         }
         
         UserDefaults.standard.set(Date.now, forKey: "lastFeedFetch")

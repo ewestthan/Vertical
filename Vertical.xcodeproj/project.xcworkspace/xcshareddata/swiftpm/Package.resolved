@@ -100,6 +100,15 @@
       }
     },
     {
+      "identity" : "refreshablescrollview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TariqAlmazyad/RefreshableScrollView",
+      "state" : {
+        "revision" : "b4495b4dd3b2391b0d947e34700ed80e09ddbf67",
+        "version" : "1.0.1"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",

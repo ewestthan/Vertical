@@ -33,7 +33,7 @@ struct SearchClimbRowView: View {
                 .clipShape(Circle())
                 
                 VStack(alignment: .leading) {
-                    Text(climb.Name + "V" + String(climb.Grade)).font(.system(size: 16))
+                    Text(climb.Name + " V" + String(climb.Grade)).font(.system(size: 16))
                     Text(climb.Area).font(.system(size: 12))
                 }.padding(.leading, 10)
                 Spacer()

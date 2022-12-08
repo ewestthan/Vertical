@@ -68,6 +68,7 @@
 		5EA4DAF1293C2D3D0008C66D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4DAF0293C2D3D0008C66D /* PostService.swift */; };
 		5EA4DAF3293C2D910008C66D /* UserPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4DAF2293C2D910008C66D /* UserPostViewModel.swift */; };
 		5EB571E829358B6F00C399A2 /* AreaSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */; };
+		5EFE22B529401F5600B157A1 /* RefreshableScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 5EFE22B429401F5600B157A1 /* RefreshableScrollView */; };
 		62111B74293BDEE5007B4EBA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B73293BDEE5007B4EBA /* DateExtensions.swift */; };
 		62111B76293BDFC4007B4EBA /* PostStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B75293BDFC4007B4EBA /* PostStore.swift */; };
 		62111B78293C0012007B4EBA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62111B77293C0012007B4EBA /* FeedCell.swift */; };
@@ -97,6 +98,7 @@
 		FD314680293302D700FD815D /* AreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31467F293302D700FD815D /* AreaViewModel.swift */; };
 		FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */; };
 		FD39F3DB291D5324000AB8F2 /* AreaProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */; };
+		FD81A47229404C6200B83243 /* ClimbProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD81A47129404C6200B83243 /* ClimbProfileService.swift */; };
 		FD95C76D2911EE0800A54810 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C76C2911EE0800A54810 /* Area.swift */; };
 		FD95C76F2911EE3D00A54810 /* Areas.json in Resources */ = {isa = PBXBuildFile; fileRef = FD95C76E2911EE3D00A54810 /* Areas.json */; };
 		FD95C7722911EE6A00A54810 /* AreaProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD95C7712911EE6A00A54810 /* AreaProfile.swift */; };
@@ -202,6 +204,7 @@
 		FD31467F293302D700FD815D /* AreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewModel.swift; sourceTree = "<group>"; };
 		FD39F3D8291D52B1000AB8F2 /* AreaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTabBar.swift; sourceTree = "<group>"; };
 		FD39F3DA291D5324000AB8F2 /* AreaProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfileContent.swift; sourceTree = "<group>"; };
+		FD81A47129404C6200B83243 /* ClimbProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileService.swift; sourceTree = "<group>"; };
 		FD95C76C2911EE0800A54810 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		FD95C76E2911EE3D00A54810 /* Areas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Areas.json; sourceTree = "<group>"; };
 		FD95C7712911EE6A00A54810 /* AreaProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaProfile.swift; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 			files = (
 				5E988E92292695E200ADF7ED /* SDWebImageSwiftUI in Frameworks */,
 				795660422911B89900D747AF /* FirebaseDatabaseSwift in Frameworks */,
+				5EFE22B529401F5600B157A1 /* RefreshableScrollView in Frameworks */,
 				795660402911B89900D747AF /* FirebaseDatabase in Frameworks */,
 				795660382911B89900D747AF /* FirebaseAnalyticsSwift in Frameworks */,
 				795660462911B89900D747AF /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -492,6 +496,7 @@
 				047FAD34293BE00C0015BC55 /* UserService.swift */,
 				042BF0792940198B00E4FE83 /* AreaService.swift */,
 				5EA4DAF0293C2D3D0008C66D /* PostService.swift */,
+				FD81A47129404C6200B83243 /* ClimbProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 				7956604D2911B89900D747AF /* FirebaseStorage */,
 				7956604F2911B89900D747AF /* FirebaseStorageCombine-Community */,
 				5E988E91292695E200ADF7ED /* SDWebImageSwiftUI */,
+				5EFE22B429401F5600B157A1 /* RefreshableScrollView */,
 			);
 			productName = Vertical;
 			productReference = 046ADF4D28F85D4D007616A2 /* Vertical.app */;
@@ -617,6 +623,7 @@
 			packageReferences = (
 				795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				5EFE22B329401F5600B157A1 /* XCRemoteSwiftPackageReference "RefreshableScrollView" */,
 			);
 			productRefGroup = 046ADF4E28F85D4D007616A2 /* Products */;
 			projectDirPath = "";
@@ -686,6 +693,7 @@
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
 				04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
+				FD81A47229404C6200B83243 /* ClimbProfileService.swift in Sources */,
 				FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */,
 				5E630F7A2908AE5200295FC3 /* ClimbProfileModel.swift in Sources */,
 				046E33372900496400EAC8DC /* UserProfilePic.swift in Sources */,
@@ -1071,6 +1079,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		5EFE22B329401F5600B157A1 /* XCRemoteSwiftPackageReference "RefreshableScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TariqAlmazyad/RefreshableScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		795660342911B89900D747AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1086,6 +1102,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E988E90292695E200ADF7ED /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		5EFE22B429401F5600B157A1 /* RefreshableScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EFE22B329401F5600B157A1 /* XCRemoteSwiftPackageReference "RefreshableScrollView" */;
+			productName = RefreshableScrollView;
 		};
 		795660352911B89900D747AF /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

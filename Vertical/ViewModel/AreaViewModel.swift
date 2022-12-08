@@ -24,11 +24,6 @@ class AreaViewModel: ObservableObject {
         self.climb = ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test")
     }
     
-    func loadClimbFromId(_ climbID: String) async throws {
-        let ref = try await Firestore.firestore().collection("ClimbProfile").document(climbID).getDocument()
-        self.climb = try ref.data(as: ClimbProfileModel.self)
-    }
-    
     func loadArea(id: String) async {
         do {
             self.area = try await fetchAreaInfo(id)

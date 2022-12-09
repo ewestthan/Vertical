@@ -26,7 +26,7 @@ struct VerticalApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
                 .environmentObject(AuthViewModel.shared)
 //                .onAppear(perform: { UserDefaults.standard.set(Date.now, forKey: "lastOpened") })
         }

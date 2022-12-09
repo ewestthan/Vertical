@@ -17,22 +17,12 @@ struct LoginView: View {
     var body: some View{
         NavigationView{
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [Color.purple, Color.white]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [Color(hue: 0.72, saturation: 0.715, brightness: 0.984), Color(hue: 0.72, saturation: 0.715, brightness: 0.984), Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
                 VStack(spacing: 20){
                     Spacer()
                     Text("V E R T I C A L").font(.system(size: 40, weight: .heavy))
-                        .overlay {
-                                LinearGradient(
-                                    colors: [.white, .white, .purple, .purple, ],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                                .mask(
-                                    Text("V E R T I C A L")
-                                        .font(Font.system(size: 40, weight: .heavy))
-                                )
-                            }
+                        .foregroundColor(.white)
                     CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))
@@ -71,7 +61,7 @@ struct LoginView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 360, height: 50)
-                            .background(.purple)
+                            .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.984))
                             .clipShape(Capsule())
                             .padding()
                     })
@@ -86,7 +76,7 @@ struct LoginView: View {
                                     .font(.system(size: 14))
                                 Text("Sign Up")
                                     .font(.system(size: 14, weight: .semibold))
-                            }.foregroundColor(.purple)
+                            }.foregroundColor(Color(hue: 0.72, saturation: 0.715, brightness: 0.984))
                     }).padding(.bottom, 30)
                 }
             }

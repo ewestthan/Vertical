@@ -22,10 +22,10 @@ struct RegistrationView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.purple, Color.white]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.72, saturation: 0.715, brightness: 0.984), Color(hue: 0.72, saturation: 0.715, brightness: 0.984), Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             VStack(spacing: 20){
-                
+                Spacer()
                 if let image = image {
                     image
                         .resizable()
@@ -84,7 +84,7 @@ struct RegistrationView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 360, height: 50)
-                        .background(.purple)
+                        .background(Color(hue: 0.72, saturation: 0.715, brightness: 0.984))
                         .clipShape(Capsule())
                         .padding()
                 })
@@ -98,7 +98,7 @@ struct RegistrationView: View {
                                 .font(.system(size: 14))
                             Text("Sign Up")
                                 .font(.system(size: 14, weight: .semibold))
-                        }.foregroundColor(.purple)
+                        }.foregroundColor(Color(hue: 0.72, saturation: 0.715, brightness: 0.984))
                 }).padding(.bottom, 30)
             }
         }

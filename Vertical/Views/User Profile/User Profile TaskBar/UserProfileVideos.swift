@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 struct UserProfileVideo: View {
     
-    var climb: ClimbRow
+    var post: Post
 
     var body: some View {
-        Image(climb.image)
+        WebImage(url: URL(string: post.ownerImageUrl))
             .resizable()
-            .scaledToFill()
-            .frame(width: 120, height: 120)
-            .cornerRadius(14)
+                        .scaledToFill()
+                        .frame(width: 120, height: 120)
+                        .cornerRadius(14)
     }
 }
 
@@ -48,24 +50,20 @@ struct UserProfileVideoPost: View {
 }
 
 struct UserProfileVideos: View {
-    
-    private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    var userPosts: [Post]
+    @EnvironmentObject var postViewModel: UserPostViewModel
     
     var body: some View {
         
         LazyVGrid(columns: columns, spacing: 7) {
-            ForEach(climbs, id: \.id){ climb in
-                NavigationLink(destination: FeedVideoCell().padding(.top)){
-                    UserProfileVideo(climb: climb)
+            ForEach(userPosts, id: \.id){ post in
+                NavigationLink(destination: FeedCell(viewModel: FeedCellViewModel(post: post.toPostData()))){
+                    UserProfileVideo(post: post)
+                    Text("")
                 }
             }
             
         }.frame(maxHeight: .infinity, alignment: .top)
-    }
-}
-
-struct UserProfileVideos_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileVideos()
     }
 }

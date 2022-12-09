@@ -19,7 +19,7 @@ struct UserProfileBottom: View{
                                 UserProfileClimbList(userPosts: userPosts)
                             }
                             if(tab.rawValue == "videos"){
-                                UserProfileVideos()
+                                UserProfileVideos(userPosts: userPosts)
                             }
                             if(tab.rawValue == "wishlist"){
                                 Text("\(tab.rawValue.capitalized)")

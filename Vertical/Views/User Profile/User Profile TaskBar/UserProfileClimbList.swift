@@ -20,7 +20,7 @@ struct UserProfileClimbRow: View {
             HStack{
                 StarsView(rating: climb.rating).frame(width:75)
                 Spacer()
-                Text(climb.description)
+                Text(climb.climbName)
                 Spacer()
                 Image("arrow").resizable()
                     .scaledToFill()

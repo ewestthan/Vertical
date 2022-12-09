@@ -13,11 +13,11 @@ struct UserProfileVideo: View {
     var post: Post
 
     var body: some View {
-        WebImage(url: URL(string: post.ownerImageUrl))
+        WebImage(url: URL(string: post.imageUrl))
             .resizable()
-                        .scaledToFill()
-                        .frame(width: 120, height: 120)
-                        .cornerRadius(14)
+            .scaledToFill()
+            .frame(width: 120, height: 120)
+            .cornerRadius(14)
     }
 }
 
@@ -55,15 +55,15 @@ struct UserProfileVideos: View {
     @EnvironmentObject var postViewModel: UserPostViewModel
     
     var body: some View {
-        
-        LazyVGrid(columns: columns, spacing: 7) {
-            ForEach(userPosts, id: \.id){ post in
-                NavigationLink(destination: FeedCell(viewModel: FeedCellViewModel(post: post.toPostData()))){
-                    UserProfileVideo(post: post)
-                    Text("")
+        ScrollView{
+            LazyVGrid(columns: columns, spacing: 7) {
+                ForEach(userPosts, id: \.id){ post in
+                    NavigationLink(destination: FeedCell(viewModel: FeedCellViewModel(post: post.toPostData()))){
+                        UserProfileVideo(post: post)
+                        Text("")
+                    }
                 }
             }
-            
         }.frame(maxHeight: .infinity, alignment: .top)
     }
 }

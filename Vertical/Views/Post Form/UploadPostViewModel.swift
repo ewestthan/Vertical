@@ -27,7 +27,6 @@ class UploadPostViewModel: ObservableObject {
                         "grade": grade,
                         "imageUrl": imageUrl,
                         "ownerId": user.id ?? "",
-                        "climbId": id,
                         "ownerImageUrl": user.profileImageUrl,
                         "ownerUsername": user.username] as [String : Any]
             
@@ -38,9 +37,9 @@ class UploadPostViewModel: ObservableObject {
                 print("DEBUG: Uploaded Post to user profile")
             }
             
-            Firestore.firestore().collection("ClimbProfile").document(id).collection("posts").addDocument(data: data) { _ in
-                print("DEBUG: Uploaded Post to climb profile")
-            }
+//            Firestore.firestore().collection("ClimbProfile").document(id).collection("posts").addDocument(data: data) { _ in
+//                print("DEBUG: Uploaded Post to climb profile")
+//            }
          }
     }
 }

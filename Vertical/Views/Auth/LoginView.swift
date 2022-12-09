@@ -20,7 +20,19 @@ struct LoginView: View {
                 LinearGradient(gradient: Gradient(colors: [Color.purple, Color.white]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 VStack(spacing: 20){
-                    
+                    Spacer()
+                    Text("V E R T I C A L").font(.system(size: 40, weight: .heavy))
+                        .overlay {
+                                LinearGradient(
+                                    colors: [.white, .white, .purple, .purple, ],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                                .mask(
+                                    Text("V E R T I C A L")
+                                        .font(Font.system(size: 40, weight: .heavy))
+                                )
+                            }
                     CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
                         .padding()
                         .background(Color(.init(white: 1, alpha: 0.15)))

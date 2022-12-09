@@ -25,7 +25,7 @@ struct ClimbProfileAscentRow: View {
             HStack{
                 StarsView(rating: post.rating).frame(width:75)
                 Spacer()
-                Text(post.climbName)
+                Text(post.ownerUsername)
                 Spacer()
                 Text(">")
             }

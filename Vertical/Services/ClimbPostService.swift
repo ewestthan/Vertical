@@ -12,12 +12,12 @@ class ClimbPostService: ObservableObject {
     let firestore = Firestore.firestore()
     let storage = Storage.storage()
     @Published var climbPosts: [Post] = []
-    let postPath: String = "ClimbProfile"
+    let postPath: String = "posts"
 
     
     func grabPosts(userId: String) {
         self.climbPosts = []
-        firestore.collection(self.postPath).document(userId).collection("posts").getDocuments() {
+        firestore.collection(self.postPath).whereField("climbId", isEqualTo: userId).getDocuments() {
             (querySnapshot, error) in
             if let error = error {
                 print(error)

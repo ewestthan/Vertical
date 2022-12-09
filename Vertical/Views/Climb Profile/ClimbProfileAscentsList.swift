@@ -1,92 +1,74 @@
-////
-////  ClimbProfileAscentsList.swift
-////  Vertical
-////
-////  Created by Ethan West on 11/10/22.
-////
-//import Foundation
-//import SwiftUI
 //
-//struct AscentRow: Hashable, Codable {
-//    var id: Int
-//    var name: String
-//    var grade: Int
-//    var stars: Int
-//    var area: String
-//    var image: String
-//    var description: String
-//}
+//  ClimbProfileAscentsList.swift
+//  Vertical
 //
-//struct ClimbProfileAscentRow: View {
-//    var climb: AscentRow
-//    let isExpanded: Bool
+//  Created by Ethan West on 11/10/22.
 //
-//    var body: some View {
-//        HStack{
-//            content
-//        }.contentShape(Rectangle())
-//            .background(.white)
-//            .foregroundColor(.black)
-//            .cornerRadius(20)
-//            .padding([.leading, .trailing], 10)
-//    }
-//
-//    private var content: some View{
-//        VStack{
-//            HStack{
-//                StarsView(rating: climb.stars).frame(width:75)
-//                Spacer()
-//                Text(climb.name)
-//                Spacer()
-//                Text(">")
-//            }
-//            .padding([.top, .bottom], 10)
-//            .padding([.leading, .trailing], 25.0)
-//
-//            if isExpanded{
-//                Image(climb.image)
+import SwiftUI
+import SDWebImageSwiftUI
+
+struct ClimbProfileAscentRow: View {
+    var post: Post
+    
+    var body: some View {
+        HStack{
+            content
+        }.contentShape(Rectangle())
+            .background(.white)
+            .foregroundColor(.black)
+            .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
+    }
+
+    private var content: some View{
+        VStack{
+            HStack{
+                StarsView(rating: post.rating).frame(width:75)
+                Spacer()
+                Text(post.climbName)
+                Spacer()
+                Text(">")
+            }
+            .padding([.top, .bottom], 10)
+            .padding([.leading, .trailing], 25.0)
+
+//                Image(post.image)
 //                    .resizable()
 //                    .aspectRatio(contentMode: .fit)
 //                VStack(alignment: .leading){
-//                    Text(climb.area)
+//                    Text(post.area)
 //                        .bold()
-//                    Text(climb.description)
+//                    Text(post.description)
 //                }
 //                .padding([.bottom], 20)
 //            }
-//        }
-//    }
-//}
-//
-//struct ClimbProfileAscentList: View {
-//
-//    @State private var selection: Set<AscentRow> = []
-//
-//    var body: some View{
-//        LazyVStack{
-//            ForEach(users, id: \.id){ user in
-//                ClimbProfileAscentRow(user: user, isExpanded: self.selection.contains(user))
-//                    .onTapGesture{ self.selectDeselect(user)}
-//                    .animation(.linear(duration: 0.3))
-//            }
-//        }.frame(maxHeight: .infinity, alignment: .top)
-//    }
-//
-//
-//    func selectDeselect(_ climb: AscentRow){
-//        if selection.contains(climb){
-//            selection.remove(climb)
-//        }
-//        else{
-//            selection.removeAll()
-//            selection.insert(climb)
-//        }
-//    }
-//}
+        }
+    } 
+}
+
+struct ClimbProfileAscentList: View {
+
+    var climbPosts: [Post]
+    @State private var selection: Set<Post> = []
+    @EnvironmentObject var postViewModel: ClimbPostViewModel
+    @StateObject private var feedVM = FeedViewModel()
+    
+    var body: some View{
+        ScrollView {
+            LazyVStack{
+                ForEach(climbPosts, id: \.id){ post in
+                    NavigationLink(destination: FeedCell(viewModel: FeedCellViewModel(post: post.toPostData())).padding(.top)){
+                        ClimbProfileAscentRow(post: post)
+                    }
+                }
+            }.frame(maxHeight: .infinity, alignment: .top)
+        }
+    }
+}
 //
 //struct ClimbProfileAscentList_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ClimbProfileAscentList()
 //    }
 //}
-//
+

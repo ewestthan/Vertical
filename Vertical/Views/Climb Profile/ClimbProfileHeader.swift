@@ -53,7 +53,7 @@ struct ClimbProfileHeader: View {
                             .fontWeight(.bold)
                     })
                     NavigationLink(destination:
-                                    VideoPostForm(tabIndex: .constant(3), grade: Int(exactly: climb.Grade)!, sliderValue: Double(climb.Rating), name: climb.Name, area: climb.Area))
+                                    VideoPostForm(tabIndex: .constant(3), climbId: String(climb.id!), grade: Int(exactly: climb.Grade)!, sliderValue: Double(climb.Rating), name: climb.Name, area: climb.Area))
                                    {
                         Text("Add")
                             .frame(maxWidth: 120, maxHeight: 35)

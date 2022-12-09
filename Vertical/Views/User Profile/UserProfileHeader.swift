@@ -47,23 +47,20 @@ struct UserProfileHeader: View {
             VStack{
                 HStack(spacing: 0){
                     Text("")
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .frame(maxWidth: 30, alignment: .leading)
                     Text(viewModel.user.fullname).font(.system(size: 32))
                         .foregroundColor(.black)
                         .fontWeight(.bold).offset(y: 5)
                         .frame(maxWidth: .infinity, alignment: .center)
                     Menu {
                         logoutButton
-                        NavigationLink( destination: EditUserProfile(), label: {
-                            Text("Edit Profile")
-                        })
                     } label: {
                         Image(systemName: "ellipsis")
                             .foregroundColor(.gray)
                             .frame(width: 25, height: 25)
                             .background(.gray.opacity(0.2))
                             .cornerRadius(100)
-                    }.frame(maxWidth: .infinity, alignment: .trailing)
+                    }.frame(maxWidth: 30, alignment: .trailing)
                         .padding(.trailing, 15)
                 }
                 Text("@" + viewModel.user.username).font(.system(size: 14)).foregroundColor(.gray)
@@ -84,7 +81,7 @@ struct UserProfileHeader: View {
     }
 
 }
-
+//
 //struct UserProfileHeader_Previews: PreviewProvider {
 //    static var previews: some View {
 //        UserProfileHeader(user: User(id: "testID", email: "test", username: "test", fullname: "test", profileImageUrl: "test", location: "test", description: "test", followers: 5, following: 5, ascents: 5))

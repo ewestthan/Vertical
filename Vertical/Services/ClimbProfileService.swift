@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 class ClimbProfileService: ObservableObject {
     
-    @Published var climb = ClimbProfileModel(Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test")
+    @Published var climb = ClimbProfileModel(id: "0", Name: "test", Grade: 4, Rating: 4, Area: "Test", Picture_URL: "Test")
     
     func setClimb(climb: ClimbProfileModel) {
         self.climb = climb

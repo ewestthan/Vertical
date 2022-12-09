@@ -82,11 +82,11 @@ struct AreaProfileClimbList: View {
                         AreaProfileClimbRow(climb: climb)
                     }
                 }
+                
                 else {
                     Text("Bad climb")
                 }
             }
         }.frame(maxHeight: .infinity, alignment: .top)
     }
-                    
 }

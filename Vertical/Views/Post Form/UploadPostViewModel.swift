@@ -10,7 +10,7 @@ import SwiftUI
 
 class UploadPostViewModel: ObservableObject {
     
-    func uploadPost(description: String, grade: Int, rating: Int, date: Date, image: UIImage, name: String, area: String, completion: ((Error?) -> Void)?) async{
+    func uploadPost(description: String, grade: Int, rating: Int, date: Date, image: UIImage, name: String, area: String, id: String, completion: ((Error?) -> Void)?) async{
         guard let user = AuthViewModel.shared.currentUser else {
             print("DEBUG: no Current user")
             return
@@ -27,13 +27,19 @@ class UploadPostViewModel: ObservableObject {
                         "grade": grade,
                         "imageUrl": imageUrl,
                         "ownerId": user.id ?? "",
+                        "climbId": id,
                         "ownerImageUrl": user.profileImageUrl,
                         "ownerUsername": user.username] as [String : Any]
+            
             
             //guard let currentUid = AuthViewModel.shared.userSession?.uid else {return}
             
             COLLECTION_POSTS.addDocument(data: data) { _ in
-                print("DEBUG: Uploaded Post")
+                print("DEBUG: Uploaded Post to user profile")
+            }
+            
+            Firestore.firestore().collection("ClimbProfile").document(id).collection("posts").addDocument(data: data) { _ in
+                print("DEBUG: Uploaded Post to climb profile")
             }
          }
     }

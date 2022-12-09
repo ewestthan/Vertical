@@ -115,7 +115,7 @@ struct AreaProfileHeader: View {
 //                            isFollowing = false
 //                        })
 //                    }
-                    NavigationLink(destination: VideoPostForm(tabIndex: .constant(3), grade: 0, sliderValue: 0.0, name: "", area: "")) {
+                    NavigationLink(destination: VideoPostForm(tabIndex: .constant(3), climbId: "0", grade: 0, sliderValue: 0.0, name: "", area: "")) {
                         Text("+")
                             .padding([.leading, .trailing], 15)
                             .padding([.bottom, .top], 10)

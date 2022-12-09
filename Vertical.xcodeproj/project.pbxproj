@@ -20,6 +20,8 @@
 		042B72D129108A7C007E1691 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B72D029108A7C007E1691 /* UserSearch.swift */; };
 		042BF07A2940198B00E4FE83 /* AreaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF0792940198B00E4FE83 /* AreaService.swift */; };
 		042BF07C29401EE300E4FE83 /* AreaActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF07B29401EE300E4FE83 /* AreaActionButtonView.swift */; };
+		042BF07E2943965D00E4FE83 /* ClimbPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF07D2943965D00E4FE83 /* ClimbPostViewModel.swift */; };
+		042BF0802943A42F00E4FE83 /* ClimbPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF07F2943A42F00E4FE83 /* ClimbPostService.swift */; };
 		0446164C291D8C9D00ABCD06 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446164B291D8C9D00ABCD06 /* ImagePicker.swift */; };
 		0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446164D291D8D9A00ABCD06 /* ImageUploader.swift */; };
 		0455A7DD291D4E2700CEBDCD /* ClimbProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */; };
@@ -50,7 +52,6 @@
 		048F53E1291D9D3B0053F433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E0291D9D3B0053F433 /* Constants.swift */; };
 		048F53E3291DA1A10053F433 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F53E2291DA1A10053F433 /* SearchViewModel.swift */; };
 		04A0F6312926AF2B004878D9 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */; };
-		04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F6322926F3E6004878D9 /* EditUserProfile.swift */; };
 		04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */; };
 		04DD94202910B8C300D36C2E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD941F2910B8C300D36C2E /* SearchBar.swift */; };
 		04DD942229115FDF00D36C2E /* ClimbsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD942129115FDF00D36C2E /* ClimbsSearch.swift */; };
@@ -139,6 +140,8 @@
 		042B72D029108A7C007E1691 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		042BF0792940198B00E4FE83 /* AreaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaService.swift; sourceTree = "<group>"; };
 		042BF07B29401EE300E4FE83 /* AreaActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaActionButtonView.swift; sourceTree = "<group>"; };
+		042BF07D2943965D00E4FE83 /* ClimbPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbPostViewModel.swift; sourceTree = "<group>"; };
+		042BF07F2943A42F00E4FE83 /* ClimbPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbPostService.swift; sourceTree = "<group>"; };
 		0446164B291D8C9D00ABCD06 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0446164D291D8D9A00ABCD06 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbProfileViewModel.swift; sourceTree = "<group>"; };
@@ -172,7 +175,6 @@
 		048F53E0291D9D3B0053F433 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		048F53E2291DA1A10053F433 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04A0F6302926AF2B004878D9 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
-		04A0F6322926F3E6004878D9 /* EditUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfile.swift; sourceTree = "<group>"; };
 		04CDBF9B29102A06005074A9 /* UserProfileVideos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVideos.swift; sourceTree = "<group>"; };
 		04DD941F2910B8C300D36C2E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		04DD942129115FDF00D36C2E /* ClimbsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbsSearch.swift; sourceTree = "<group>"; };
@@ -299,13 +301,6 @@
 			path = "Tab Bars";
 			sourceTree = "<group>";
 		};
-		042D00492911E9B100F907E2 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		042D004A2911EA1900F907E2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,7 +387,6 @@
 				046E333829005F4200EAC8DC /* UserProfileBottom.swift */,
 				046E333A29005F5800EAC8DC /* UserProfile.swift */,
 				046E333028FF6ED100EAC8DC /* UserProfileHeader.swift */,
-				04A0F6322926F3E6004878D9 /* EditUserProfile.swift */,
 				047FAD36293BE5630015BC55 /* ProfileViewModel.swift */,
 				047FAD38293BEB080015BC55 /* ProfileActionButtonView.swift */,
 			);
@@ -441,6 +435,7 @@
 				5EB571E729358B6F00C399A2 /* AreaSearchViewModel.swift */,
 				FD31467F293302D700FD815D /* AreaViewModel.swift */,
 				5EA4DAF2293C2D910008C66D /* UserPostViewModel.swift */,
+				042BF07D2943965D00E4FE83 /* ClimbPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -448,7 +443,7 @@
 		5E630F7B2908AE6C00295FC3 /* Climb Profile */ = {
 			isa = PBXGroup;
 			children = (
-				5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */,
+				5E33FF17291D3D65000639D0 /* ClimbProfile.swift */,
 				5E630F772908AE1D00295FC3 /* ClimbProfileView.swift */,
 				0455A7E0291D574500CEBDCD /* ClimbProfileBottom.swift */,
 				0455A7DE291D4E7600CEBDCD /* ClimbProfileHeader.swift */,
@@ -463,7 +458,7 @@
 				7956602E2911AFB700D747AF /* User.swift */,
 				FD95C76C2911EE0800A54810 /* Area.swift */,
 				0455A7DC291D4E2700CEBDCD /* ClimbProfileViewModel.swift */,
-				5E33FF17291D3D65000639D0 /* ClimbProfile.swift */,
+				5E630F792908AE5200295FC3 /* ClimbProfileModel.swift */,
 				79CBE8CC29183D0F00D43A08 /* Post.swift */,
 				FDF77ACD2939B0D700F0F2F1 /* AreaClimb.swift */,
 				5E2DC66D293CF9EF0073BCAB /* ClimbRow.swift */,
@@ -482,7 +477,6 @@
 				042441E72911CEDD008C4E5B /* Post Form */,
 				046E333C2900653B00EAC8DC /* User Profile */,
 				042B72C629107F63007E1691 /* Search */,
-				042D00492911E9B100F907E2 /* Login */,
 				04DD94282911830500D36C2E /* Feed */,
 			);
 			path = Views;
@@ -496,6 +490,7 @@
 				047FAD34293BE00C0015BC55 /* UserService.swift */,
 				042BF0792940198B00E4FE83 /* AreaService.swift */,
 				5EA4DAF0293C2D3D0008C66D /* PostService.swift */,
+				042BF07F2943A42F00E4FE83 /* ClimbPostService.swift */,
 				FD81A47129404C6200B83243 /* ClimbProfileService.swift */,
 			);
 			path = Services;
@@ -682,6 +677,7 @@
 				0446164E291D8D9A00ABCD06 /* ImageUploader.swift in Sources */,
 				FDF77ACE2939B0D700F0F2F1 /* AreaClimb.swift in Sources */,
 				04CDBF9C29102A06005074A9 /* UserProfileVideos.swift in Sources */,
+				042BF07E2943965D00E4FE83 /* ClimbPostViewModel.swift in Sources */,
 				5E33FF16291D3CBD000639D0 /* ClimbSearch.swift in Sources */,
 				0455A7E1291D574500CEBDCD /* ClimbProfileBottom.swift in Sources */,
 				5EA4DAF3293C2D910008C66D /* UserPostViewModel.swift in Sources */,
@@ -691,7 +687,6 @@
 				0414E814291D715D004EE6F2 /* AuthViewModel.swift in Sources */,
 				62111B7A293C00F5007B4EBA /* FeedCellViewModel.swift in Sources */,
 				795660522911BC9500D747AF /* LoginViewModel.swift in Sources */,
-				04A0F6332926F3E6004878D9 /* EditUserProfile.swift in Sources */,
 				5E630F782908AE1D00295FC3 /* ClimbProfileView.swift in Sources */,
 				FD81A47229404C6200B83243 /* ClimbProfileService.swift in Sources */,
 				FDF77ACC2939ACBE00F0F2F1 /* AreaProfileClimbList.swift in Sources */,
@@ -721,6 +716,7 @@
 				046E33352900424600EAC8DC /* Feed.swift in Sources */,
 				042BF07A2940198B00E4FE83 /* AreaService.swift in Sources */,
 				FD39F3D9291D52B1000AB8F2 /* AreaTabBar.swift in Sources */,
+				042BF0802943A42F00E4FE83 /* ClimbPostService.swift in Sources */,
 				7956602A2911AA4D00D747AF /* HexColor.swift in Sources */,
 				495C26892936D33800169AE8 /* MapView.swift in Sources */,
 				0414E81C291D746C004EE6F2 /* CustomTextField.swift in Sources */,

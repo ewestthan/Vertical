@@ -7,7 +7,7 @@
 
 import Combine
 import Firebase
-
+ 
 final class UserPostViewModel: ObservableObject {
     @Published var userPostRepository: PostService = PostService()
     @Published var userPosts: [Post] = []

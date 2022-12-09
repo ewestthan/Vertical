@@ -15,5 +15,9 @@ struct ClimbProfileModel: Hashable, Codable, Identifiable {
     var Rating: Int
     var Area: String
     var Picture_URL: String
+    var ascents: [Post]?
     var header_image: String?
+    
+    
+    
 }

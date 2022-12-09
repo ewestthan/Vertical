@@ -21,6 +21,7 @@ struct VideoPostForm: View {
     @ObservedObject var viewModel = UploadPostViewModel()
     @ObservedObject var climbViewModel = ClimbSearchViewModel()
     
+    @State var climbId: String
     @State var grade: Int
     @State var sliderValue: Double
     @State var name: String
@@ -101,7 +102,7 @@ struct VideoPostForm: View {
             Button(action: {
                 Task{
                     if let image = selectedImage {
-                        await viewModel.uploadPost(description: description, grade: grade, rating: Int(sliderValue), date: selectedDate, image: image, name: name, area: area)
+                        await viewModel.uploadPost(description: description, grade: grade, rating: Int(sliderValue), date: selectedDate, image: image, name: name, area: area, id: climbId)
                         { _ in
                             description = ""
                             postImage = nil
@@ -133,6 +134,6 @@ extension VideoPostForm{
 
 struct VideoPostForm_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPostForm(tabIndex: .constant(3), grade: 0, sliderValue: 0.0, name: "", area: "")
+        VideoPostForm(tabIndex: .constant(3), climbId: "0", grade: 0, sliderValue: 0.0, name: "", area: "")
     }
 }

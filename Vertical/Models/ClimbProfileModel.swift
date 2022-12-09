@@ -7,8 +7,10 @@
 
 import Foundation
 import SwiftUI
+import FirebaseFirestoreSwift
 
-struct ClimbProfileData: Hashable, Codable {
+struct ClimbProfileData: Identifiable, Hashable, Codable {
+    @DocumentID var id: String?
     var name: String
     var grade: Int
     var rating: Int

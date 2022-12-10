@@ -53,14 +53,12 @@ struct UserProfileClimbList: View {
     
     var body: some View{
         ScrollView {
-            LazyVStack{
-                ForEach(userPosts, id: \.id){ post in
-                    UserProfileClimbRow(climb: post, isExpanded: self.selection.contains(post))
-                        .onTapGesture{ self.selectDeselect(post)}
-                        .animation(.linear(duration: 0.3))
-                }
-            }.frame(maxHeight: .infinity, alignment: .top)
-        }
+            ForEach(userPosts, id: \.id){ post in
+                UserProfileClimbRow(climb: post, isExpanded: self.selection.contains(post))
+                    .onTapGesture{ self.selectDeselect(post)}
+                    .animation(.linear(duration: 0.3))
+            }
+        }.frame(maxHeight: .infinity, alignment: .top)
     }
     
     
